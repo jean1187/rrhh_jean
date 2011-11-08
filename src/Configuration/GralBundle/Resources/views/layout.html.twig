@@ -1,12 +1,12 @@
 {# src src/Configuration/GralBundle/Resource/views/layout.html.twig #}
 {% extends '::base.html.twig' %} 
-{% block title 'Plantilla' %}
+{% block title 'Aragua' %}
 
 {% block stylesheets %}
     {{parent()}}
         {% stylesheets  filter='cssrewrite, yui_css' output='css/compresed/compressed.css'
-                'bundles/plantilla/css/main.css'
-                'bundles/plantilla/menu/menu.css'
+                'css/main.css'
+                'css/menu/menu.css'
                 'css/jquery_ui/jquery-ui.css'
         %}
             <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
@@ -38,8 +38,8 @@
     {% endblock %}
 {% block javascripts %}
          {% javascripts  filter='yui_js' output='js/compresed/compressed.js'
-                'bundles/plantilla/js/jquery.js'
-                'bundles/plantilla/menu/menu.js'
+                'js/jquery.js'
+                'js/menu/menu.js'
                 'js/global.twig.js'
                 'js/jquery_ui/jquery-ui.js'
         %}

@@ -2,13 +2,13 @@
 
 // ::base.html.twig
 return array (
-  '9b32ce3' => 
+  '44adec6' => 
   array (
     0 => 
     array (
-      0 => 'bundles/plantilla/css/reset.css',
-      1 => 'bundles/plantilla/css/text.css',
-      2 => 'bundles/plantilla/css/960.css',
+      0 => 'css/960Grid/reset.css',
+      1 => 'css/960Grid/text.css',
+      2 => 'css/960Grid/960.css',
     ),
     1 => 
     array (
@@ -18,7 +18,7 @@ return array (
     2 => 
     array (
       'output' => '_controller/css/compresed/960grid.css',
-      'name' => '9b32ce3',
+      'name' => '44adec6',
       'debug' => NULL,
       'combine' => NULL,
     ),

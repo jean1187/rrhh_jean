@@ -1,0 +1,27 @@
+Dependencia:
+  type: entity
+  table: dependencia
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    nombre:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+  oneToOne:
+    direccion:
+      targetEntity: Direccion
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        direccion_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

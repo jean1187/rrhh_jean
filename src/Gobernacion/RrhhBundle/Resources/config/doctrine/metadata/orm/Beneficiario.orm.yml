@@ -1,0 +1,40 @@
+Beneficiario:
+  type: entity
+  table: beneficiario
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+  oneToOne:
+    persona:
+      targetEntity: Persona
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        persona_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    funcionario:
+      targetEntity: Funcionario
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        funcionario_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    parentezco:
+      targetEntity: Parentezco
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        parentezco_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

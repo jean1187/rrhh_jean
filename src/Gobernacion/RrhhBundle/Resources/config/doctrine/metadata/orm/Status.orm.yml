@@ -1,0 +1,27 @@
+Status:
+  type: entity
+  table: status
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    nombre:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+  oneToOne:
+    catStatus:
+      targetEntity: CatStatus
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        cat_status_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

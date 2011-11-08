@@ -1,0 +1,41 @@
+Vacaciones:
+  type: entity
+  table: vacaciones
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    fchIni:
+      type: date
+      nullable: true
+      column: fch_ini
+    fchHasta:
+      type: date
+      nullable: true
+      column: fch_hasta
+    fchCre:
+      type: datetime
+      nullable: true
+      column: fch_cre
+    fchModif:
+      type: datetime
+      nullable: true
+      column: fch_modif
+    tomadas:
+      type: boolean
+      nullable: false
+  oneToOne:
+    funcionario:
+      targetEntity: Funcionario
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        funcionario_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

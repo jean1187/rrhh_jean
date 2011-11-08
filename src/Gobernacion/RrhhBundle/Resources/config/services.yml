@@ -1,0 +1,7 @@
+parameters:
+#    gobernacion_rrhh.example.class: Gobernacion\RrhhBundle\Example
+
+services:
+#    gobernacion_rrhh.example:
+#        class: %gobernacion_rrhh.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

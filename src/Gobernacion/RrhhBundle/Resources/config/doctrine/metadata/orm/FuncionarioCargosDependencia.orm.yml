@@ -1,0 +1,34 @@
+FuncionarioCargosDependencia:
+  type: entity
+  table: funcionario_cargos_dependencia
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    sueldo:
+      type: float
+      nullable: true
+  oneToOne:
+    funcionario:
+      targetEntity: Funcionario
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        funcionario_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    cargosDependencia:
+      targetEntity: CargosDependencia
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        cargos_dependencia_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

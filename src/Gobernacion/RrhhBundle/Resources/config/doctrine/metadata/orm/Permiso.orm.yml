@@ -1,0 +1,62 @@
+Permiso:
+  type: entity
+  table: permiso
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    motivo:
+      type: text
+      nullable: true
+    fchSolicitud:
+      type: date
+      nullable: true
+      column: fch_solicitud
+    fchPermiso:
+      type: date
+      nullable: true
+      column: fch_permiso
+    fchDesde:
+      type: datetime
+      nullable: true
+      column: fch_desde
+    fchHasta:
+      type: datetime
+      nullable: true
+      column: fch_hasta
+    fchFinal:
+      type: datetime
+      nullable: true
+      column: fch_final
+    fchCre:
+      type: datetime
+      nullable: true
+      column: fch_cre
+    fchModif:
+      type: datetime
+      nullable: true
+      column: fch_modif
+  oneToOne:
+    status:
+      targetEntity: Status
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        status_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    funcionario:
+      targetEntity: Funcionario
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        funcionario_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

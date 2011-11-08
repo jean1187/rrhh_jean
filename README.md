@@ -1,4 +1,4 @@
-Proyecto PLANTILLA
+Proyecto RRHH
 ==================
 
 Este repositorio alberga el código fuente del proyecto que se esta desarollando
@@ -13,7 +13,7 @@ Instalación y configuración
 
 #### Instalación ####
 
-  1. Clona el repositorio `plantilla_sf2`  && cd plantilla_sf2`
+  1. Clona el repositorio `rrhh`  && cd rrhh`
   2. Ejecuta el comando  php `bin/vendors install`  para descargar
   o actualizar las librerías externas de ``Symfony2``. Este comando puede tardar
   un buen rato en completarse.
@@ -28,7 +28,7 @@ configurarlo en las primeras líneas del archivo `app/config/parameters.ini`:
     database_driver   = pdo_mysql
     database_host     = localhost
     database_port     =
-    database_name     = plantilla
+    database_name     = rrhh
     database_user     = root
     database_password = 123
 ```
@@ -44,16 +44,16 @@ Restaurar la base de datos con ayuda del SQL que esta en data_base_SQL/Empresa_p
 
     Si las entidades no estivieran creadas
 
-1. php app/console doctrine:mapping:convert yml ./src/Empresa/PlantillaBundle/Resources/config/doctrine/metadata/orm --from-database --force
+1. php app/console doctrine:mapping:convert yml ./src/Gobernacion/RrhhBundle/Resources/config/doctrine/metadata/orm --from-database --force
 
-2. php app/console doctrine:mapping:import PlantillaBundle annotation
+2. php app/console doctrine:mapping:import RrhhBundle annotation
 
-3. php app/console doctrine:generate:entities PlantillaBundle
+3. php app/console doctrine:generate:entities RrhhBundle
 
 
 ```
 
-### Con ayuda de Doctrine Doctrine  ###
+### Con ayuda de Doctrine Doctrine  "Estos 3 pasos son sufientes para que el sistema quede funcional" ###
 
 ```
 Como ya las entidades estan creadas
@@ -66,7 +66,7 @@ Como ya las entidades estan creadas
     
     `Solamente tengo algunas tablas precargadas` Si quieres modificar puedes ver el archivo
 
-    `/src/Empresa/PlantillaBundle/DataFixtures/ORM/`
+    `/src/Gobernacion/RrhhBundle/DataFixtures/ORM/`
 
 ```
 
@@ -78,7 +78,7 @@ tu servidor web local. Añade en primer lugar la siguiente línea en el archivo
 `/etc/hosts`:
 
 ```
-127.0.0.1    w2w.plantilla_sf2
+127.0.0.1    w2w.rrhh
 
 ```
 
@@ -86,12 +86,12 @@ Después, configura el *host* en el servidor web. Si utilizas por ejemplo
 Apache, debes añadir lo siguiente en su archivo de configuración:
 
 ```
-# plantillasf2 2011
+# rrhh 2011
 <VirtualHost *:80>
-  DocumentRoot "/home/jean/Documentos/www/plantilla_sf2/web"
-  ServerName    w2w.plantilla_sf2
+  DocumentRoot "/home/jean/Documentos/www/rrhh/web"
+  ServerName    w2w.rrhh
   DirectoryIndex app_dev.php
-  <Directory "/home/jean/Documentos/www/plantilla_sf2/web">
+  <Directory "/home/jean/Documentos/www/rrhh/web">
     AllowOverride All
     Allow from All
   </Directory>
@@ -104,12 +104,12 @@ Para terminar, no olvides reiniciar el servidor web.
 ### Probando el proyecto ###
 
 Después de la configuración anterior, ya puedes acceder al entorno de 
-desarrollo de la aplicación en `http://w2w.plantilla_sf2/app_dev.php`. El 
-entorno de producción es accesible en `http://w2w.plantilla_sf2/`
+desarrollo de la aplicación en `http://w2w.rrhh/app_dev.php`. El 
+entorno de producción es accesible en `http://w2w.rrhh/`
 
 Si se produce algún error, es posible que el servidor web no tenga permiso de 
-escritura en los directordesymfonyios de la caché y de los logs. Ejecuta `chmod -R 777 
-/proyectos/desymfony/app/cache /proyectos/desymfony/app/logs` y el error ya no 
+escritura en los directorios de la caché y de los logs. Ejecuta `chmod -R 777 
+/app/cache /app/logs` y el error ya no 
 debería mostrarse.
 
 
@@ -140,5 +140,6 @@ El proyecto esta siendo desarrollado por:
 ```
 
   * Jean Mendoza (@rivasjeancarlos)
+  * Keyla Saragozza (@katla20)
 
 ```

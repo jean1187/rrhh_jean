@@ -1,0 +1,31 @@
+CargosDependencia:
+  type: entity
+  table: cargos_dependencia
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+  oneToOne:
+    cargos:
+      targetEntity: Cargos
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        cargos_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    dependencia:
+      targetEntity: Dependencia
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        dependencia_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

@@ -1,0 +1,40 @@
+TitulosPersona:
+  type: entity
+  table: titulos_persona
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+  oneToOne:
+    titulos:
+      targetEntity: Titulos
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        titulos_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    persona:
+      targetEntity: Persona
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        persona_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    status:
+      targetEntity: Status
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        status_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

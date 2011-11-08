@@ -1,0 +1,20 @@
+Cargos:
+  type: entity
+  table: cargos
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    nombre:
+      type: string
+      length: 45
+      fixed: false
+      nullable: false
+    sueldo:
+      type: float
+      nullable: false
+  lifecycleCallbacks: {  }

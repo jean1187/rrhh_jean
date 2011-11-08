@@ -1,0 +1,81 @@
+Funcionario:
+  type: entity
+  table: funcionario
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    funcionariocol:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    fchIngreso:
+      type: date
+      nullable: false
+      column: fch_ingreso
+    direccionE:
+      type: text
+      nullable: true
+      column: direccion_e
+    contactoE:
+      type: text
+      nullable: true
+      column: contacto_e
+    vivienda:
+      type: boolean
+      nullable: true
+    vehiculo:
+      type: boolean
+      nullable: true
+  oneToOne:
+    persona:
+      targetEntity: Persona
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        persona_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    estadoCivil:
+      targetEntity: EstadoCivil
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        estado_civil_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    status:
+      targetEntity: Status
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        status_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    lateralidad:
+      targetEntity: Status
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        lateralidad_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    tipoFuncionario:
+      targetEntity: TipoFuncionario
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        tipo_funcionario_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

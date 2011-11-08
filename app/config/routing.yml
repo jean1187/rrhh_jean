@@ -1,3 +1,7 @@
+GobernacionRrhhBundle:
+    resource: "@GobernacionRrhhBundle/Resources/config/routing.yml"
+    prefix:   /rrhh
+
 ConfigurationGralBundle:
     resource: "@ConfigurationGralBundle/Resources/config/routing.yml"
     prefix:   /

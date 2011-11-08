@@ -1,0 +1,74 @@
+Persona:
+  type: entity
+  table: persona
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    cedula:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    nombre:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    apellido:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    sexo:
+      type: string
+      length: 1
+      fixed: true
+      nullable: true
+    tlfCelular:
+      type: string
+      length: 11
+      fixed: false
+      nullable: true
+      column: tlf_celular
+    tlfHabitacion:
+      type: string
+      length: 11
+      fixed: false
+      nullable: true
+      column: tlf_habitacion
+    direccion:
+      type: text
+      nullable: true
+    fchCre:
+      type: datetime
+      nullable: false
+      column: fch_cre
+    fchModif:
+      type: datetime
+      nullable: false
+      column: fch_modif
+  oneToOne:
+    nivelAcademico:
+      targetEntity: NivelAcademico
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        nivel_academico_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    status:
+      targetEntity: Status
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        status_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

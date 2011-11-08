@@ -20,8 +20,8 @@ class AppKernel extends Kernel
             new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            new Empresa\PlantillaBundle\PlantillaBundle(),
             new Configuration\GralBundle\ConfigurationGralBundle(),
+            new Gobernacion\RrhhBundle\GobernacionRrhhBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

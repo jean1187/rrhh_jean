@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.root_dir">/home/jean/Documentos/www/a_plantilla_sf2/app</parameter>
+    <parameter key="kernel.root_dir">/home/jean/Documentos/www/rrhh_prueba/app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">app</parameter>
-    <parameter key="kernel.cache_dir">/home/jean/Documentos/www/a_plantilla_sf2/app/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">/home/jean/Documentos/www/a_plantilla_sf2/app/logs</parameter>
+    <parameter key="kernel.cache_dir">/home/jean/Documentos/www/rrhh_prueba/app/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">/home/jean/Documentos/www/rrhh_prueba/app/logs</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
@@ -20,8 +20,8 @@
       <parameter key="DoctrineFixturesBundle">Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="KnpMenuBundle">Knp\Bundle\MenuBundle\KnpMenuBundle</parameter>
-      <parameter key="PlantillaBundle">Empresa\PlantillaBundle\PlantillaBundle</parameter>
       <parameter key="ConfigurationGralBundle">Configuration\GralBundle\ConfigurationGralBundle</parameter>
+      <parameter key="GobernacionRrhhBundle">Gobernacion\RrhhBundle\GobernacionRrhhBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -32,7 +32,7 @@
     <parameter key="database_driver">pdo_mysql</parameter>
     <parameter key="database_host">localhost</parameter>
     <parameter key="database_port"></parameter>
-    <parameter key="database_name">plantilla</parameter>
+    <parameter key="database_name">rrhh</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">root_mysql.2010</parameter>
     <parameter key="mailer_transport">smtp</parameter>
@@ -57,7 +57,7 @@
     <parameter key="translation.loader.yml.class">Symfony\Component\Translation\Loader\YamlFileLoader</parameter>
     <parameter key="translation.loader.xliff.class">Symfony\Component\Translation\Loader\XliffFileLoader</parameter>
     <parameter key="debug.event_dispatcher.class">Symfony\Bundle\FrameworkBundle\Debug\TraceableEventDispatcher</parameter>
-    <parameter key="debug.container.dump">/home/jean/Documentos/www/a_plantilla_sf2/app/cache/dev/appDevDebugProjectContainer.xml</parameter>
+    <parameter key="debug.container.dump">/home/jean/Documentos/www/rrhh_prueba/app/cache/dev/appDevDebugProjectContainer.xml</parameter>
     <parameter key="kernel.secret">ThisTokenIsNotSoSecretChangeIt</parameter>
     <parameter key="kernel.trust_proxy_headers">false</parameter>
     <parameter key="session.class">Symfony\Component\HttpFoundation\Session</parameter>
@@ -83,8 +83,8 @@
     <parameter key="validator.mapping.loader.yaml_files_loader.class">Symfony\Component\Validator\Mapping\Loader\YamlFilesLoader</parameter>
     <parameter key="validator.validator_factory.class">Symfony\Bundle\FrameworkBundle\Validator\ConstraintValidatorFactory</parameter>
     <parameter key="validator.mapping.loader.xml_files_loader.mapping_files" type="collection">
-      <parameter>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/../../../Component/Form/Resources/config/validation.xml</parameter>
-      <parameter>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/config/validation.xml</parameter>
+      <parameter>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/../../../Component/Form/Resources/config/validation.xml</parameter>
+      <parameter>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/config/validation.xml</parameter>
     </parameter>
     <parameter key="validator.mapping.loader.yaml_files_loader.mapping_files" type="collection"/>
     <parameter key="esi.class">Symfony\Component\HttpKernel\HttpCache\Esi</parameter>
@@ -100,7 +100,7 @@
     <parameter key="data_collector.memory.class">Symfony\Component\HttpKernel\DataCollector\MemoryDataCollector</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">sqlite:/home/jean/Documentos/www/a_plantilla_sf2/app/cache/dev/profiler.db</parameter>
+    <parameter key="profiler.storage.dsn">sqlite:/home/jean/Documentos/www/rrhh_prueba/app/cache/dev/profiler.db</parameter>
     <parameter key="profiler.storage.username"></parameter>
     <parameter key="profiler.storage.password"></parameter>
     <parameter key="profiler.storage.lifetime">86400</parameter>
@@ -119,7 +119,7 @@
     <parameter key="router.cache_warmer.class">Symfony\Bundle\FrameworkBundle\CacheWarmer\RouterCacheWarmer</parameter>
     <parameter key="router.options.matcher.cache_class">app%kernel.environment%UrlMatcher</parameter>
     <parameter key="router.options.generator.cache_class">app%kernel.environment%UrlGenerator</parameter>
-    <parameter key="router.resource">/home/jean/Documentos/www/a_plantilla_sf2/app/config/routing_dev.yml</parameter>
+    <parameter key="router.resource">/home/jean/Documentos/www/rrhh_prueba/app/config/routing_dev.yml</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="templating.engine.delegating.class">Symfony\Bundle\FrameworkBundle\Templating\DelegatingEngine</parameter>
@@ -234,7 +234,7 @@
       <parameter key="debug">true</parameter>
       <parameter key="strict_variables">true</parameter>
       <parameter key="exception_controller">Symfony\Bundle\TwigBundle\Controller\ExceptionController::showAction</parameter>
-      <parameter key="cache">/home/jean/Documentos/www/a_plantilla_sf2/app/cache/dev/twig</parameter>
+      <parameter key="cache">/home/jean/Documentos/www/rrhh_prueba/app/cache/dev/twig</parameter>
       <parameter key="charset">UTF-8</parameter>
     </parameter>
     <parameter key="monolog.logger.class">Symfony\Bridge\Monolog\Logger</parameter>
@@ -311,7 +311,7 @@
     </parameter>
     <parameter key="doctrine.default_entity_manager">default</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">/home/jean/Documentos/www/a_plantilla_sf2/app/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">/home/jean/Documentos/www/rrhh_prueba/app/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="assetic.asset_factory.class">Symfony\Bundle\AsseticBundle\Factory\AssetFactory</parameter>
     <parameter key="assetic.asset_manager.class">Assetic\Factory\LazyAssetManager</parameter>
@@ -325,7 +325,7 @@
     <parameter key="assetic.filter_manager.class">Symfony\Bundle\AsseticBundle\FilterManager</parameter>
     <parameter key="assetic.worker.ensure_filter.class">Assetic\Factory\Worker\EnsureFilterWorker</parameter>
     <parameter key="assetic.node.paths" type="collection"/>
-    <parameter key="assetic.cache_dir">/home/jean/Documentos/www/a_plantilla_sf2/app/cache/dev/assetic</parameter>
+    <parameter key="assetic.cache_dir">/home/jean/Documentos/www/rrhh_prueba/app/cache/dev/assetic</parameter>
     <parameter key="assetic.twig_extension.class">Symfony\Bundle\AsseticBundle\Twig\AsseticExtension</parameter>
     <parameter key="assetic.twig_formula_loader.class">Assetic\Extension\Twig\TwigFormulaLoader</parameter>
     <parameter key="assetic.helper.dynamic.class">Symfony\Bundle\AsseticBundle\Templating\DynamicAsseticHelper</parameter>
@@ -333,19 +333,19 @@
     <parameter key="assetic.php_formula_loader.class">Symfony\Bundle\AsseticBundle\Factory\Loader\AsseticHelperFormulaLoader</parameter>
     <parameter key="assetic.debug">true</parameter>
     <parameter key="assetic.use_controller">true</parameter>
-    <parameter key="assetic.read_from">/home/jean/Documentos/www/a_plantilla_sf2/app/../web</parameter>
-    <parameter key="assetic.write_to">/home/jean/Documentos/www/a_plantilla_sf2/app/../web</parameter>
+    <parameter key="assetic.read_from">/home/jean/Documentos/www/rrhh_prueba/app/../web</parameter>
+    <parameter key="assetic.write_to">/home/jean/Documentos/www/rrhh_prueba/app/../web</parameter>
     <parameter key="assetic.java.bin">/usr/bin/java</parameter>
     <parameter key="assetic.node.bin">/usr/bin/node</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
     <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>
     <parameter key="assetic.filter.yui_css.class">Assetic\Filter\Yui\CssCompressorFilter</parameter>
     <parameter key="assetic.filter.yui_css.java">/usr/bin/java</parameter>
-    <parameter key="assetic.filter.yui_css.jar">/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/java/yuicompressor-2.4.6.jar</parameter>
+    <parameter key="assetic.filter.yui_css.jar">/home/jean/Documentos/www/rrhh_prueba/app/Resources/java/yuicompressor-2.4.6.jar</parameter>
     <parameter key="assetic.filter.yui_css.charset">UTF-8</parameter>
     <parameter key="assetic.filter.yui_js.class">Assetic\Filter\Yui\JsCompressorFilter</parameter>
     <parameter key="assetic.filter.yui_js.java">/usr/bin/java</parameter>
-    <parameter key="assetic.filter.yui_js.jar">/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/java/yuicompressor-2.4.6.jar</parameter>
+    <parameter key="assetic.filter.yui_js.jar">/home/jean/Documentos/www/rrhh_prueba/app/Resources/java/yuicompressor-2.4.6.jar</parameter>
     <parameter key="assetic.filter.yui_js.charset">UTF-8</parameter>
     <parameter key="assetic.filter.yui_js.nomunge">null</parameter>
     <parameter key="assetic.filter.yui_js.preserve_semi">null</parameter>
@@ -424,6 +424,8 @@
     <parameter key="fos_user.group.form.validation_groups" type="collection">
       <parameter>Registration</parameter>
     </parameter>
+    <parameter key="fos_user.model.user.form_data_class">Configuration\GralBundle\Entity\Usuario</parameter>
+    <parameter key="fos_user.model.group.form_data_class">Configuration\GralBundle\Entity\Grupo</parameter>
     <parameter key="knp_menu.factory.class">Knp\Menu\Silex\RouterAwareFactory</parameter>
     <parameter key="knp_menu.helper.class">Knp\Menu\Twig\Helper</parameter>
     <parameter key="knp_menu.menu_provider.chain.class">Knp\Menu\Provider\ChainProvider</parameter>
@@ -702,7 +704,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.name_parser"/>
-                <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources</argument>
+                <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources</argument>
               </service>
             </argument>
             <argument type="service" id="templating.locator"/>
@@ -728,7 +730,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.name_parser"/>
-                <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources</argument>
+                <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources</argument>
               </service>
             </argument>
           </service>
@@ -747,7 +749,7 @@
     <service id="filesystem" class="Symfony\Component\HttpKernel\Util\Filesystem"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator">
       <argument type="service" id="kernel"/>
-      <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources</argument>
+      <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources</argument>
     </service>
     <service id="translator.default" class="Symfony\Bundle\FrameworkBundle\Translation\Translator">
       <argument type="service" id="service_container"/>
@@ -760,7 +762,7 @@
         <argument key="translation.loader.xliff">xliff</argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">/home/jean/Documentos/www/a_plantilla_sf2/app/cache/dev/translations</argument>
+        <argument key="cache_dir">/home/jean/Documentos/www/rrhh_prueba/app/cache/dev/translations</argument>
         <argument key="debug">true</argument>
       </argument>
       <argument type="service" id="session"/>
@@ -769,313 +771,313 @@
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.cs.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.cs.xliff</argument>
         <argument>cs</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.id.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.id.xliff</argument>
         <argument>id</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.eu.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.eu.xliff</argument>
         <argument>eu</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.pt_BR.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.pt_BR.xliff</argument>
         <argument>pt_BR</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.sv.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.sv.xliff</argument>
         <argument>sv</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.ua.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.ua.xliff</argument>
         <argument>ua</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.fi.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.fi.xliff</argument>
         <argument>fi</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.et.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.et.xliff</argument>
         <argument>et</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.sk.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.sk.xliff</argument>
         <argument>sk</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.pt_PT.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.pt_PT.xliff</argument>
         <argument>pt_PT</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.fr.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.fr.xliff</argument>
         <argument>fr</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.fa.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.fa.xliff</argument>
         <argument>fa</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.ro.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.ro.xliff</argument>
         <argument>ro</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.it.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.it.xliff</argument>
         <argument>it</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.hu.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.hu.xliff</argument>
         <argument>hu</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.ru.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.ru.xliff</argument>
         <argument>ru</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.mn.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.mn.xliff</argument>
         <argument>mn</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.da.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.da.xliff</argument>
         <argument>da</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.cn.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.cn.xliff</argument>
         <argument>cn</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.nl.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.nl.xliff</argument>
         <argument>nl</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.es.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.es.xliff</argument>
         <argument>es</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.ca.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.ca.xliff</argument>
         <argument>ca</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.sr.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.sr.xliff</argument>
         <argument>sr</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.lt.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.lt.xliff</argument>
         <argument>lt</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.de.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.de.xliff</argument>
         <argument>de</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.lb.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.lb.xliff</argument>
         <argument>lb</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.he.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.he.xliff</argument>
         <argument>he</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.sl.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.sl.xliff</argument>
         <argument>sl</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.ja_JP.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.ja_JP.xliff</argument>
         <argument>ja_JP</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.pl.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.pl.xliff</argument>
         <argument>pl</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.es.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.es.yml</argument>
         <argument>es</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.nl.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.nl.yml</argument>
         <argument>nl</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.ca.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.ca.yml</argument>
         <argument>ca</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.it.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.it.yml</argument>
         <argument>it</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.sv.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.sv.yml</argument>
         <argument>sv</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.sk.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.sk.yml</argument>
         <argument>sk</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.ja.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.ja.yml</argument>
         <argument>ja</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.sl.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.sl.yml</argument>
         <argument>sl</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.hu.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.hu.yml</argument>
         <argument>hu</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.en.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.en.yml</argument>
         <argument>en</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.pt_BR.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.pt_BR.yml</argument>
         <argument>pt_BR</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.ro.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.ro.yml</argument>
         <argument>ro</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.da.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.da.yml</argument>
         <argument>da</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.pt_PT.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.pt_PT.yml</argument>
         <argument>pt_PT</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.ru.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.ru.yml</argument>
         <argument>ru</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.lb.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.lb.yml</argument>
         <argument>lb</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.et.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.et.yml</argument>
         <argument>et</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.de.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.de.yml</argument>
         <argument>de</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.pl.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.pl.yml</argument>
         <argument>pl</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.fr.yml</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.fr.yml</argument>
         <argument>fr</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/translations/validators.es.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/translations/validators.es.xliff</argument>
         <argument>es</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xliff</argument>
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/translations/messages.es.xliff</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/translations/messages.es.xliff</argument>
         <argument>es</argument>
         <argument>messages</argument>
       </call>
@@ -1290,8 +1292,8 @@
             <argument type="service">
               <service class="Symfony\Component\Validator\Mapping\Loader\XmlFilesLoader" public="false">
                 <argument type="collection">
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/../../../Component/Form/Resources/config/validation.xml</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/config/validation.xml</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/../../../Component/Form/Resources/config/validation.xml</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/config/validation.xml</argument>
                 </argument>
               </service>
             </argument>
@@ -1314,7 +1316,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service">
         <service class="Symfony\Component\HttpKernel\Profiler\SqliteProfilerStorage" public="false">
-          <argument>sqlite:/home/jean/Documentos/www/a_plantilla_sf2/app/cache/dev/profiler.db</argument>
+          <argument>sqlite:/home/jean/Documentos/www/rrhh_prueba/app/cache/dev/profiler.db</argument>
           <argument></argument>
           <argument></argument>
           <argument>86400</argument>
@@ -1494,7 +1496,7 @@
     </service>
     <service id="templating.locator" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator" public="false">
       <argument type="service" id="file_locator"/>
-      <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/cache/dev</argument>
+      <argument>/home/jean/Documentos/www/rrhh_prueba/app/cache/dev</argument>
     </service>
     <service id="templating.helper.slots" class="Symfony\Component\Templating\Helper\SlotsHelper">
       <tag name="templating.helper" alias="slots"/>
@@ -1532,7 +1534,7 @@
     <service id="templating.helper.code" class="Symfony\Bundle\FrameworkBundle\Templating\Helper\CodeHelper">
       <tag name="templating.helper" alias="code"/>
       <argument>null</argument>
-      <argument>/home/jean/Documentos/www/a_plantilla_sf2/app</argument>
+      <argument>/home/jean/Documentos/www/rrhh_prueba/app</argument>
     </service>
     <service id="templating.helper.translator" class="Symfony\Bundle\FrameworkBundle\Templating\Helper\TranslatorHelper">
       <tag name="templating.helper" alias="translator"/>
@@ -1602,7 +1604,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>4eb06db4335c3</argument>
+            <argument>4eb9995934a08</argument>
           </service>
         </argument>
       </argument>
@@ -1862,7 +1864,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>4eb06db4335c3</argument>
+            <argument>4eb9995934a08</argument>
             <argument type="service" id="monolog.logger.security"/>
           </service>
         </argument>
@@ -1953,7 +1955,7 @@
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
         <argument key="exception_controller">Symfony\Bundle\TwigBundle\Controller\ExceptionController::showAction</argument>
-        <argument key="cache">/home/jean/Documentos/www/a_plantilla_sf2/app/cache/dev/twig</argument>
+        <argument key="cache">/home/jean/Documentos/www/rrhh_prueba/app/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
       </argument>
       <call method="addExtension">
@@ -2056,10 +2058,10 @@
       <argument type="service" id="templating.locator"/>
       <argument type="service" id="templating.name_parser"/>
       <call method="addPath">
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/TwigBundle/DependencyInjection/../../../Bridge/Twig/Resources/views/Form</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/TwigBundle/DependencyInjection/../../../Bridge/Twig/Resources/views/Form</argument>
       </call>
       <call method="addPath">
-        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/KnpMenu/src/Knp/Menu/Resources/views</argument>
+        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/KnpMenu/src/Knp/Menu/Resources/views</argument>
       </call>
     </service>
     <service id="twig.exception_listener" class="Symfony\Component\HttpKernel\EventListener\ExceptionListener">
@@ -2069,7 +2071,7 @@
       <argument type="service" id="monolog.logger.request"/>
     </service>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
-      <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/logs/dev.log</argument>
+      <argument>/home/jean/Documentos/www/rrhh_prueba/app/logs/dev.log</argument>
       <argument>100</argument>
       <argument>true</argument>
     </service>
@@ -2101,7 +2103,7 @@
     </service>
     <service id="doctrine.dbal.default_connection" class="Doctrine\DBAL\Connection" factory-method="createConnection" factory-service="doctrine.dbal.connection_factory">
       <argument type="collection">
-        <argument key="dbname">plantilla</argument>
+        <argument key="dbname">rrhh</argument>
         <argument key="host">localhost</argument>
         <argument key="port"></argument>
         <argument key="user">root</argument>
@@ -2162,13 +2164,14 @@
             <argument type="collection">
               <argument key="FOSUserBundle">FOS\UserBundle\Entity</argument>
               <argument key="ConfigurationGralBundle">Configuration\GralBundle\Entity</argument>
+              <argument key="GobernacionRrhhBundle">Gobernacion\RrhhBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
             <argument type="service">
               <service class="Doctrine\Common\Cache\ArrayCache" public="false">
                 <call method="setNamespace">
-                  <argument>sf2orm_default_d1bd4e93c300da4e877448145c8df0fa</argument>
+                  <argument>sf2orm_default_6664e27fc09f8819e3b7730b906f305a</argument>
                 </call>
               </service>
             </argument>
@@ -2177,7 +2180,7 @@
             <argument type="service">
               <service class="Doctrine\Common\Cache\ArrayCache" public="false">
                 <call method="setNamespace">
-                  <argument>sf2orm_default_d1bd4e93c300da4e877448145c8df0fa</argument>
+                  <argument>sf2orm_default_6664e27fc09f8819e3b7730b906f305a</argument>
                 </call>
               </service>
             </argument>
@@ -2186,7 +2189,7 @@
             <argument type="service">
               <service class="Doctrine\Common\Cache\ArrayCache" public="false">
                 <call method="setNamespace">
-                  <argument>sf2orm_default_d1bd4e93c300da4e877448145c8df0fa</argument>
+                  <argument>sf2orm_default_6664e27fc09f8819e3b7730b906f305a</argument>
                 </call>
               </service>
             </argument>
@@ -2198,11 +2201,11 @@
                   <argument type="service">
                     <service class="Symfony\Bridge\Doctrine\Mapping\Driver\XmlDriver" public="false">
                       <argument type="collection">
-                        <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/config/doctrine</argument>
+                        <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/config/doctrine</argument>
                       </argument>
                       <call method="setNamespacePrefixes">
                         <argument type="collection">
-                          <argument key="/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/config/doctrine">FOS\UserBundle\Entity</argument>
+                          <argument key="/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/config/doctrine">FOS\UserBundle\Entity</argument>
                         </argument>
                       </call>
                       <call method="setGlobalBasename">
@@ -2221,17 +2224,34 @@
                         </service>
                       </argument>
                       <argument type="collection">
-                        <argument>/home/jean/Documentos/www/a_plantilla_sf2/src/Configuration/GralBundle/Entity</argument>
+                        <argument>/home/jean/Documentos/www/rrhh_prueba/src/Configuration/GralBundle/Entity</argument>
+                        <argument>/home/jean/Documentos/www/rrhh_prueba/src/Gobernacion/RrhhBundle/Entity</argument>
                       </argument>
                     </service>
                   </argument>
                   <argument>Configuration\GralBundle\Entity</argument>
                 </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service">
+                        <service class="Symfony\Bridge\Doctrine\Annotations\IndexedReader" public="false">
+                          <argument type="service" id="annotation_reader"/>
+                        </service>
+                      </argument>
+                      <argument type="collection">
+                        <argument>/home/jean/Documentos/www/rrhh_prueba/src/Configuration/GralBundle/Entity</argument>
+                        <argument>/home/jean/Documentos/www/rrhh_prueba/src/Gobernacion/RrhhBundle/Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>Gobernacion\RrhhBundle\Entity</argument>
+                </call>
               </service>
             </argument>
           </call>
           <call method="setProxyDir">
-            <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/cache/dev/doctrine/orm/Proxies</argument>
+            <argument>/home/jean/Documentos/www/rrhh_prueba/app/cache/dev/doctrine/orm/Proxies</argument>
           </call>
           <call method="setProxyNamespace">
             <argument>Proxies</argument>
@@ -2268,7 +2288,7 @@
             </argument>
             <argument type="service">
               <service class="Assetic\Cache\ConfigCache" public="false">
-                <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/cache/dev/assetic/config</argument>
+                <argument>/home/jean/Documentos/www/rrhh_prueba/app/cache/dev/assetic/config</argument>
               </service>
             </argument>
             <argument>true</argument>
@@ -2285,7 +2305,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>FrameworkBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/FrameworkBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/FrameworkBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2293,7 +2313,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>FrameworkBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2312,7 +2332,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SecurityBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/SecurityBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/SecurityBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2320,7 +2340,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SecurityBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2339,7 +2359,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>TwigBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/TwigBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/TwigBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2347,7 +2367,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>TwigBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/TwigBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/TwigBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2366,7 +2386,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>MonologBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/MonologBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/MonologBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2374,7 +2394,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>MonologBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/MonologBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/MonologBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2393,7 +2413,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SwiftmailerBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/SwiftmailerBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/SwiftmailerBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2401,7 +2421,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SwiftmailerBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/SwiftmailerBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/SwiftmailerBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2420,7 +2440,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>DoctrineBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/DoctrineBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/DoctrineBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2428,7 +2448,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>DoctrineBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/DoctrineBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/DoctrineBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2447,7 +2467,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>AsseticBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/AsseticBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/AsseticBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2455,7 +2475,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>AsseticBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/Symfony/Bundle/AsseticBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/Symfony/Bundle/AsseticBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2474,7 +2494,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SensioFrameworkExtraBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/SensioFrameworkExtraBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/SensioFrameworkExtraBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2482,7 +2502,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SensioFrameworkExtraBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/Sensio/Bundle/FrameworkExtraBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/Sensio/Bundle/FrameworkExtraBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2501,7 +2521,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>JMSSecurityExtraBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/JMSSecurityExtraBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/JMSSecurityExtraBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2509,7 +2529,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>JMSSecurityExtraBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/JMS/SecurityExtraBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/JMS/SecurityExtraBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2528,7 +2548,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>DoctrineFixturesBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/DoctrineFixturesBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/DoctrineFixturesBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2536,7 +2556,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>DoctrineFixturesBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/Symfony/Bundle/DoctrineFixturesBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/Symfony/Bundle/DoctrineFixturesBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2555,7 +2575,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>FOSUserBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/FOSUserBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/FOSUserBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2563,7 +2583,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>FOSUserBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/FOS/UserBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/FOS/UserBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2582,7 +2602,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>KnpMenuBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/KnpMenuBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/KnpMenuBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2590,34 +2610,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>KnpMenuBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/Knp/Bundle/MenuBundle/Resources/views</argument>
-                  <argument>/^[^.]+\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="collection">
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>PlantillaBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/PlantillaBundle/views</argument>
-                  <argument>/^[^.]+\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>PlantillaBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/src/Empresa/PlantillaBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/Knp/Bundle/MenuBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2636,7 +2629,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>ConfigurationGralBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/ConfigurationGralBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/ConfigurationGralBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2644,7 +2637,34 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>ConfigurationGralBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/src/Configuration/GralBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/src/Configuration/GralBundle/Resources/views</argument>
+                  <argument>/^[^.]+\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>GobernacionRrhhBundle</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/GobernacionRrhhBundle/views</argument>
+                  <argument>/^[^.]+\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>GobernacionRrhhBundle</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/src/Gobernacion/RrhhBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2663,7 +2683,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>AcmeDemoBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/AcmeDemoBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/AcmeDemoBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2671,7 +2691,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>AcmeDemoBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/src/Acme/DemoBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/src/Acme/DemoBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2690,7 +2710,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>WebProfilerBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/WebProfilerBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/WebProfilerBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2698,7 +2718,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>WebProfilerBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2717,7 +2737,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SensioDistributionBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/SensioDistributionBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/SensioDistributionBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2725,7 +2745,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SensioDistributionBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/Sensio/Bundle/DistributionBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/Sensio/Bundle/DistributionBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2744,7 +2764,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SensioGeneratorBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/SensioGeneratorBundle/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/SensioGeneratorBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2752,7 +2772,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SensioGeneratorBundle</argument>
-                  <argument>/home/jean/Documentos/www/a_plantilla_sf2/vendor/bundles/Sensio/Bundle/GeneratorBundle/Resources/views</argument>
+                  <argument>/home/jean/Documentos/www/rrhh_prueba/vendor/bundles/Sensio/Bundle/GeneratorBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2768,7 +2788,7 @@
             <tag name="assetic.formula_resource" loader="twig"/>
             <argument type="service" id="templating.loader"/>
             <argument></argument>
-            <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/views</argument>
+            <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/views</argument>
             <argument>/^[^.]+\.[^.]+\.twig$/</argument>
           </service>
         </argument>
@@ -2785,7 +2805,7 @@
           </argument>
         </service>
       </argument>
-      <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/../web</argument>
+      <argument>/home/jean/Documentos/www/rrhh_prueba/app/../web</argument>
       <argument>true</argument>
       <call method="addWorker">
         <argument type="service">
@@ -2800,7 +2820,7 @@
     </service>
     <service id="assetic.filter.yui_css" class="Assetic\Filter\Yui\CssCompressorFilter">
       <tag name="assetic.filter" alias="yui_css"/>
-      <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/java/yuicompressor-2.4.6.jar</argument>
+      <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/java/yuicompressor-2.4.6.jar</argument>
       <argument>/usr/bin/java</argument>
       <call method="setCharset">
         <argument>UTF-8</argument>
@@ -2808,7 +2828,7 @@
     </service>
     <service id="assetic.filter.yui_js" class="Assetic\Filter\Yui\JsCompressorFilter">
       <tag name="assetic.filter" alias="yui_js"/>
-      <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/Resources/java/yuicompressor-2.4.6.jar</argument>
+      <argument>/home/jean/Documentos/www/rrhh_prueba/app/Resources/java/yuicompressor-2.4.6.jar</argument>
       <argument>/usr/bin/java</argument>
       <call method="setCharset">
         <argument>UTF-8</argument>
@@ -2829,7 +2849,7 @@
       <argument type="service" id="assetic.cache"/>
     </service>
     <service id="assetic.cache" class="Assetic\Cache\FilesystemCache" public="false">
-      <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/cache/dev/assetic/assets</argument>
+      <argument>/home/jean/Documentos/www/rrhh_prueba/app/cache/dev/assetic/assets</argument>
     </service>
     <service id="assetic.request_listener" class="Symfony\Bundle\AsseticBundle\EventListener\RequestListener">
       <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
@@ -3022,7 +3042,7 @@
       <argument>2</argument>
     </service>
     <service id="sensio.distribution.webconfigurator" class="Sensio\Bundle\DistributionBundle\Configurator\Configurator">
-      <argument>/home/jean/Documentos/www/a_plantilla_sf2/app</argument>
+      <argument>/home/jean/Documentos/www/rrhh_prueba/app</argument>
     </service>
     <service id="monolog.logger.request" class="Symfony\Bridge\Monolog\Logger">
       <argument>request</argument>
@@ -3117,9 +3137,9 @@
     </service>
     <service id="router" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <argument type="service" id="service_container"/>
-      <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/config/routing_dev.yml</argument>
+      <argument>/home/jean/Documentos/www/rrhh_prueba/app/config/routing_dev.yml</argument>
       <argument type="collection">
-        <argument key="cache_dir">/home/jean/Documentos/www/a_plantilla_sf2/app/cache/dev</argument>
+        <argument key="cache_dir">/home/jean/Documentos/www/rrhh_prueba/app/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -3143,7 +3163,7 @@
       <argument type="service">
         <service class="Doctrine\Common\Annotations\AnnotationReader" public="false"/>
       </argument>
-      <argument>/home/jean/Documentos/www/a_plantilla_sf2/app/cache/dev/annotations</argument>
+      <argument>/home/jean/Documentos/www/rrhh_prueba/app/cache/dev/annotations</argument>
       <argument>true</argument>
     </service>
     <service id="security.encoder_factory" class="FOS\UserBundle\Security\Encoder\EncoderFactory">

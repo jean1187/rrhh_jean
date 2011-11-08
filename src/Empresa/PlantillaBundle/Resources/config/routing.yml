@@ -1,0 +1,4 @@
+AeronauticoBundle_componente:
+    resource: "@AeronauticoBundle/Resources/config/routing/componente.yml"
+    prefix:   /componente
+

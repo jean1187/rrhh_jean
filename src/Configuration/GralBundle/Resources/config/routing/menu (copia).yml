@@ -1,0 +1,30 @@
+config_menu:
+    pattern:  /
+    defaults: { _controller: "ConfigurationGralBundle:Menu:index" }
+
+config_menu_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ConfigurationGralBundle:Menu:show" }
+
+config_menu_new:
+    pattern:  /new
+    defaults: { _controller: "ConfigurationGralBundle:Menu:new" }
+
+config_menu_create:
+    pattern:  /create
+    defaults: { _controller: "ConfigurationGralBundle:Menu:create" }
+    requirements: { _method: post }
+
+config_menu_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ConfigurationGralBundle:Menu:edit" }
+
+config_menu_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ConfigurationGralBundle:Menu:update" }
+    requirements: { _method: post }
+
+config_menu_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ConfigurationGralBundle:Menu:delete" }
+    requirements: { _method: post }

@@ -1,0 +1,35 @@
+Menu:
+  type: entity
+  table: menu
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    nombre:
+      type: string
+      length: 30
+      fixed: false
+      nullable: false
+    uri:
+      type: string
+      length: 200
+      fixed: false
+      nullable: true
+    roles:
+      type: text
+      nullable: true
+  oneToOne:
+    parent:
+      targetEntity: Menu
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        parent:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

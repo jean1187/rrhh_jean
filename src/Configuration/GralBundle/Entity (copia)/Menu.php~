@@ -1,0 +1,53 @@
+<?php
+
+namespace Configuration\GralBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Configuration\GralBundle\Entity\Menu
+ *
+ * @ORM\Table(name="menu")
+ * @ORM\Entity
+ */
+class Menu
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $nombre
+     *
+     * @ORM\Column(name="nombre", type="string", length=30, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string $uri
+     *
+     * @ORM\Column(name="uri", type="string", length=200, nullable=false)
+     */
+    private $uri;
+
+    /**
+     * @var integer $parent
+     *
+     * @ORM\Column(name="parent", type="integer", nullable=false)
+     */
+    private $parent;
+
+    /**
+     * @var text $roles
+     *
+     * @ORM\Column(name="roles", type="text", nullable=false)
+     */
+    private $roles;
+
+
+}

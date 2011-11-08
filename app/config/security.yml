@@ -1,0 +1,29 @@
+security:      
+    firewalls:
+ #       login_firewall:
+ #           pattern:    ^/login$
+ #           anonymous: true
+        assets:
+            pattern:  ^/(_(profiler|wdt)|css|images|js|favicon.ico)/
+            security: false   
+        principal:
+            pattern:    ^/
+            form_login: 
+                provider: fos_userbundle
+            logout:       true
+            anonymous:    true
+# para lo opcion de recordarlo mas tiempo si tilda la opcion rememberme
+            remember_me:
+              key:      Cla,ve_ScrimorP?"
+              lifetime: 3600
+              path:     /
+              # Defaults to the current domain from $_SERVER
+              domain:   ~             
+    access_control:
+         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+         - { path: ^/, role: ROLE_USER }
+    providers:
+        fos_userbundle:
+            id: fos_user.user_manager

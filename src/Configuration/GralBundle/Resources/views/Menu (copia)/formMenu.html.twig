@@ -1,0 +1,25 @@
+{% import "ConfigurationGralBundle::macros_form.html.twig" as forms %}
+                {# Primera columna #}
+
+		<div class="grid_4 alpha" >
+                    {{ forms.input(form.nombre, { 'attr': {'placeholder': '  AJE002-08','size':'15px'} }) }}
+		</div>
+		<div class="clear"></div>
+
+		{# Segunda columna #}
+
+		<div class="grid_4 alpha" >
+                    {{ forms.input(form.uri, { 'attr': {'size':'15px'} }) }}
+		</div>
+		<div class="clear"></div>
+
+		{# Tercera columna #}
+
+		<div class="grid_5 prefix_2 alpha" >
+                    {{ forms.input(form.parent) }}
+		</div>
+		<div class="clear"></div>
+                
+		<div class="grid_5 prefix_2 alpha" >
+                    {{ forms.input(form.roles) }}
+		</div>                

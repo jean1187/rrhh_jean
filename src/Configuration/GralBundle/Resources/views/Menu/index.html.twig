@@ -1,0 +1,104 @@
+{# src src/Configuration/GralBundle/Resource/views/Menu/index.html.twig #}
+
+{% extends 'ConfigurationGralBundle::layout.html.twig' %} 
+
+{% block title %}Listado de Items Menu{% endblock %}
+
+
+{% block body %}
+<div class="cuerpo grid_16 " >
+    {{ parent() }}
+        <table>
+            <thead>
+                <tr>
+                    <th min-width=7px>#</th>
+                    <th>Nombre</th>
+                    <th>Uri</th>
+                    <th>Parent</th>
+                    <th>Roles</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('config_menu_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.nombre }}</td>
+                    <td>{{ entity.uri }}</td>
+                    <td>{{ entity.parent}}</td>
+                    <td>
+                        <ul> 
+                            {% for key in entity.groups%}
+                            <li> {{key.name}}
+                                <ul>
+                              {% for key,name in key.roles%}
+                                   <li>
+                                       {{ name }}
+                                   </li>
+                              {% endfor %}
+                                  </ul>
+                             </li>                           
+                            {% endfor %}
+                       </ul>                    
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('config_menu_show', { 'id': entity.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('config_menu_edit', { 'id': entity.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                {% else  %}
+                   <tr>
+                     <td colspan="6"><h1><center>No existe ningún registro</center></h1></td>
+                   </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <a href="{{path("config_menu_new")}}" ><button class="add_button" >Nuevo Menu</button></a>
+                    </td>    
+                </tr>
+            </tfoot>
+        </table>    
+</div>
+<div id="new_form" style="display:none" href="{{path("config_menu_new")}}" ></div>    
+
+                
+{% endblock body%}
+
+{% block javascripts %}
+{{ parent() }}
+        <script type="text/javascript">
+            $(document).ready(function() {
+                         $( ".add_button" ).button({ 
+                               text: true
+                         });
+                        /* $('#new_form').load($('#new_form').attr("href")).dialog({
+					autoOpen: false,
+					width: 980,
+					buttons: {
+						"Guardar": function() { 
+                                                    $.post($('#new_form').attr("href"), $("form").serializeArray() ,function(data) {
+                                                      $.mesages_validation(data);                                                      
+                                                    });
+						}, 
+						"Cancelar": function() { 
+							$(this).dialog("close"); 
+						} 
+					}
+				});
+
+                         $(".add_button").click(function(){
+                             $('#new_form').dialog('open');
+                             return false;
+                        });*/
+            });
+            
+        </script>
+{% endblock javascripts%}

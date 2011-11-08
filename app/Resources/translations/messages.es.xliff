@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+<!-- Messajes del fosuserbundle-->
+            <trans-unit id="1">
+                <source>The presented password cannot be empty.</source>
+                <target>La contraseña no puede estar vacía.</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>The presented password is invalid.</source>
+                <target>La contraseña no es válida</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Bad credentials</source>
+                <target>Malas Credenciales</target>
+            </trans-unit>
+<!-- fin Messajes del fosuserbundle-->
+        </body>
+    </file>
+</xliff>

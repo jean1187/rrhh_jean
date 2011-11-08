@@ -1,0 +1,11 @@
+parameters:
+#    configuration_gral.example.class: Configuration\GralBundle\Example
+
+services:
+#    configuration_gral.example:
+#        class: %configuration_gral.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - { name: twig.extension }

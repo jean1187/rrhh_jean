@@ -1,0 +1,32 @@
+{# src src/Empresa/PlantillaBundle/Resource/views/layout.html.twig #}
+
+{% extends '::base.html.twig' %} 
+
+{% block title 'Plantilla' %}
+
+{% block stylesheets %}
+{% endblock %}
+      
+           
+{% block header%}
+{% endblock header%}
+    
+
+{% block body %}
+         {{ block('titulo_page') }}
+{% endblock  body %}
+
+
+{% block javascripts %}
+         
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+
+    {% block titulo_page %}
+    <div  class="grid_16 " >
+        <h1> {{block('title') }}</h1>
+    </div>
+    {% endblock %}

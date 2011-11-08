@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %} 
+{% block title 'LOGIN' %}
+{% block stylesheets %}
+ {{parent()}}
+        {% stylesheets  filter='cssrewrite,yui_css' output='css/login.css'
+                'css/tripoli.css'
+                'css/login.css'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
+        {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+        <div id="bd-login-form" class="grid_16 ">
+		<div id="msj_header">
+		    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+		        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+		        <a href="{{ path('fos_user_security_logout') }}">
+		            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+		        </a>
+		    {% endif %}
+		</div>
+ 		{% for key, message in app.session.getFlashes() %}
+			<div class="{{ key }}">
+			    {{ message|trans({}, 'FOSUserBundle') }}
+			</div>
+		{% endfor %}
+		    {% block fos_user_content %}
+		    {% endblock fos_user_content %}
+	</div>
+{% endblock %}

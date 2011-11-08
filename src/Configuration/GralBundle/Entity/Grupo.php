@@ -1,0 +1,33 @@
+<?php
+namespace Configuration\GralBundle\Entity;
+
+use FOS\UserBundle\Entity\Group as BaseGrupo;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="fos_grupo")
+ */
+class Grupo extends BaseGrupo
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\generatedValue(strategy="AUTO")
+     */
+     protected $id;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    public function __toString() {
+             return $this->getName();
+    }        
+}

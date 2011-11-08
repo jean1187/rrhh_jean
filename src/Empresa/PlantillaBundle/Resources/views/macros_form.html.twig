@@ -1,0 +1,14 @@
+{# src src/Empresa/PlantillaBundle/Resource/views/macros_form.html.twig #}
+
+{% macro input(campo, atributos) %}
+    {{ form_errors(campo) }}
+        <p>
+            {{ form_label(campo) }}
+                {% if atributos %}
+                        {{ form_widget(campo ,atributos)}}
+                    {% else %}
+                        {{ form_widget(campo )}}
+                {% endif %}
+            
+        </p>
+{% endmacro %}		    

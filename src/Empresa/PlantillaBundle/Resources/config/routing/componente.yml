@@ -1,0 +1,30 @@
+componente:
+    pattern:  /
+    defaults: { _controller: "AeronauticoBundle:Componente:index" }
+
+componente_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AeronauticoBundle:Componente:show" }
+
+componente_new:
+    pattern:  /new
+    defaults: { _controller: "AeronauticoBundle:Componente:new" }
+
+componente_create:
+    pattern:  /create
+    defaults: { _controller: "AeronauticoBundle:Componente:create" }
+    requirements: { _method: post }
+
+componente_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AeronauticoBundle:Componente:edit" }
+
+componente_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AeronauticoBundle:Componente:update" }
+    requirements: { _method: post }
+
+componente_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AeronauticoBundle:Componente:delete" }
+    requirements: { _method: post }

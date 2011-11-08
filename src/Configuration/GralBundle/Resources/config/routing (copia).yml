@@ -1,0 +1,8 @@
+_homepage:
+    pattern:  /
+    defaults: { _controller: ConfigurationGralBundle:Welcome:index }
+    
+ConfigurationGralBundle_config_menu:
+    resource: "@ConfigurationGralBundle/Resources/config/routing/menu.yml"
+    prefix:   /config/menu
+

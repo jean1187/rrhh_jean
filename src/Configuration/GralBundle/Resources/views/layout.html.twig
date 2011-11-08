@@ -1,0 +1,48 @@
+{# src src/Configuration/GralBundle/Resource/views/layout.html.twig #}
+{% extends '::base.html.twig' %} 
+{% block title 'Plantilla' %}
+
+{% block stylesheets %}
+    {{parent()}}
+        {% stylesheets  filter='cssrewrite, yui_css' output='css/compresed/compressed.css'
+                'bundles/plantilla/css/main.css'
+                'bundles/plantilla/menu/menu.css'
+                'css/jquery_ui/jquery-ui.css'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
+        {% endstylesheets %}
+{% endblock %}
+{% block header%}
+    <div id="header" class="grid_16 " >
+       <center> <h1> ========= Aqui va un banner HEADER ===============</h1> </center>
+    </div>
+    <div class="clear"></div>
+    {% block menu%}
+       <div  id="menu" class="grid_16 " >
+            {{ knp_menu_render('ConfigurationGralBundle:Builder:MenuPrincipal') }} 
+            <div id="copyright" style="display:none">Copyright &copy; 2011 <a href="http://apycom.com/" >Apycom jQuery Menus</a></div>
+        </div>
+    {% endblock menu %}
+    <div class="clear"></div>
+{% endblock header%}
+
+{% block body %}
+     <noscript>
+        <h1> Por Favor Active el Javascript en su Navegador para el buen Funcionamiento de este Modulo</h1>
+     </noscript>
+        {{ block('titulo_page') }}
+{% endblock  body %}
+
+    {% block titulo_page %}
+        <h1> {{block('title') }}</h1>
+    {% endblock %}
+{% block javascripts %}
+         {% javascripts  filter='yui_js' output='js/compresed/compressed.js'
+                'bundles/plantilla/js/jquery.js'
+                'bundles/plantilla/menu/menu.js'
+                'js/global.twig.js'
+                'js/jquery_ui/jquery-ui.js'
+        %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+{% endblock %}

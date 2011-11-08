@@ -1,0 +1,50 @@
+<?php
+
+namespace Configuration\GralBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Configuration\GralBundle\Entity\FosGrupo
+ *
+ * @ORM\Table(name="fos_grupo")
+ * @ORM\Entity
+ */
+class FosGrupo
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $name
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var array $roles
+     *
+     * @ORM\Column(name="roles", type="array", nullable=false)
+     */
+    private $roles;
+
+    /**
+     * @var Usuario
+     *
+     * @ORM\ManyToMany(targetEntity="Usuario", mappedBy="group")
+     */
+    private $user;
+
+    public function __construct()
+    {
+        $this->user = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+}

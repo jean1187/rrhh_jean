@@ -1,0 +1,29 @@
+{% extends 'ConfigurationGralBundle::layout.html.twig' %} 
+{% block title %}Menu creation{% endblock %}
+
+{% block body %}
+
+<div class="cuerpo grid_16 " >
+    
+    {{ parent() }}
+    
+
+
+<form action="{{ path('config_menu_create') }}" method="post" {{ form_enctype(form) }}>
+    {#{% include 'ConfigurationGralBundle:Menu:formMenu.html.twig' %}#}
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">Create</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('config_menu') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+
+</div>
+{% endblock %}

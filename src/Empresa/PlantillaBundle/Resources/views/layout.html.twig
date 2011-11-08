@@ -1,0 +1,94 @@
+{# src src/Empresa/PlantillaBundle/Resource/views/layout.html.twig #}
+
+{% extends '::base.html.twig' %} 
+
+{% block title 'Plantilla' %}
+
+{% block stylesheets %}
+    {{parent()}}
+        {% stylesheets  filter='cssrewrite, yui_css' output='css/compresed/compressed.css'
+                'bundles/plantilla/css/main.css'
+                'bundles/plantilla/menu/menu.css'
+                'bundles/plantilla/jquery_ui/css/jquery-ui.css'
+                'bundles/plantilla/jquery_ui/css/ui.selectmenu.css'
+                'bundles/plantilla/achtung/ui.achtung-min.css'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
+        {% endstylesheets %}
+{% endblock %}
+      
+           
+{% block header%}
+
+            
+    <div id="header" class="grid_16 " >
+       <center> <h1> ========= Aqui va un banner HEADER ===============</h1> </center>
+    </div>
+
+    <div class="clear"></div>
+    
+    {% block menu%}
+       <div  id="menu" class="grid_16 " >
+            <ul class="menu">
+                <li><a href="#" class="parent"><span>Aeronave</span></a>
+                    <div><ul>
+                        <li><a href="{{path("_plantillaBundle_homepage")}}"><span>Lista</span></a></li>
+                        <li><a href="{{path("_plantillaBundle_new")}}"><span>Agregar</span></a></li>
+                    </ul></div>
+                </li>
+                <li><a href="#" class="parent"><span>Componente</span></a>
+                    <div><ul>
+                            <li><a href="{{path("componente")}}"><span>Lista</span></a></li>
+                            <li><a href="{{path("componente_new")}}"><span>Añadir</span></a></li>
+                    </ul></div>
+                </li>                
+                <li><a href="#"><span>Ayuda</span></a></li>
+                <li class="last"><a href="/logout"><span>Salir</span></a></li>
+            </ul>
+               <div id="copyright" style="display:none">Copyright &copy; 2011 <a href="http://apycom.com/" >Apycom jQuery Menus</a></div>
+        </div>
+    
+    {% endblock menu %}
+    <div class="clear"></div>
+{% endblock header%}
+    
+
+{% block body %}
+     <noscript>
+        <h1> Por Favor Active el Javascript en su Navegador para el buen Funcionamiento de este Modulo</h1>
+     </noscript>
+        {{ block('titulo_page') }}
+{% endblock  body %}
+
+
+{# Linsk de Accesibilidad #}
+    
+    {% block listado_aeronave %}
+        <a href="{{path("_plantillaBundle_homepage")}}"><< IR al listado de Aeronaves</a>  
+    {% endblock %}
+
+    {% block listado_componentes %}
+        <a href="{{ path('componente') }}"><< IR al listado de Componentes</a>
+    {% endblock %}        
+        
+    {% block titulo_page %}
+    <div  class="grid_16 " >
+        <h1> {{block('title') }}</h1>
+    </div>
+    {% endblock %}
+    
+
+{# Fin Linsk de Accesibilidad #}
+    
+{% block javascripts %}
+         {% javascripts  filter='yui_js' output='js/compresed/compressed.js'
+                'bundles/plantilla/js/jquery.js'
+                'bundles/plantilla/js/global.twig.js'
+                'bundles/plantilla/menu/menu.js'
+                'bundles/plantilla/jquery_ui/js/jquery-ui.js'
+                'bundles/plantilla/jquery_ui/js/ui.selectmenu.js'
+                'bundles/plantilla/achtung/ui.achtung-min.js'
+        %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+{% endblock %}

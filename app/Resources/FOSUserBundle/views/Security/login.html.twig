@@ -1,0 +1,20 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+
+<form action="{{ path("fos_user_security_check") }}" method="post" autocomplete="off">
+    <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+
+    <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+    <input type="password" id="password" name="_password" />
+
+                       <div class="buttons">
+	                        <input type="submit" class="btn" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+                      </div>
+	{% if error %}
+	    <div class="msj">{{ error|trans  }}</div>
+	{% endif %}
+
+</form>
+{% endblock fos_user_content %}

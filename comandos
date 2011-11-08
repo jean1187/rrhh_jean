@@ -1,0 +1,8 @@
+php app/console cache:clear && chmod  777 -Rf app/cache/
+rm -Rf app/cache/* && chmod  777 -Rf app/cache/
+php app/console assets:install web --symlink
+php app/console assetic:dump --env=prod --no-debug
+php app/console doctrine:mapping:convert yml ./src/Configuration/GralBundle/Resources/config/doctrine/metadata/orm --from-database --force
+php app/console doctrine:generate:entities ConfigurationGralBundle
+php app/console doctrine:database:create && php app/console doctrine:schema:create && php app/console doctrine:fixtures:load
+php app/console doctrine:schema:update --force

@@ -1,0 +1,46 @@
+{# app/Resources/views/base.html.twig #}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Empresa | {% block title %}Plnatilla General{% endblock %}</title>
+  <meta name="description" content="{% block metadesc %}Descripcion general{% endblock %}" /></meta>
+  {% block stylesheets  %}
+    {% stylesheets   output='css/compresed/960grid.css' filter='cssrewrite, yui_css'
+                'bundles/plantilla/css/reset.css'
+                'bundles/plantilla/css/text.css'
+                'bundles/plantilla/css/960.css'
+    %}
+                {# If your files are in web/css/mystyle1.css
+                    call them with: 'css/mystyle.css' #}
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
+    {% endstylesheets %}
+  {% endblock %}
+<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />  
+</head>
+
+<body id="{% block pageid '' %}">
+    <div class="container_16">
+    <header>
+    
+    {% block header %}{% endblock %}
+
+  </header>
+  
+     
+    {% block body %}{% endblock %}
+
+             {% block footer %}
+                    <footer>
+                        <a href="">&copy; {{ 'now' | date('Y') }} - Taller Areonatico</a>
+                        <a href=""> Privacidad</a>
+                        <a href=""> Condiciones de uso</a>
+                    </footer>
+            {% endblock %}
+   </div> 
+        
+  {% block javascripts %}
+
+  {% endblock %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+_AeronauticoBundle_homepage:
+    pattern:  /
+    defaults: { _controller: AeronauticoBundle:Aeronave:index}
+    
+_AeronauticoBundle_new:
+    pattern:  /new
+    defaults: { _controller: AeronauticoBundle:Aeronave:new} 
+
+_AeronauticoBundle_edit:
+    pattern:  /edit/{id}
+    defaults: { _controller: AeronauticoBundle:Aeronave:edit}
+
+_AeronauticoBundle_del:
+    pattern:  /del/{id}
+    defaults: { _controller: AeronauticoBundle:Aeronave:del}     
+
+_AeronauticoBundle_show:
+    pattern:  /show/{id}
+    defaults: { _controller: AeronauticoBundle:Aeronave:show}
+    
+_AeronauticoBundle_add_componente:
+    pattern:  /add/componente
+    defaults: { _controller: AeronauticoBundle:Aeronave:add_componente}

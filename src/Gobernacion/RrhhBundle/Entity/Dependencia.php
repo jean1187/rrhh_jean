@@ -24,7 +24,7 @@ class Dependencia
     /**
      * @var string $nombre
      *
-     * @ORM\Column(name="nombre", type="string", length=45, nullable=true)
+     * @ORM\Column(name="nombre", type="string", length=45, nullable=false)
      */
     private $nombre;
 
@@ -33,12 +33,16 @@ class Dependencia
      *
      * @ORM\ManyToOne(targetEntity="Direccion")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="direccion_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="direccion_id", referencedColumnName="id",nullable=false)
      * })
      */
     private $direccion;
 
 
+    public function __toString()
+	{
+		return $this->getNombre();  
+	}
 
     /**
      * Get id

@@ -50,6 +50,20 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_step' => true,
        '_configurator_final' => true,
        'GobernacionRrhhBundle_homepage' => true,
+       'dep' => true,
+       'dep_show' => true,
+       'dep_new' => true,
+       'dep_create' => true,
+       'dep_edit' => true,
+       'dep_update' => true,
+       'dep_delete' => true,
+       'dir' => true,
+       'dir_show' => true,
+       'dir_new' => true,
+       'dir_create' => true,
+       'dir_edit' => true,
+       'dir_update' => true,
+       'dir_delete' => true,
        '_homepage' => true,
        'config_menu' => true,
        'config_menu_show' => true,
@@ -282,7 +296,77 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
 
     private function getGobernacionRrhhBundle_homepageRouteInfo()
     {
-        return array(array (  0 => 'name',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DefaultController::indexAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'name',  ),  1 =>   array (    0 => 'text',    1 => '/rrhh/hello',  ),));
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\RrhhController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/',  ),));
+    }
+
+    private function getdepRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/dep/',  ),));
+    }
+
+    private function getdep_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dep',  ),));
+    }
+
+    private function getdep_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/dep/new',  ),));
+    }
+
+    private function getdep_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/dep/create',  ),));
+    }
+
+    private function getdep_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dep',  ),));
+    }
+
+    private function getdep_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dep',  ),));
+    }
+
+    private function getdep_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dep',  ),));
+    }
+
+    private function getdirRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/dir/',  ),));
+    }
+
+    private function getdir_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dir',  ),));
+    }
+
+    private function getdir_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/dir/new',  ),));
+    }
+
+    private function getdir_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/dir/create',  ),));
+    }
+
+    private function getdir_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dir',  ),));
+    }
+
+    private function getdir_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dir',  ),));
+    }
+
+    private function getdir_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dir',  ),));
     }
 
     private function get_homepageRouteInfo()

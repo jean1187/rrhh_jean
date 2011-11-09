@@ -220,9 +220,127 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // GobernacionRrhhBundle_homepage
-        if (0 === strpos($pathinfo, '/rrhh/hello') && preg_match('#^/rrhh/hello/(?P<name>[^/]+?)$#x', $pathinfo, $matches)) {
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DefaultController::indexAction',)), array('_route' => 'GobernacionRrhhBundle_homepage'));
+        if (0 === strpos($pathinfo, '/rrhh')) {
+            // GobernacionRrhhBundle_homepage
+            if (rtrim($pathinfo, '/') === '/rrhh') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'GobernacionRrhhBundle_homepage');
+                }
+                return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\RrhhController::indexAction',  '_route' => 'GobernacionRrhhBundle_homepage',);
+            }
+
+            if (0 === strpos($pathinfo, '/rrhh/dep')) {
+                // dep
+                if (rtrim($pathinfo, '/') === '/rrhh/dep') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'dep');
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::indexAction',  '_route' => 'dep',);
+                }
+
+                // dep_show
+                if (preg_match('#^/rrhh/dep/(?P<id>[^/]+?)/show$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::showAction',)), array('_route' => 'dep_show'));
+                }
+
+                // dep_new
+                if ($pathinfo === '/rrhh/dep/new') {
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::newAction',  '_route' => 'dep_new',);
+                }
+
+                // dep_create
+                if ($pathinfo === '/rrhh/dep/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_dep_create;
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::createAction',  '_route' => 'dep_create',);
+                }
+                not_dep_create:
+
+                // dep_edit
+                if (preg_match('#^/rrhh/dep/(?P<id>[^/]+?)/edit$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::editAction',)), array('_route' => 'dep_edit'));
+                }
+
+                // dep_update
+                if (preg_match('#^/rrhh/dep/(?P<id>[^/]+?)/update$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_dep_update;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::updateAction',)), array('_route' => 'dep_update'));
+                }
+                not_dep_update:
+
+                // dep_delete
+                if (preg_match('#^/rrhh/dep/(?P<id>[^/]+?)/delete$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_dep_delete;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::deleteAction',)), array('_route' => 'dep_delete'));
+                }
+                not_dep_delete:
+
+            }
+
+            if (0 === strpos($pathinfo, '/rrhh/dir')) {
+                // dir
+                if (rtrim($pathinfo, '/') === '/rrhh/dir') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'dir');
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::indexAction',  '_route' => 'dir',);
+                }
+
+                // dir_show
+                if (preg_match('#^/rrhh/dir/(?P<id>[^/]+?)/show$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::showAction',)), array('_route' => 'dir_show'));
+                }
+
+                // dir_new
+                if ($pathinfo === '/rrhh/dir/new') {
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::newAction',  '_route' => 'dir_new',);
+                }
+
+                // dir_create
+                if ($pathinfo === '/rrhh/dir/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_dir_create;
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::createAction',  '_route' => 'dir_create',);
+                }
+                not_dir_create:
+
+                // dir_edit
+                if (preg_match('#^/rrhh/dir/(?P<id>[^/]+?)/edit$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::editAction',)), array('_route' => 'dir_edit'));
+                }
+
+                // dir_update
+                if (preg_match('#^/rrhh/dir/(?P<id>[^/]+?)/update$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_dir_update;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::updateAction',)), array('_route' => 'dir_update'));
+                }
+                not_dir_update:
+
+                // dir_delete
+                if (preg_match('#^/rrhh/dir/(?P<id>[^/]+?)/delete$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_dir_delete;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::deleteAction',)), array('_route' => 'dir_delete'));
+                }
+                not_dir_delete:
+
+            }
+
         }
 
         // _homepage

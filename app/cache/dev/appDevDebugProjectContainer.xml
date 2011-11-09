@@ -1604,7 +1604,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>4eb9995934a08</argument>
+            <argument>4eba7b94794a8</argument>
           </service>
         </argument>
       </argument>
@@ -1864,7 +1864,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>4eb9995934a08</argument>
+            <argument>4eba7b94794a8</argument>
             <argument type="service" id="monolog.logger.security"/>
           </service>
         </argument>

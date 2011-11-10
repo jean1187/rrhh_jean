@@ -22,13 +22,6 @@ class Funcionario
     private $id;
 
     /**
-     * @var string $funcionariocol
-     *
-     * @ORM\Column(name="funcionariocol", type="string", length=45, nullable=true)
-     */
-    private $funcionariocol;
-
-    /**
      * @var date $fchIngreso
      *
      * @ORM\Column(name="fch_ingreso", type="date", nullable=false)
@@ -123,26 +116,6 @@ class Funcionario
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set funcionariocol
-     *
-     * @param string $funcionariocol
-     */
-    public function setFuncionariocol($funcionariocol)
-    {
-        $this->funcionariocol = $funcionariocol;
-    }
-
-    /**
-     * Get funcionariocol
-     *
-     * @return string 
-     */
-    public function getFuncionariocol()
-    {
-        return $this->funcionariocol;
     }
 
     /**

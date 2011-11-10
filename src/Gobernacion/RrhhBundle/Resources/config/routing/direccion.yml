@@ -1,0 +1,30 @@
+dir:
+    pattern:  /
+    defaults: { _controller: "GobernacionRrhhBundle:Direccion:index" }
+
+dir_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GobernacionRrhhBundle:Direccion:show" }
+
+dir_new:
+    pattern:  /new
+    defaults: { _controller: "GobernacionRrhhBundle:Direccion:new" }
+
+dir_create:
+    pattern:  /create
+    defaults: { _controller: "GobernacionRrhhBundle:Direccion:create" }
+    requirements: { _method: post }
+
+dir_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GobernacionRrhhBundle:Direccion:edit" }
+
+dir_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GobernacionRrhhBundle:Direccion:update" }
+    requirements: { _method: post }
+
+dir_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GobernacionRrhhBundle:Direccion:delete" }
+    requirements: { _method: post }

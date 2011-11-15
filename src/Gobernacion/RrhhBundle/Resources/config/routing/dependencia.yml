@@ -1,0 +1,30 @@
+dep:
+    pattern:  /
+    defaults: { _controller: "GobernacionRrhhBundle:Dependencia:index" }
+
+dep_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GobernacionRrhhBundle:Dependencia:show" }
+
+dep_new:
+    pattern:  /new
+    defaults: { _controller: "GobernacionRrhhBundle:Dependencia:new" }
+
+dep_create:
+    pattern:  /create
+    defaults: { _controller: "GobernacionRrhhBundle:Dependencia:create" }
+    requirements: { _method: post }
+
+dep_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GobernacionRrhhBundle:Dependencia:edit" }
+
+dep_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GobernacionRrhhBundle:Dependencia:update" }
+    requirements: { _method: post }
+
+dep_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GobernacionRrhhBundle:Dependencia:delete" }
+    requirements: { _method: post }

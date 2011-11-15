@@ -8,6 +8,7 @@
                 'css/main.css'
                 'css/menu/menu.css'
                 'css/jquery_ui/jquery-ui.css'
+                'css/achtung/ui.achtung-min.css'
         %}
             <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
         {% endstylesheets %}
@@ -36,12 +37,21 @@
     {% block titulo_page %}
         <h1> {{block('title') }}</h1>
     {% endblock %}
+        
+        
+    {% block listado %}
+        
+          <a href=" {{Uri}}"><< IR al listado </a>
+          
+    {% endblock %}     
+        
 {% block javascripts %}
          {% javascripts  filter='yui_js' output='js/compresed/compressed.js'
                 'js/jquery.js'
                 'js/menu/menu.js'
                 'js/global.twig.js'
                 'js/jquery_ui/jquery-ui.js'
+                'js/achtung/ui.achtung-min.js'
         %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}

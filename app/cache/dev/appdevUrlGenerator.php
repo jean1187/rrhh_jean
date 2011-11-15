@@ -26,15 +26,17 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_assetic_4657d2c' => true,
        '_assetic_4657d2c_0' => true,
        '_assetic_4657d2c_1' => true,
-       '_assetic_081eeec' => true,
-       '_assetic_081eeec_0' => true,
-       '_assetic_081eeec_1' => true,
-       '_assetic_081eeec_2' => true,
-       '_assetic_ef8a279' => true,
-       '_assetic_ef8a279_0' => true,
-       '_assetic_ef8a279_1' => true,
-       '_assetic_ef8a279_2' => true,
-       '_assetic_ef8a279_3' => true,
+       '_assetic_abfa510' => true,
+       '_assetic_abfa510_0' => true,
+       '_assetic_abfa510_1' => true,
+       '_assetic_abfa510_2' => true,
+       '_assetic_abfa510_3' => true,
+       '_assetic_a26618a' => true,
+       '_assetic_a26618a_0' => true,
+       '_assetic_a26618a_1' => true,
+       '_assetic_a26618a_2' => true,
+       '_assetic_a26618a_3' => true,
+       '_assetic_a26618a_4' => true,
        '_assetic_44adec6' => true,
        '_assetic_44adec6_0' => true,
        '_assetic_44adec6_1' => true,
@@ -50,6 +52,20 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_step' => true,
        '_configurator_final' => true,
        'GobernacionRrhhBundle_homepage' => true,
+       'dep' => true,
+       'dep_show' => true,
+       'dep_new' => true,
+       'dep_create' => true,
+       'dep_edit' => true,
+       'dep_update' => true,
+       'dep_delete' => true,
+       'dir' => true,
+       'dir_show' => true,
+       'dir_new' => true,
+       'dir_create' => true,
+       'dir_edit' => true,
+       'dir_update' => true,
+       'dir_delete' => true,
        '_homepage' => true,
        'config_menu' => true,
        'config_menu_show' => true,
@@ -165,49 +181,59 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => '4657d2c',  'pos' => 1,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/login_login_2.css',  ),));
     }
 
-    private function get_assetic_081eeecRouteInfo()
+    private function get_assetic_abfa510RouteInfo()
     {
-        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => '081eeec',  'pos' => NULL,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/compresed/compressed.css',  ),));
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'abfa510',  'pos' => NULL,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/compresed/compressed.css',  ),));
     }
 
-    private function get_assetic_081eeec_0RouteInfo()
+    private function get_assetic_abfa510_0RouteInfo()
     {
-        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => '081eeec',  'pos' => 0,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/compresed/compressed_main_1.css',  ),));
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'abfa510',  'pos' => 0,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/compresed/compressed_main_1.css',  ),));
     }
 
-    private function get_assetic_081eeec_1RouteInfo()
+    private function get_assetic_abfa510_1RouteInfo()
     {
-        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => '081eeec',  'pos' => 1,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/compresed/compressed_menu_2.css',  ),));
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'abfa510',  'pos' => 1,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/compresed/compressed_menu_2.css',  ),));
     }
 
-    private function get_assetic_081eeec_2RouteInfo()
+    private function get_assetic_abfa510_2RouteInfo()
     {
-        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => '081eeec',  'pos' => 2,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/compresed/compressed_jquery-ui_3.css',  ),));
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'abfa510',  'pos' => 2,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/compresed/compressed_jquery-ui_3.css',  ),));
     }
 
-    private function get_assetic_ef8a279RouteInfo()
+    private function get_assetic_abfa510_3RouteInfo()
     {
-        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'ef8a279',  'pos' => NULL,  '_format' => 'js',), array (), array (  0 =>   array (    0 => 'text',    1 => '/js/compresed/compressed.js',  ),));
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'abfa510',  'pos' => 3,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/compresed/compressed_ui.achtung-min_4.css',  ),));
     }
 
-    private function get_assetic_ef8a279_0RouteInfo()
+    private function get_assetic_a26618aRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'ef8a279',  'pos' => 0,  '_format' => 'js',), array (), array (  0 =>   array (    0 => 'text',    1 => '/js/compresed/compressed_jquery_1.js',  ),));
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'a26618a',  'pos' => NULL,  '_format' => 'js',), array (), array (  0 =>   array (    0 => 'text',    1 => '/js/compresed/compressed.js',  ),));
     }
 
-    private function get_assetic_ef8a279_1RouteInfo()
+    private function get_assetic_a26618a_0RouteInfo()
     {
-        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'ef8a279',  'pos' => 1,  '_format' => 'js',), array (), array (  0 =>   array (    0 => 'text',    1 => '/js/compresed/compressed_menu_2.js',  ),));
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'a26618a',  'pos' => 0,  '_format' => 'js',), array (), array (  0 =>   array (    0 => 'text',    1 => '/js/compresed/compressed_jquery_1.js',  ),));
     }
 
-    private function get_assetic_ef8a279_2RouteInfo()
+    private function get_assetic_a26618a_1RouteInfo()
     {
-        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'ef8a279',  'pos' => 2,  '_format' => 'js',), array (), array (  0 =>   array (    0 => 'text',    1 => '/js/compresed/compressed_global.twig_3.js',  ),));
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'a26618a',  'pos' => 1,  '_format' => 'js',), array (), array (  0 =>   array (    0 => 'text',    1 => '/js/compresed/compressed_menu_2.js',  ),));
     }
 
-    private function get_assetic_ef8a279_3RouteInfo()
+    private function get_assetic_a26618a_2RouteInfo()
     {
-        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'ef8a279',  'pos' => 3,  '_format' => 'js',), array (), array (  0 =>   array (    0 => 'text',    1 => '/js/compresed/compressed_jquery-ui_4.js',  ),));
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'a26618a',  'pos' => 2,  '_format' => 'js',), array (), array (  0 =>   array (    0 => 'text',    1 => '/js/compresed/compressed_global.twig_3.js',  ),));
+    }
+
+    private function get_assetic_a26618a_3RouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'a26618a',  'pos' => 3,  '_format' => 'js',), array (), array (  0 =>   array (    0 => 'text',    1 => '/js/compresed/compressed_jquery-ui_4.js',  ),));
+    }
+
+    private function get_assetic_a26618a_4RouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'a26618a',  'pos' => 4,  '_format' => 'js',), array (), array (  0 =>   array (    0 => 'text',    1 => '/js/compresed/compressed_ui.achtung-min_5.js',  ),));
     }
 
     private function get_assetic_44adec6RouteInfo()
@@ -282,7 +308,77 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
 
     private function getGobernacionRrhhBundle_homepageRouteInfo()
     {
-        return array(array (  0 => 'name',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DefaultController::indexAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'name',  ),  1 =>   array (    0 => 'text',    1 => '/rrhh/hello',  ),));
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\RrhhController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/',  ),));
+    }
+
+    private function getdepRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/dep/',  ),));
+    }
+
+    private function getdep_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dep',  ),));
+    }
+
+    private function getdep_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/dep/new',  ),));
+    }
+
+    private function getdep_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/dep/create',  ),));
+    }
+
+    private function getdep_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dep',  ),));
+    }
+
+    private function getdep_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dep',  ),));
+    }
+
+    private function getdep_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dep',  ),));
+    }
+
+    private function getdirRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/dir/',  ),));
+    }
+
+    private function getdir_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dir',  ),));
+    }
+
+    private function getdir_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/dir/new',  ),));
+    }
+
+    private function getdir_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/dir/create',  ),));
+    }
+
+    private function getdir_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dir',  ),));
+    }
+
+    private function getdir_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dir',  ),));
+    }
+
+    private function getdir_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dir',  ),));
     }
 
     private function get_homepageRouteInfo()

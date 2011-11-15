@@ -1,0 +1,132 @@
+{# src src/Gobernacion/RrhhBundle/Resource/views/Direccion/index.html.twig #}
+
+{% extends 'ConfigurationGralBundle::layout.html.twig' %} 
+
+{% block title %}Listado de Direccion{% endblock %}
+
+{% block body %}
+<div class="cuerpo grid_16 " >
+    {{ parent() }}
+
+        <table id="tableDireccion">
+            <thead>
+                <tr>
+                    <th min-width=7px>#</th>
+                    <th>Nombre</th>
+                    <th width=150px>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('dir_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td  class="text" cond="{{ entity.id }}">{{ entity.nombre }}</td>
+                    <td >
+                        <span  class="ui-widget-header ui-corner-all toolbar">
+                           {#<a class="show_button" href="{{ path('dir_show', { 'id': entity.id}) }}">Ver Detalles</a>#}
+                            <a class="edit_button" href="{{ path('dir_edit', { 'id': entity.id}) }}">Editar</a>
+                            <a class="del_button"  href="{{ path('dir_delete', { 'id': entity.id}) }}">Eliminar</a>
+                        </span>                        
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <a id="button_new" href="{{path("dir_new")}}" ><button class="add_button" >Nueva Dirección</button></a>
+                    </td>    
+                </tr>
+            </tfoot>            
+</table>
+
+</div>
+
+<div id="new_form" style="display:none" href="{{path("dir_create")}}" ></div>    
+{% endblock body%}
+
+{% block javascripts %}
+{{ parent() }}
+        <script type="text/javascript">
+            $(document).ready(function() {
+                         $( ".add_button" ).button({ 
+                               text: true
+                         });
+                         op=1;
+                         $('#new_form').load($('#button_new').attr("href")).dialog({
+					autoOpen: false,
+					width: 980,
+					buttons: {
+						"Cancelar": function() { 
+							$(this).dialog("close"); 
+						} ,                                            
+						"Guardar": function() 
+                                                { 
+                                                        $.post((op==1)?$('#new_form').attr("href"):url_update,$("form").serializeArray() ,function(data) {
+                                                          $.mesages_validation(data);   
+                                                          if(data.code )
+                                                          {
+                                                              if(op==1)
+                                                                  {
+                                                                      var fila='<tr>    <td><a href="'+data.obj.id+'/show">'+data.obj.id+'</a></td>\
+                                                                                        <td class="text">'+data.obj.nombre+'</td>\
+                                                                                        <td>\
+                                                                                            <span  class="ui-widget-header ui-corner-all toolbar">\
+                                                                                                <a class="edit_button" href="'+data.obj.id+'/edit">Editar</a>\
+                                                                                                <a class="del_button" href="'+data.obj.id+'/delete">Eliminar</a>\
+                                                                                            </span>\
+                                                                                        </td>\
+                                                                                 </tr>\
+                                                                                ';
+                                                                       $("#tableDireccion tbody").append(fila);
+                                                                       $.botones();$( ".add_button" ).button({text: true});
+                                                                   }
+                                                                   else
+                                                                         edit.text(data.obj.nombre);
+                                                                         
+                                                                     $('#new_form').dialog("close"); 
+                                                           }
+                                                        });
+						}
+					}
+				});
+
+                         $(".add_button").click(function(){
+                             $('#new_form').dialog('open');
+                             $('#new_form input').val("");
+                             op=1;
+                             return false;
+                        });//fin .add_button
+
+                         $(".edit_button").live("click",function(){
+                             op=2;
+                             edit=$(this).parents('tr').children(".text");
+                             url_update=$(this).attr("href").replace("edit","update");
+                             $.get($(this).attr("href"),function(data) {
+                                    $('#new_form').dialog('open');
+                                    $('#new_form #gobernacion_rrhhbundle_direcciontype_nombre').val(data);
+                                 });
+                             return false;
+                        });//fin .edit_button      
+                        
+                         $(".del_button").live("click",function(){
+                             button=$(this);                           
+                             if(confirm("Estas seguro que deseas eliminar la direccion : "+$(this).parents('tr').children(".text").text())) 
+                             {
+                                $.post($(this).attr("href"),function(data) {
+                                    if(data=="")
+                                        {
+                                            $.achtung({message: 'El dato fue eliminado con exito', timeout:5});
+                                            button.parents('tr').remove();
+                                        }
+                                        else 
+                                                $.achtung({message: data, timeout:5});
+                                                                
+                                 });
+                             }
+                             return false;
+                        });//fin .del_button                              
+            });//fin ready
+            
+        </script>
+{% endblock javascripts%}

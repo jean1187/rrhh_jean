@@ -96,49 +96,59 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'assetic.controller:render',  'name' => '4657d2c',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_4657d2c_1',);
         }
 
-        // _assetic_081eeec
+        // _assetic_abfa510
         if ($pathinfo === '/css/compresed/compressed.css') {
-            return array (  '_controller' => 'assetic.controller:render',  'name' => '081eeec',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_081eeec',);
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'abfa510',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_abfa510',);
         }
 
-        // _assetic_081eeec_0
+        // _assetic_abfa510_0
         if ($pathinfo === '/css/compresed/compressed_main_1.css') {
-            return array (  '_controller' => 'assetic.controller:render',  'name' => '081eeec',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_081eeec_0',);
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'abfa510',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_abfa510_0',);
         }
 
-        // _assetic_081eeec_1
+        // _assetic_abfa510_1
         if ($pathinfo === '/css/compresed/compressed_menu_2.css') {
-            return array (  '_controller' => 'assetic.controller:render',  'name' => '081eeec',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_081eeec_1',);
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'abfa510',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_abfa510_1',);
         }
 
-        // _assetic_081eeec_2
+        // _assetic_abfa510_2
         if ($pathinfo === '/css/compresed/compressed_jquery-ui_3.css') {
-            return array (  '_controller' => 'assetic.controller:render',  'name' => '081eeec',  'pos' => 2,  '_format' => 'css',  '_route' => '_assetic_081eeec_2',);
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'abfa510',  'pos' => 2,  '_format' => 'css',  '_route' => '_assetic_abfa510_2',);
         }
 
-        // _assetic_ef8a279
+        // _assetic_abfa510_3
+        if ($pathinfo === '/css/compresed/compressed_ui.achtung-min_4.css') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'abfa510',  'pos' => 3,  '_format' => 'css',  '_route' => '_assetic_abfa510_3',);
+        }
+
+        // _assetic_a26618a
         if ($pathinfo === '/js/compresed/compressed.js') {
-            return array (  '_controller' => 'assetic.controller:render',  'name' => 'ef8a279',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_ef8a279',);
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'a26618a',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_a26618a',);
         }
 
-        // _assetic_ef8a279_0
+        // _assetic_a26618a_0
         if ($pathinfo === '/js/compresed/compressed_jquery_1.js') {
-            return array (  '_controller' => 'assetic.controller:render',  'name' => 'ef8a279',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_ef8a279_0',);
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'a26618a',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_a26618a_0',);
         }
 
-        // _assetic_ef8a279_1
+        // _assetic_a26618a_1
         if ($pathinfo === '/js/compresed/compressed_menu_2.js') {
-            return array (  '_controller' => 'assetic.controller:render',  'name' => 'ef8a279',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_ef8a279_1',);
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'a26618a',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_a26618a_1',);
         }
 
-        // _assetic_ef8a279_2
+        // _assetic_a26618a_2
         if ($pathinfo === '/js/compresed/compressed_global.twig_3.js') {
-            return array (  '_controller' => 'assetic.controller:render',  'name' => 'ef8a279',  'pos' => 2,  '_format' => 'js',  '_route' => '_assetic_ef8a279_2',);
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'a26618a',  'pos' => 2,  '_format' => 'js',  '_route' => '_assetic_a26618a_2',);
         }
 
-        // _assetic_ef8a279_3
+        // _assetic_a26618a_3
         if ($pathinfo === '/js/compresed/compressed_jquery-ui_4.js') {
-            return array (  '_controller' => 'assetic.controller:render',  'name' => 'ef8a279',  'pos' => 3,  '_format' => 'js',  '_route' => '_assetic_ef8a279_3',);
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'a26618a',  'pos' => 3,  '_format' => 'js',  '_route' => '_assetic_a26618a_3',);
+        }
+
+        // _assetic_a26618a_4
+        if ($pathinfo === '/js/compresed/compressed_ui.achtung-min_5.js') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'a26618a',  'pos' => 4,  '_format' => 'js',  '_route' => '_assetic_a26618a_4',);
         }
 
         // _assetic_44adec6
@@ -220,9 +230,127 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // GobernacionRrhhBundle_homepage
-        if (0 === strpos($pathinfo, '/rrhh/hello') && preg_match('#^/rrhh/hello/(?P<name>[^/]+?)$#x', $pathinfo, $matches)) {
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DefaultController::indexAction',)), array('_route' => 'GobernacionRrhhBundle_homepage'));
+        if (0 === strpos($pathinfo, '/rrhh')) {
+            // GobernacionRrhhBundle_homepage
+            if (rtrim($pathinfo, '/') === '/rrhh') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'GobernacionRrhhBundle_homepage');
+                }
+                return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\RrhhController::indexAction',  '_route' => 'GobernacionRrhhBundle_homepage',);
+            }
+
+            if (0 === strpos($pathinfo, '/rrhh/dep')) {
+                // dep
+                if (rtrim($pathinfo, '/') === '/rrhh/dep') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'dep');
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::indexAction',  '_route' => 'dep',);
+                }
+
+                // dep_show
+                if (preg_match('#^/rrhh/dep/(?P<id>[^/]+?)/show$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::showAction',)), array('_route' => 'dep_show'));
+                }
+
+                // dep_new
+                if ($pathinfo === '/rrhh/dep/new') {
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::newAction',  '_route' => 'dep_new',);
+                }
+
+                // dep_create
+                if ($pathinfo === '/rrhh/dep/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_dep_create;
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::createAction',  '_route' => 'dep_create',);
+                }
+                not_dep_create:
+
+                // dep_edit
+                if (preg_match('#^/rrhh/dep/(?P<id>[^/]+?)/edit$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::editAction',)), array('_route' => 'dep_edit'));
+                }
+
+                // dep_update
+                if (preg_match('#^/rrhh/dep/(?P<id>[^/]+?)/update$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_dep_update;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::updateAction',)), array('_route' => 'dep_update'));
+                }
+                not_dep_update:
+
+                // dep_delete
+                if (preg_match('#^/rrhh/dep/(?P<id>[^/]+?)/delete$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_dep_delete;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DependenciaController::deleteAction',)), array('_route' => 'dep_delete'));
+                }
+                not_dep_delete:
+
+            }
+
+            if (0 === strpos($pathinfo, '/rrhh/dir')) {
+                // dir
+                if (rtrim($pathinfo, '/') === '/rrhh/dir') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'dir');
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::indexAction',  '_route' => 'dir',);
+                }
+
+                // dir_show
+                if (preg_match('#^/rrhh/dir/(?P<id>[^/]+?)/show$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::showAction',)), array('_route' => 'dir_show'));
+                }
+
+                // dir_new
+                if ($pathinfo === '/rrhh/dir/new') {
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::newAction',  '_route' => 'dir_new',);
+                }
+
+                // dir_create
+                if ($pathinfo === '/rrhh/dir/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_dir_create;
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::createAction',  '_route' => 'dir_create',);
+                }
+                not_dir_create:
+
+                // dir_edit
+                if (preg_match('#^/rrhh/dir/(?P<id>[^/]+?)/edit$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::editAction',)), array('_route' => 'dir_edit'));
+                }
+
+                // dir_update
+                if (preg_match('#^/rrhh/dir/(?P<id>[^/]+?)/update$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_dir_update;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::updateAction',)), array('_route' => 'dir_update'));
+                }
+                not_dir_update:
+
+                // dir_delete
+                if (preg_match('#^/rrhh/dir/(?P<id>[^/]+?)/delete$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_dir_delete;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::deleteAction',)), array('_route' => 'dir_delete'));
+                }
+                not_dir_delete:
+
+            }
+
         }
 
         // _homepage

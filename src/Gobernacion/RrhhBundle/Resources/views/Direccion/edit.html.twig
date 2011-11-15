@@ -1,0 +1,53 @@
+{# src src/Gobernacion/RrhhBundle/Resource/views/Direccion/edit.html.twig #}
+{% extends app.request.isXmlHttpRequest  ? 'ConfigurationGralBundle::layout_ajax.html.twig' :'ConfigurationGralBundle::layout.html.twig' %}
+
+{% block title %}Creación de Direccion{% endblock %}
+
+{% block pageid 'edit' %}
+
+{% block body %}
+
+    <div class="grid_16 " >
+        {{ parent() }}
+        {{ form_errors(form) }}
+
+            <form action="{{ path('dir_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(form) }}>
+            {% include 'GobernacionRrhhBundle:Direccion:formDireccion.html.twig' %}
+                
+                {# Cuarta columna #}
+
+                {% if not app.request.isXmlHttpRequest %}
+		<div class="grid_2 prefix_7" >
+		    <p>
+			<input type="submit" value="Guardar" />
+		    </p>
+		</div>
+
+                <div class="clear"></div>
+                <div class="grid_2 prefix_7" >
+                    <p>
+                        {% set Uri =  url('dir') %}
+                        {{- block('listado') -}}                        
+		    </p>
+		</div>   
+                 <div class="clear"></div>
+                {% endif %}
+
+		{{ form_errors(form._token) }}
+		{{ form_widget(form._token) }}
+        </form>
+                <div class="grid_2 " >
+                    <form action="{{ path('dir_delete', { 'id': entity.id }) }}" method="post">
+                        {{ form_widget(delete_form) }}
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </div>      
+    </div>
+
+{% endblock body%}
+
+
+
+
+
+            

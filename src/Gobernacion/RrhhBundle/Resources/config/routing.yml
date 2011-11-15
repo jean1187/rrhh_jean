@@ -1,3 +1,11 @@
 GobernacionRrhhBundle_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: GobernacionRrhhBundle:Default:index }
+    pattern:  /
+    defaults: { _controller: GobernacionRrhhBundle:Rrhh:index }
+
+GobernacionRrhhBundle_dep:
+    resource: "@GobernacionRrhhBundle/Resources/config/routing/dependencia.yml"
+    prefix:   /dep
+
+GobernacionRrhhBundle_dir:
+    resource: "@GobernacionRrhhBundle/Resources/config/routing/direccion.yml"
+    prefix:   /dir

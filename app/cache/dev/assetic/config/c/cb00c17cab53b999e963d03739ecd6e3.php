@@ -2,13 +2,14 @@
 
 // ConfigurationGralBundle:Menu (copia):show.html.twig
 return array (
-  '081eeec' => 
+  'abfa510' => 
   array (
     0 => 
     array (
       0 => 'css/main.css',
       1 => 'css/menu/menu.css',
       2 => 'css/jquery_ui/jquery-ui.css',
+      3 => 'css/achtung/ui.achtung-min.css',
     ),
     1 => 
     array (
@@ -18,12 +19,12 @@ return array (
     2 => 
     array (
       'output' => '_controller/css/compresed/compressed.css',
-      'name' => '081eeec',
+      'name' => 'abfa510',
       'debug' => NULL,
       'combine' => NULL,
     ),
   ),
-  'ef8a279' => 
+  'a26618a' => 
   array (
     0 => 
     array (
@@ -31,6 +32,7 @@ return array (
       1 => 'js/menu/menu.js',
       2 => 'js/global.twig.js',
       3 => 'js/jquery_ui/jquery-ui.js',
+      4 => 'js/achtung/ui.achtung-min.js',
     ),
     1 => 
     array (
@@ -39,7 +41,7 @@ return array (
     2 => 
     array (
       'output' => '_controller/js/compresed/compressed.js',
-      'name' => 'ef8a279',
+      'name' => 'a26618a',
       'debug' => NULL,
       'combine' => NULL,
     ),

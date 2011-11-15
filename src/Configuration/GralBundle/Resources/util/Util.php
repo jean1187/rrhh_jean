@@ -1,5 +1,4 @@
 <?php
-
 namespace Configuration\GralBundle\Resources\util;
 
 class Util
@@ -188,4 +187,52 @@ class Util
       }
       return true;
     }
-}
+    
+    
+    /**
+     * Devuelve un array en json de las validaciones si no se cumplieron
+     * de lo contrario devuelve false
+     * 
+     * @param string $cadena Cadena de texto original
+     * @return string Slug calculado para la cadena original
+     */    
+    
+    static public function ValidarAjax($ObjEntidad,$ArrayPost,$inyeccioDependencias,$em,$entidades=NULL)
+                {
+                   $campos=array();
+                        foreach ($ArrayPost as $key=>$value)
+                             {   
+                               $campos[$key]=$ArrayPost[$key];
+                               if(count($entidades)  && array_key_exists($key, $entidades)) 
+                                {
+                                     $EntityRelacion = $em->find($entidades[$key]["ruta"],  $ArrayPost[$key]);
+                                     $ObjEntidad->{'set'.ucfirst($key)}($EntityRelacion);
+                                }//fin if
+                                else if(strcmp($key,"_token"))
+                                       $ObjEntidad->{'set'.ucfirst($key)}( $ArrayPost[$key]);                                    
+                             }//fin for
+                         $msg = array();
+                         $errores = $inyeccioDependencias["validator"]->validate($ObjEntidad);
+                         
+                         if (count($errores) > 0) 
+                             {
+                                 foreach ($errores as $err) {
+                                    $msg[$err->getPropertyPath()]= $inyeccioDependencias["translator"]->trans($err->getMessage(), array(), 'validators');
+                                }
+                                $code = false;
+                            } 
+                         else 
+                            {
+                             $code = true;
+                             $em->persist($ObjEntidad);
+                             $em->flush();
+                             $campos["id"]=$ObjEntidad->getId();
+                            }
+                        $response = new \Symfony\Component\HttpFoundation\Response(json_encode(array('code' => $code,"obj"=>$campos, 'msg' => $msg,"locale" => $inyeccioDependencias["session"]->getLocale())));
+                        $response->headers->set('Content-Type', 'application/json');
+                        return $response;
+               }// Validar Ajax
+    
+    
+    
+}//fin classs

@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Gobernacion\RrhhBundle\Entity\Dependencia;
 use Gobernacion\RrhhBundle\Form\DependenciaType;
-
+use Configuration\GralBundle\Resources\util\Util;
 /**
  * Dependencia controller.
  *
@@ -74,11 +74,21 @@ class DependenciaController extends Controller
     {
         $entity  = new Dependencia();
         $request = $this->getRequest();
+        
+        $em = $this->getDoctrine()->getEntityManager();
+
+        if ($request->getMethod() == 'POST' && $request->isXmlHttpRequest()) 
+                 {  
+                    $inyeccioDependencias=array("validator"=>$this->get('validator'),"translator"=>$this->get('translator'),"session"=>$this->get('session'));
+                    return Util::ValidarAjax($entity, $request->get("gobernacion_rrhhbundle_dependenciatype"),$inyeccioDependencias,$em,array("direccion"=>array("ruta"=>"GobernacionRrhhBundle:Direccion")));
+              
+                }
+                
         $form    = $this->createForm(new DependenciaType(), $entity);
         $form->bindRequest($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
+            //$em = $this->getDoctrine()->getEntityManager();
             $em->persist($entity);
             $em->flush();
 

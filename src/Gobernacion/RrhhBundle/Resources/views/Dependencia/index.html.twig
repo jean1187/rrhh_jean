@@ -1,5 +1,12 @@
-<h1>Dependencia list</h1>
+{# src src/Gobernacion/RrhhBundle/Resource/views/Direccion/index.html.twig #}
 
+{% extends 'ConfigurationGralBundle::layout.html.twig' %} 
+
+{% block title %}Listado de Dependencias{% endblock %}
+
+{% block body %}
+<div class="cuerpo grid_16 " >
+    {{ parent() }}
 <table class="records_list">
     <thead>
         <tr>
@@ -14,24 +21,76 @@
             <td><a href="{{ path('dep_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
             <td>{{ entity.nombre }}</td>
             <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('dep_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('dep_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                        <span  class="ui-widget-header ui-corner-all toolbar">
+                           {#<a class="show_button" href="{{ path('dir_show', { 'id': entity.id}) }}">Ver Detalles</a>#}
+                            <a class="edit_button" href="{{ path('dep_edit', { 'id': entity.id}) }}">Editar</a>
+                            <a class="del_button"  href="{{ path('dep_delete', { 'id': entity.id}) }}">Eliminar</a>
+                        </span>                  
             </td>
         </tr>
     {% endfor %}
+        
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <a id="button_new" href="{{path("dep_new")}}" ><button class="add_button" >Nueva Dependencia</button></a>
+                    </td>    
+                </tr>
+            </tfoot>             
     </tbody>
 </table>
 
-<ul>
-    <li>
-        <a href="{{ path('dep_new') }}">
-            Create a new entry
-        </a>
-    </li>
-</ul>
+        
+</div>
+
+<div id="new_form" style="display:none" href="{{path("dep_create")}}" ></div>    
+{% endblock body%}
+
+{% block javascripts %}
+{{ parent() }}
+        <script type="text/javascript">
+            $(document).ready(function() {
+                         $( ".add_button" ).button({ 
+                               text: true
+                         });
+                         op=1;
+                         
+                        $('#new_form').load($('#button_new').attr("href")).dialog({
+					autoOpen: false,
+					width: 980,
+					buttons: {
+						"Cancelar": function() { 
+							$(this).dialog("close"); 
+						} ,                                            
+						"Guardar": function() 
+                                                { 
+                                                        $.post((op==1)?$('#new_form').attr("href"):url_update,$("form").serializeArray() ,function(data) {
+                                                          $.mesages_validation(data);   
+                                                        });
+						}
+					}
+				});
+
+                         $(".add_button").click(function(){
+                             $('#new_form').dialog('open');
+                            
+                             op=1;
+                             return false;
+                        });//fin .add_button
+
+                         $(".edit_button").live("click",function(){
+                             op=2;
+                             edit=$(this).parents('tr').children(".text");
+                             url_update=$(this).attr("href").replace("edit","update");
+                             alert("edit")
+                        });//fin .edit_button      
+                        
+                         $(".del_button").live("click",function(){
+                             button=$(this);                           
+                             laert("del")
+                             return false;
+                        });//fin .del_button                                                  
+            });//fin ready
+            
+        </script>
+{% endblock javascripts%}                         

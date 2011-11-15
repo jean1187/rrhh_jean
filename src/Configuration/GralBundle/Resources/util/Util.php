@@ -201,13 +201,16 @@ class Util
                 {
                    $campos=array();
                         foreach ($ArrayPost as $key=>$value)
-                             {   
+                             {   //echo $key;
+                            
                                $campos[$key]=$ArrayPost[$key];
-                               if(count($entidades)  && array_key_exists($key, $entidades)) 
+   
+                               if(count($entidades)!=0  && array_key_exists($key, $entidades)) 
                                 {
                                      $EntityRelacion = $em->find($entidades[$key]["ruta"],  $ArrayPost[$key]);
                                      $ObjEntidad->{'set'.ucfirst($key)}($EntityRelacion);
                                 }//fin if
+                                
                                 else if(strcmp($key,"_token"))
                                        $ObjEntidad->{'set'.ucfirst($key)}( $ArrayPost[$key]);                                    
                              }//fin for

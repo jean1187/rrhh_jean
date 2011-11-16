@@ -12,7 +12,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints as DoctrineAssert;
  * Gobernacion\RrhhBundle\Entity\Direccion
  *
  * @ORM\Table(name="direccion")
-  * @ORM\Entity(repositoryClass="Gobernacion\RrhhBundle\Repository\DireccionRepository")
+ * @ORM\Entity
  */
 class Direccion
 {

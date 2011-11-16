@@ -112,6 +112,19 @@ class DependenciaController extends Controller
 
         $entity = $em->getRepository('GobernacionRrhhBundle:Dependencia')->find($id);
 
+                if ($this->getRequest()->isXmlHttpRequest()) 
+                 { 
+                        $response = new \Symfony\Component\HttpFoundation\Response(json_encode(array('code' =>1,"selectores"=>
+                                                                                                        array(
+                                                                                                              "#gobernacion_rrhhbundle_dependenciatype_nombre"=>$entity->getNombre(),
+                                                                                                             "#gobernacion_rrhhbundle_dependenciatype_direccion"=>$entity->getDireccion()->getId()
+                                                                                                            )
+                                                                                            ))
+                                                                                      );
+                        $response->headers->set('Content-Type', 'application/json');
+                        return $response;                    
+                 }     
+                 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Dependencia entity.');
         }
@@ -133,17 +146,21 @@ class DependenciaController extends Controller
     public function updateAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
-
+        $request = $this->getRequest();
         $entity = $em->getRepository('GobernacionRrhhBundle:Dependencia')->find($id);
 
+                if ($request->getMethod() == 'POST' && $request->isXmlHttpRequest()) 
+                 {  
+                    $inyeccioDependencias=array("validator"=>$this->get('validator'),"translator"=>$this->get('translator'),"session"=>$this->get('session'));
+                    return Util::ValidarAjax($entity, $request->get("gobernacion_rrhhbundle_dependenciatype"),$inyeccioDependencias,$em,array("direccion"=>array("ruta"=>"GobernacionRrhhBundle:Direccion")));
+              
+                }
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Dependencia entity.');
         }
 
         $editForm   = $this->createForm(new DependenciaType(), $entity);
         $deleteForm = $this->createDeleteForm($id);
-
-        $request = $this->getRequest();
 
         $editForm->bindRequest($request);
 
@@ -169,11 +186,30 @@ class DependenciaController extends Controller
     {
         $form = $this->createDeleteForm($id);
         $request = $this->getRequest();
-
+        $em = $this->getDoctrine()->getEntityManager();
+        if ($this->getRequest()->getMethod() == 'POST' && $this->getRequest()->isXmlHttpRequest()) 
+                 {  
+                    $cargos=$em->getRepository('GobernacionRrhhBundle:CargosDependencia')->findCargosDep($id);
+                    $msg="";
+                    $num=count($cargos);
+                        if($num )
+                        {
+                                $msg.=" La dependencia no puede ser eliminada, por que tiene ".$num." cargo";
+                                if($num>1)
+                                    $msg.="s";
+                        }
+                        else
+                            { 
+                                $entity = $em->getRepository('GobernacionRrhhBundle:Dependencia')->find($id);
+                                $em->remove($entity);
+                                $em->flush();
+                            }
+                    return new \Symfony\Component\HttpFoundation\Response($msg);
+                 }
+                 
         $form->bindRequest($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
             $entity = $em->getRepository('GobernacionRrhhBundle:Dependencia')->find($id);
 
             if (!$entity) {

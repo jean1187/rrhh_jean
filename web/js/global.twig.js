@@ -1,5 +1,13 @@
 $(document).ready(function() {
-    var botones_iconos={ "show_button" : "ui-icon-search", 
+    $.botones();
+    
+});//fin $(document).ready(function() {
+
+//botones
+
+ jQuery.botones = function() 
+ {
+     var botones_iconos={ "show_button" : "ui-icon-search", 
 			 "add_button" : "ui-icon-plusthick",
 			 "del_button":"ui-icon-closethick",
 			 "edit_button":"ui-icon-pencil"};
@@ -16,24 +24,16 @@ $(document).ready(function() {
     });//fin each
     //para que no haya tanta separacion en los botones
     $(".toolbar a").css("margin","0 0");
-
-   //cada vez que haga una validation ajax llamo a esta funcion y se encargara de mostrar los mensajes de error por cada campo o el de exito si todo paso bien
-    function mesages_validation(data)
-    {    alert("")
-
-       
-    }
     
-    
-});//fin $(document).ready(function() {
+ }//fin botones
 
     //inicio mesages_validation
     jQuery.mesages_validation = function(data) {
         if(data.code)
             $.achtung({message: 'El dato fue guardado', timeout:5});
         else
-        $.each(data.msg,function(key,val){
-            $.achtung({message: 'Campo \"'+key+"\" : "+val, timeout:5});
-        });
+            $.each(data.msg,function(key,val){
+                $.achtung({message: 'Campo \"'+key+"\" : "+val, timeout:5});
+            });
         return data.code;
     };

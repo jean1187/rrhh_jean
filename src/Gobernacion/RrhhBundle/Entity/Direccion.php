@@ -4,6 +4,10 @@ namespace Gobernacion\RrhhBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints as DoctrineAssert;
+
 /**
  * Gobernacion\RrhhBundle\Entity\Direccion
  *
@@ -24,7 +28,8 @@ class Direccion
     /**
      * @var string $nombre
      *
-     * @ORM\Column(name="nombre", type="string", length=45, nullable=true)
+     * @ORM\Column(name="nombre", type="string", length=45)
+     * @Assert\NotBlank()
      */
     private $nombre;
 

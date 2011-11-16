@@ -1,25 +1,27 @@
-<h1>Dependencia list</h1>
+<h1>Cargos list</h1>
 
 <table class="records_list">
     <thead>
         <tr>
             <th>Id</th>
             <th>Nombre</th>
+            <th>Sueldo</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
     {% for entity in entities %}
         <tr>
-            <td><a href="{{ path('dep_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td><a href="{{ path('Gobernacion_RrhhBundle_Entity__show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
             <td>{{ entity.nombre }}</td>
+            <td>{{ entity.sueldo }}</td>
             <td>
                 <ul>
                     <li>
-                        <a href="{{ path('dep_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('Gobernacion_RrhhBundle_Entity__show', { 'id': entity.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('dep_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('Gobernacion_RrhhBundle_Entity__edit', { 'id': entity.id }) }}">edit</a>
                     </li>
                 </ul>
             </td>
@@ -30,7 +32,7 @@
 
 <ul>
     <li>
-        <a href="{{ path('dep_new') }}">
+        <a href="{{ path('Gobernacion_RrhhBundle_Entity__new') }}">
             Create a new entry
         </a>
     </li>

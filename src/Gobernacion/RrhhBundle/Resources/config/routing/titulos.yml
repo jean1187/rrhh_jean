@@ -1,0 +1,30 @@
+Gobernacion_RrhhBundle_Entity_:
+    pattern:  /
+    defaults: { _controller: "GobernacionRrhhBundle:Titulos:index" }
+
+Gobernacion_RrhhBundle_Entity__show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GobernacionRrhhBundle:Titulos:show" }
+
+Gobernacion_RrhhBundle_Entity__new:
+    pattern:  /new
+    defaults: { _controller: "GobernacionRrhhBundle:Titulos:new" }
+
+Gobernacion_RrhhBundle_Entity__create:
+    pattern:  /create
+    defaults: { _controller: "GobernacionRrhhBundle:Titulos:create" }
+    requirements: { _method: post }
+
+Gobernacion_RrhhBundle_Entity__edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GobernacionRrhhBundle:Titulos:edit" }
+
+Gobernacion_RrhhBundle_Entity__update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GobernacionRrhhBundle:Titulos:update" }
+    requirements: { _method: post }
+
+Gobernacion_RrhhBundle_Entity__delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GobernacionRrhhBundle:Titulos:delete" }
+    requirements: { _method: post }

@@ -29,6 +29,8 @@ class Builder  extends Controller
 		->addChild('Mantenimiento', array('attributes'=>array('class' => 'parent'),'uri' => '#'));
           $mantenimiento->addChild('Dirección', array('route' => 'dir'));
 	  $mantenimiento->addChild('Dependencia', array('route' => 'dep'));
+         
+          
         $menu->addChild('Salir', array('route' => 'fos_user_security_logout'));
         return $menu;
     }

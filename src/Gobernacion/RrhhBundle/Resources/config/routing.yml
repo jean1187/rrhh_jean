@@ -9,3 +9,15 @@ GobernacionRrhhBundle_dep:
 GobernacionRrhhBundle_dir:
     resource: "@GobernacionRrhhBundle/Resources/config/routing/direccion.yml"
     prefix:   /dir
+
+GobernacionRrhhBundle_car:
+    resource: "@GobernacionRrhhBundle/Resources/config/routing/cargos.yml"
+    prefix:   /car
+
+
+
+
+
+
+
+

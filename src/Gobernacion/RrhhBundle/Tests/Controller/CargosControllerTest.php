@@ -4,7 +4,7 @@ namespace Gobernacion\RrhhBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class DependenciaControllerTest extends WebTestCase
+class CargosControllerTest extends WebTestCase
 {
     /*
     public function testCompleteScenario()
@@ -13,13 +13,13 @@ class DependenciaControllerTest extends WebTestCase
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/dep/');
+        $crawler = $client->request('GET', '/Gobernacion/RrhhBundle/Entity//');
         $this->assertTrue(200 === $client->getResponse()->getStatusCode());
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'dependencia[field_name]'  => 'Test',
+            'cargos[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class DependenciaControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Edit')->form(array(
-            'dependencia[field_name]'  => 'Foo',
+            'cargos[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 

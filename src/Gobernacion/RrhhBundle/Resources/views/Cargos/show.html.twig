@@ -1,4 +1,4 @@
-<h1>Direccion</h1>
+<h1>Cargos</h1>
 
 <table class="record_properties">
     <tbody>
@@ -10,22 +10,26 @@
             <th>Nombre</th>
             <td>{{ entity.nombre }}</td>
         </tr>
+        <tr>
+            <th>Sueldo</th>
+            <td>{{ entity.sueldo }}</td>
+        </tr>
     </tbody>
 </table>
 
 <ul class="record_actions">
     <li>
-        <a href="{{ path('dir') }}">
+        <a href="{{ path('Gobernacion_RrhhBundle_Entity_') }}">
             Back to the list
         </a>
     </li>
     <li>
-        <a href="{{ path('dir_edit', { 'id': entity.id }) }}">
+        <a href="{{ path('Gobernacion_RrhhBundle_Entity__edit', { 'id': entity.id }) }}">
             Edit
         </a>
     </li>
     <li>
-        <form action="{{ path('dir_delete', { 'id': entity.id }) }}" method="post">
+        <form action="{{ path('Gobernacion_RrhhBundle_Entity__delete', { 'id': entity.id }) }}" method="post">
             {{ form_widget(delete_form) }}
             <button type="submit">Delete</button>
         </form>

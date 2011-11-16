@@ -1,37 +1,140 @@
-<h1>Dependencia list</h1>
+{# src src/Gobernacion/RrhhBundle/Resource/views/Direccion/index.html.twig #}
 
-<table class="records_list">
+{% extends 'ConfigurationGralBundle::layout.html.twig' %} 
+
+{% block title %}Listado de Dependencias{% endblock %}
+
+{% block body %}
+<div class="cuerpo grid_16 " >
+    {{ parent() }}
+<table id="tableDep" class="records_list">
     <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Actions</th>
-        </tr>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th width=150px>Actions</th>
+                </tr>
     </thead>
     <tbody>
     {% for entity in entities %}
         <tr>
             <td><a href="{{ path('dep_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-            <td>{{ entity.nombre }}</td>
+            <td class="text">{{ entity.nombre }}</td>
             <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('dep_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('dep_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                        <span  class="ui-widget-header ui-corner-all toolbar">
+                           {#<a class="show_button" href="{{ path('dir_show', { 'id': entity.id}) }}">Ver Detalles</a>#}
+                            <a class="edit_button" href="{{ path('dep_edit', { 'id': entity.id}) }}">Editar</a>
+                            <a class="del_button"  href="{{ path('dep_delete', { 'id': entity.id}) }}">Eliminar</a>
+                        </span>                  
             </td>
         </tr>
     {% endfor %}
+        
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <a id="button_new" href="{{path("dep_new")}}" ><button class="add_button" >Nueva Dependencia</button></a>
+                    </td>    
+                </tr>
+            </tfoot>             
     </tbody>
 </table>
 
-<ul>
-    <li>
-        <a href="{{ path('dep_new') }}">
-            Create a new entry
-        </a>
-    </li>
-</ul>
+        
+</div>
+
+<div id="new_form" style="display:none" href="{{path("dep_create")}}" ></div>    
+{% endblock body%}
+
+{% block javascripts %}
+{{ parent() }}
+        <script type="text/javascript">
+            $(document).ready(function() {
+                         $( ".add_button" ).button({ 
+                               text: true
+                         });
+                         op=1;
+                         
+                        $('#new_form').load($('#button_new').attr("href")).dialog({
+					autoOpen: false,
+					width: 980,
+					buttons: {
+						"Cancelar": function() { 
+							$(this).dialog("close"); 
+						} ,                                            
+						"Guardar": function() 
+                                                { 
+                                                        $.post((op==1)?$('#new_form').attr("href"):url_update,$("form").serializeArray() ,function(data) {
+                                                          $.mesages_validation(data);
+                                                          if(data.code )
+                                                          {
+                                                              if(op==1)
+                                                                  {
+                                                                      var fila='<tr>    <td><a href="'+data.obj.id+'/show">'+data.obj.id+'</a></td>\
+                                                                                        <td class="text">'+data.obj.nombre+'</td>\
+                                                                                        <td>\
+                                                                                            <span  class="ui-widget-header ui-corner-all toolbar">\
+                                                                                                <a class="edit_button" href="'+data.obj.id+'/edit">Editar</a>\
+                                                                                                <a class="del_button" href="'+data.obj.id+'/delete">Eliminar</a>\
+                                                                                            </span>\
+                                                                                        </td>\
+                                                                                 </tr>\
+                                                                                ';
+                                                                       $("#tableDep tbody").append(fila);
+                                                                       $.botones();$( ".add_button" ).button({text: true});
+                                                                   }
+                                                                   else
+                                                                    {
+                                                                         edit.text(data.obj.nombre);
+                                                                    }
+                                                                         
+                                                                     $('#new_form').dialog("close"); 
+                                                           }                                                          
+                                                        });
+						}
+					}
+				});
+
+                         $(".add_button").click(function(){
+                             $('#new_form').dialog('open');
+                            
+                             op=1;
+                             return false;
+                        });//fin .add_button
+
+                         $(".edit_button").live("click",(function (event){
+                             op=2;
+                             edit=$(this).parents('tr').children(".text");                          
+                             url_update=$(this).attr("href").replace("edit","update");
+                             $.get($(this).attr("href"),function(data) {
+                                    $('#new_form').dialog('open');
+                                    $.each(data.selectores,function(selector,val){
+                                        $(selector).val(val);
+                                    });
+                                 });
+                             event.preventDefault(); //para prevenir el comportamiento normal de un href
+                        }));//fin .edit_button      
+                        
+                         $(".del_button").live("click",(function (event) 
+                            { 
+                                 button=$(this);                           
+                                 if(confirm("Estas seguro que deseas eliminar la dependencia : "+$(this).parents('tr').children(".text").text())) 
+                                 {
+                                    $.post($(this).attr("href"),function(data) {
+                                        if(data=="")
+                                            {
+                                                $.achtung({message: 'El dato fue eliminado con exito', timeout:5});
+                                                button.parents('tr').remove();
+                                            }
+                                            else 
+                                                    $.achtung({message: data, timeout:5});
+
+                                     });
+                                 }
+                                 event.preventDefault(); //para prevenir el comportamiento normal de un href
+                            })        
+                        );     //fin .del_button                                                    
+            });//fin ready
+            
+        </script>
+{% endblock javascripts%}                         

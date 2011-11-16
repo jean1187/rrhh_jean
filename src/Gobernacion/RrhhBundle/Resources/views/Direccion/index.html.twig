@@ -109,23 +109,26 @@
                              return false;
                         });//fin .edit_button      
                         
-                         $(".del_button").live("click",function(){
-                             button=$(this);                           
-                             if(confirm("Estas seguro que deseas eliminar la direccion : "+$(this).parents('tr').children(".text").text())) 
-                             {
-                                $.post($(this).attr("href"),function(data) {
-                                    if(data=="")
-                                        {
-                                            $.achtung({message: 'El dato fue eliminado con exito', timeout:5});
-                                            button.parents('tr').remove();
-                                        }
-                                        else 
-                                                $.achtung({message: data, timeout:5});
-                                                                
-                                 });
-                             }
-                             return false;
-                        });//fin .del_button                              
+                         $(".del_button").live("click",(function (event) 
+                            { 
+                                 button=$(this);                           
+                                 if(confirm("Estas seguro que deseas eliminar la direccion : "+$(this).parents('tr').children(".text").text())) 
+                                 {
+                                    $.post($(this).attr("href"),function(data) {
+                                        if(data=="")
+                                            {
+                                                $.achtung({message: 'El dato fue eliminado con exito', timeout:5});
+                                                button.parents('tr').remove();
+                                            }
+                                            else 
+                                                    $.achtung({message: data, timeout:5});
+
+                                     });
+                                 }
+                                 event.preventDefault(); 
+                                 //here you can also do all sort of things 
+                            })        
+                        );     //fin .del_button                                 
             });//fin ready
             
         </script>

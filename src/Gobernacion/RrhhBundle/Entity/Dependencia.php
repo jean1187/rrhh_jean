@@ -2,6 +2,9 @@
 
 namespace Gobernacion\RrhhBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints as DoctrineAssert;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -25,6 +28,7 @@ class Dependencia
      * @var string $nombre
      *
      * @ORM\Column(name="nombre", type="string", length=45, nullable=false)
+     * @Assert\NotBlank()
      */
     private $nombre;
 

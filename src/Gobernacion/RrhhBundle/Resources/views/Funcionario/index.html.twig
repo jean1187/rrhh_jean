@@ -1,0 +1,65 @@
+{# src src/Gobernacion/RrhhBundle/Resource/views/Funcionario/index.html.twig #}
+
+{% extends 'ConfigurationGralBundle::layout.html.twig' %} 
+
+{% block title %}Listado de Funcionarios{% endblock %}
+
+{% block body %}
+<div class="cuerpo grid_16 " >
+    {{ parent() }}
+
+        <table class="records_list">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Cedula</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Genero</th>
+                    <th>Ingreso</th>
+                    {#<th>Direccione</th>
+                    <th>Contactoe</th>#}
+                    <th>Vivienda</th>
+                    <th>Vehiculo</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('funcionario_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.persona.cedula}}</td>
+                    <td>{{ entity.persona.nombre}}</td>
+                    <td>{{ entity.persona.apellido}}</td>
+                    <td>{{ entity.persona.sexo}}</td>
+                    <td>{{ entity.fchIngreso|date('Y-m-d') }}</td>
+                    {#<td>{{ entity.direccionE | truncate(20, true) | default('--') }}</td>
+                    <td> {{ entity.contactoE | truncate(20, true) | default('--') }}  </td>#} 
+                    <td>{{  entity.vivienda  ? 'si' : 'no' }}</td>
+                    <td>{{   entity.vehiculo   ? 'si' : 'no' }} </td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('funcionario_show', { 'id': entity.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('funcionario_edit', { 'id': entity.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <ul>
+            <li>
+                <a href="{{ path('funcionario_new') }}">
+                    Create a new entry
+                </a>
+            </li>
+        </ul>
+</div>
+
+<div id="new_form" style="display:none" href="{{path("dep_create")}}" ></div>    
+{% endblock body%}

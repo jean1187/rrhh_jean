@@ -1,0 +1,30 @@
+funcionario:
+    pattern:  /
+    defaults: { _controller: "GobernacionRrhhBundle:Funcionario:index" }
+
+funcionario_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GobernacionRrhhBundle:Funcionario:show" }
+
+funcionario_new:
+    pattern:  /new
+    defaults: { _controller: "GobernacionRrhhBundle:Funcionario:new" }
+
+funcionario_create:
+    pattern:  /create
+    defaults: { _controller: "GobernacionRrhhBundle:Funcionario:create" }
+    requirements: { _method: post }
+
+funcionario_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GobernacionRrhhBundle:Funcionario:edit" }
+
+funcionario_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GobernacionRrhhBundle:Funcionario:update" }
+    requirements: { _method: post }
+
+funcionario_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GobernacionRrhhBundle:Funcionario:delete" }
+    requirements: { _method: post }

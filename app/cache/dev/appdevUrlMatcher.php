@@ -351,6 +351,62 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            if (0 === strpos($pathinfo, '/rrhh/funcionario')) {
+                // funcionario
+                if (rtrim($pathinfo, '/') === '/rrhh/funcionario') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'funcionario');
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\FuncionarioController::indexAction',  '_route' => 'funcionario',);
+                }
+
+                // funcionario_show
+                if (preg_match('#^/rrhh/funcionario/(?P<id>[^/]+?)/show$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\FuncionarioController::showAction',)), array('_route' => 'funcionario_show'));
+                }
+
+                // funcionario_new
+                if ($pathinfo === '/rrhh/funcionario/new') {
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\FuncionarioController::newAction',  '_route' => 'funcionario_new',);
+                }
+
+                // funcionario_create
+                if ($pathinfo === '/rrhh/funcionario/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_funcionario_create;
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\FuncionarioController::createAction',  '_route' => 'funcionario_create',);
+                }
+                not_funcionario_create:
+
+                // funcionario_edit
+                if (preg_match('#^/rrhh/funcionario/(?P<id>[^/]+?)/edit$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\FuncionarioController::editAction',)), array('_route' => 'funcionario_edit'));
+                }
+
+                // funcionario_update
+                if (preg_match('#^/rrhh/funcionario/(?P<id>[^/]+?)/update$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_funcionario_update;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\FuncionarioController::updateAction',)), array('_route' => 'funcionario_update'));
+                }
+                not_funcionario_update:
+
+                // funcionario_delete
+                if (preg_match('#^/rrhh/funcionario/(?P<id>[^/]+?)/delete$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_funcionario_delete;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\FuncionarioController::deleteAction',)), array('_route' => 'funcionario_delete'));
+                }
+                not_funcionario_delete:
+
+            }
+
         }
 
         // _homepage

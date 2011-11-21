@@ -9,3 +9,7 @@ GobernacionRrhhBundle_dep:
 GobernacionRrhhBundle_dir:
     resource: "@GobernacionRrhhBundle/Resources/config/routing/direccion.yml"
     prefix:   /dir
+    
+GobernacionRrhhBundle_funcionario:
+    resource: "@GobernacionRrhhBundle/Resources/config/routing/funcionario.yml"
+    prefix:   /funcionario

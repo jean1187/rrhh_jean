@@ -66,6 +66,13 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'dir_edit' => true,
        'dir_update' => true,
        'dir_delete' => true,
+       'funcionario' => true,
+       'funcionario_show' => true,
+       'funcionario_new' => true,
+       'funcionario_create' => true,
+       'funcionario_edit' => true,
+       'funcionario_update' => true,
+       'funcionario_delete' => true,
        '_homepage' => true,
        'config_menu' => true,
        'config_menu_show' => true,
@@ -379,6 +386,41 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getdir_deleteRouteInfo()
     {
         return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dir',  ),));
+    }
+
+    private function getfuncionarioRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\FuncionarioController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/funcionario/',  ),));
+    }
+
+    private function getfuncionario_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\FuncionarioController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/funcionario',  ),));
+    }
+
+    private function getfuncionario_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\FuncionarioController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/funcionario/new',  ),));
+    }
+
+    private function getfuncionario_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\FuncionarioController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/funcionario/create',  ),));
+    }
+
+    private function getfuncionario_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\FuncionarioController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/funcionario',  ),));
+    }
+
+    private function getfuncionario_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\FuncionarioController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/funcionario',  ),));
+    }
+
+    private function getfuncionario_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\FuncionarioController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/funcionario',  ),));
     }
 
     private function get_homepageRouteInfo()

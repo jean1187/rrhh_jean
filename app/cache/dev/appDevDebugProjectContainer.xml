@@ -34,7 +34,7 @@
     <parameter key="database_port"></parameter>
     <parameter key="database_name">rrhh</parameter>
     <parameter key="database_user">root</parameter>
-    <parameter key="database_password">root_mysql.2010</parameter>
+    <parameter key="database_password">123</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">localhost</parameter>
     <parameter key="mailer_user"></parameter>
@@ -1604,7 +1604,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>4ec42f9716094</argument>
+            <argument>4ecaa93f3d161</argument>
           </service>
         </argument>
       </argument>
@@ -1864,7 +1864,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>4ec42f9716094</argument>
+            <argument>4ecaa93f3d161</argument>
             <argument type="service" id="monolog.logger.security"/>
           </service>
         </argument>
@@ -2107,7 +2107,7 @@
         <argument key="host">localhost</argument>
         <argument key="port"></argument>
         <argument key="user">root</argument>
-        <argument key="password">root_mysql.2010</argument>
+        <argument key="password">123</argument>
         <argument key="driver">pdo_mysql</argument>
         <argument key="driverOptions" type="collection"/>
       </argument>

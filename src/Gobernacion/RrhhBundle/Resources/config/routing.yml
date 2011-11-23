@@ -10,14 +10,10 @@ GobernacionRrhhBundle_dir:
     resource: "@GobernacionRrhhBundle/Resources/config/routing/direccion.yml"
     prefix:   /dir
 
-GobernacionRrhhBundle_car:
+GobernacionRrhhBundle_cargos:
     resource: "@GobernacionRrhhBundle/Resources/config/routing/cargos.yml"
-    prefix:   /car
-
-
-
-
-
-
-
-
+    prefix:   /cargos
+    
+GobernacionRrhhBundle_permiso:
+    resource: "@GobernacionRrhhBundle/Resources/config/routing/permiso.yml"
+    prefix:   /permiso

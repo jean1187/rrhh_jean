@@ -74,7 +74,6 @@ class DependenciaController extends Controller
     {
         $entity  = new Dependencia();
         $request = $this->getRequest();
-        
         $em = $this->getDoctrine()->getEntityManager();
 
         if ($request->getMethod() == 'POST' && $request->isXmlHttpRequest()) 

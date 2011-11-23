@@ -1,6 +1,6 @@
-<h1>Cargos edit</h1>
+<h1>Permiso edit</h1>
 
-<form action="{{ path('cargos_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+<form action="{{ path('permiso_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
     {{ form_widget(edit_form) }}
     <p>
         <button type="submit">Edit</button>
@@ -9,12 +9,12 @@
 
 <ul class="record_actions">
     <li>
-        <a href="{{ path('cargos') }}">
+        <a href="{{ path('permiso') }}">
             Back to the list
         </a>
     </li>
     <li>
-        <form action="{{ path('cargos_delete', { 'id': entity.id }) }}" method="post">
+        <form action="{{ path('permiso_delete', { 'id': entity.id }) }}" method="post">
             {{ form_widget(delete_form) }}
             <button type="submit">Delete</button>
         </form>

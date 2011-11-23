@@ -351,6 +351,118 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            if (0 === strpos($pathinfo, '/rrhh/titulos')) {
+                // titulos
+                if (rtrim($pathinfo, '/') === '/rrhh/titulos') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'titulos');
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\TitulosController::indexAction',  '_route' => 'titulos',);
+                }
+
+                // titulos_show
+                if (preg_match('#^/rrhh/titulos/(?P<id>[^/]+?)/show$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\TitulosController::showAction',)), array('_route' => 'titulos_show'));
+                }
+
+                // titulos_new
+                if ($pathinfo === '/rrhh/titulos/new') {
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\TitulosController::newAction',  '_route' => 'titulos_new',);
+                }
+
+                // titulos_create
+                if ($pathinfo === '/rrhh/titulos/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_titulos_create;
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\TitulosController::createAction',  '_route' => 'titulos_create',);
+                }
+                not_titulos_create:
+
+                // titulos_edit
+                if (preg_match('#^/rrhh/titulos/(?P<id>[^/]+?)/edit$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\TitulosController::editAction',)), array('_route' => 'titulos_edit'));
+                }
+
+                // titulos_update
+                if (preg_match('#^/rrhh/titulos/(?P<id>[^/]+?)/update$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_titulos_update;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\TitulosController::updateAction',)), array('_route' => 'titulos_update'));
+                }
+                not_titulos_update:
+
+                // titulos_delete
+                if (preg_match('#^/rrhh/titulos/(?P<id>[^/]+?)/delete$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_titulos_delete;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\TitulosController::deleteAction',)), array('_route' => 'titulos_delete'));
+                }
+                not_titulos_delete:
+
+            }
+
+            if (0 === strpos($pathinfo, '/rrhh/cargos')) {
+                // cargos
+                if (rtrim($pathinfo, '/') === '/rrhh/cargos') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'cargos');
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\CargosController::indexAction',  '_route' => 'cargos',);
+                }
+
+                // cargos_show
+                if (preg_match('#^/rrhh/cargos/(?P<id>[^/]+?)/show$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\CargosController::showAction',)), array('_route' => 'cargos_show'));
+                }
+
+                // cargos_new
+                if ($pathinfo === '/rrhh/cargos/new') {
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\CargosController::newAction',  '_route' => 'cargos_new',);
+                }
+
+                // cargos_create
+                if ($pathinfo === '/rrhh/cargos/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_cargos_create;
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\CargosController::createAction',  '_route' => 'cargos_create',);
+                }
+                not_cargos_create:
+
+                // cargos_edit
+                if (preg_match('#^/rrhh/cargos/(?P<id>[^/]+?)/edit$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\CargosController::editAction',)), array('_route' => 'cargos_edit'));
+                }
+
+                // cargos_update
+                if (preg_match('#^/rrhh/cargos/(?P<id>[^/]+?)/update$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_cargos_update;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\CargosController::updateAction',)), array('_route' => 'cargos_update'));
+                }
+                not_cargos_update:
+
+                // cargos_delete
+                if (preg_match('#^/rrhh/cargos/(?P<id>[^/]+?)/delete$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_cargos_delete;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\CargosController::deleteAction',)), array('_route' => 'cargos_delete'));
+                }
+                not_cargos_delete:
+
+            }
+
         }
 
         // _homepage

@@ -29,6 +29,7 @@
             </td>
         </tr>
     {% endfor %}
+      </tbody>
         
             <tfoot>
                 <tr>
@@ -37,10 +38,9 @@
                     </td>    
                 </tr>
             </tfoot>             
-    </tbody>
+    
 </table>
-
-        
+   
 </div>
 
 <div id="new_form" style="display:none" href="{{path("dep_create")}}" ></div>    
@@ -61,7 +61,7 @@
 					buttons: {
 						"Cancelar": function() { 
 							$(this).dialog("close"); 
-						} ,                                            
+                                                    } ,                                            
 						"Guardar": function() 
                                                 { 
                                                         $.post((op==1)?$('#new_form').attr("href"):url_update,$("form").serializeArray() ,function(data) {

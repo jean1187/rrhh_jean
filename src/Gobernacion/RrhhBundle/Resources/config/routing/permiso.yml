@@ -1,0 +1,30 @@
+permiso:
+    pattern:  /
+    defaults: { _controller: "GobernacionRrhhBundle:Permiso:index" }
+
+permiso_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GobernacionRrhhBundle:Permiso:show" }
+
+permiso_new:
+    pattern:  /new
+    defaults: { _controller: "GobernacionRrhhBundle:Permiso:new" }
+
+permiso_create:
+    pattern:  /create
+    defaults: { _controller: "GobernacionRrhhBundle:Permiso:create" }
+    requirements: { _method: post }
+
+permiso_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GobernacionRrhhBundle:Permiso:edit" }
+
+permiso_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GobernacionRrhhBundle:Permiso:update" }
+    requirements: { _method: post }
+
+permiso_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GobernacionRrhhBundle:Permiso:delete" }
+    requirements: { _method: post }

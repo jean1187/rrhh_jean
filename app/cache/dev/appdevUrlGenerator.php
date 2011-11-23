@@ -66,6 +66,20 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'dir_edit' => true,
        'dir_update' => true,
        'dir_delete' => true,
+       'titulos' => true,
+       'titulos_show' => true,
+       'titulos_new' => true,
+       'titulos_create' => true,
+       'titulos_edit' => true,
+       'titulos_update' => true,
+       'titulos_delete' => true,
+       'cargos' => true,
+       'cargos_show' => true,
+       'cargos_new' => true,
+       'cargos_create' => true,
+       'cargos_edit' => true,
+       'cargos_update' => true,
+       'cargos_delete' => true,
        '_homepage' => true,
        'config_menu' => true,
        'config_menu_show' => true,
@@ -379,6 +393,76 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getdir_deleteRouteInfo()
     {
         return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\DireccionController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/dir',  ),));
+    }
+
+    private function gettitulosRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\TitulosController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/titulos/',  ),));
+    }
+
+    private function gettitulos_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\TitulosController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/titulos',  ),));
+    }
+
+    private function gettitulos_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\TitulosController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/titulos/new',  ),));
+    }
+
+    private function gettitulos_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\TitulosController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/titulos/create',  ),));
+    }
+
+    private function gettitulos_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\TitulosController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/titulos',  ),));
+    }
+
+    private function gettitulos_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\TitulosController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/titulos',  ),));
+    }
+
+    private function gettitulos_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\TitulosController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/titulos',  ),));
+    }
+
+    private function getcargosRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\CargosController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/cargos/',  ),));
+    }
+
+    private function getcargos_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\CargosController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/cargos',  ),));
+    }
+
+    private function getcargos_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\CargosController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/cargos/new',  ),));
+    }
+
+    private function getcargos_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\CargosController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/cargos/create',  ),));
+    }
+
+    private function getcargos_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\CargosController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/cargos',  ),));
+    }
+
+    private function getcargos_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\CargosController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/cargos',  ),));
+    }
+
+    private function getcargos_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\CargosController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/cargos',  ),));
     }
 
     private function get_homepageRouteInfo()

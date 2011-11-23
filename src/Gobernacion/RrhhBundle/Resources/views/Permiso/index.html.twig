@@ -1,0 +1,57 @@
+{# src src/Gobernacion/RrhhBundle/Resource/views/Direccion/index.html.twig #}
+
+{% extends 'ConfigurationGralBundle::layout.html.twig' %} 
+
+{% block title %}Permisos{% endblock %}
+
+{% block body %}
+<div class="cuerpo grid_16 " >
+    {{ parent() }}
+
+ <table id="tablePermisos">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Motivo</th>
+            <th>Fecha Solicitud</th>
+            <th>Fecha Permiso</th>
+            <th>Fecha Desde</th>
+            <th>Fecha Hasta</th>
+            <th>Fecha Final</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('permiso_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.motivo }}</td>
+            <td>{{ entity.fchSolicitud|date('Y-m-d H:i:s') }}</td>
+            <td>{{ entity.fchPermiso|date('Y-m-d H:i:s') }}</td>
+            <td>{{ entity.fchDesde|date('Y-m-d H:i:s') }}</td>
+            <td>{{ entity.fchHasta|date('Y-m-d H:i:s') }}</td>
+            <td>{{ entity.fchFinal|date('Y-m-d H:i:s') }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('permiso_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('permiso_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <a id="button_new" href="{{path("permiso_new")}}" ><button class="add_button" >Nuevo Permiso</button></a>
+                    </td>    
+                </tr>
+    </tfoot> 
+</table>      
+<!--<div id="new_form" style="display:none" href="{#{path("dir_create")}#}" ></div> --> 
+</div>
+{% endblock body%}

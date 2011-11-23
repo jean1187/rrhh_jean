@@ -1,16 +1,34 @@
-<h1>Cargos creation</h1>
+{# src src/Gobernacion/RrhhBundle/Resource/views/Direccion/new.html.twig #}
+{% extends app.request.isXmlHttpRequest  ? 'ConfigurationGralBundle::layout_ajax.html.twig' :'ConfigurationGralBundle::layout.html.twig' %}
 
-<form action="{{ path('Gobernacion_RrhhBundle_Entity__create') }}" method="post" {{ form_enctype(form) }}>
+{% block title %}Creación de Cargos{% endblock %}
+
+{% block pageid 'new' %}
+
+{% block body %}
+
+    <div class="grid_16 " >
+        {{ parent() }}
+       
+
+<form action="{{ path('cargos_create') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
-    <p>
-        <button type="submit">Create</button>
-    </p>
+        {% if not app.request.isXmlHttpRequest %}
+		<div class="grid_2 prefix_7" >
+		    <p>
+			<input type="submit" value="Guardar" />
+		    </p>
+		</div>
+                <div class="clear"></div>
+                <div class="grid_2 prefix_7" >
+                    <p>
+                        {% set Uri =  url('cargos') %}
+                        {{- block('listado') -}}                        
+		    </p>
+		</div>                    
+                {% endif %}
+    
 </form>
-
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('Gobernacion_RrhhBundle_Entity_') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+     
+     </div>
+{% endblock body%}  

@@ -1,0 +1,61 @@
+<h1>Permiso</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Motivo</th>
+            <td>{{ entity.motivo }}</td>
+        </tr>
+        <tr>
+            <th>Fchsolicitud</th>
+            <td>{{ entity.fchSolicitud|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Fchpermiso</th>
+            <td>{{ entity.fchPermiso|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Fchdesde</th>
+            <td>{{ entity.fchDesde|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Fchhasta</th>
+            <td>{{ entity.fchHasta|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Fchfinal</th>
+            <td>{{ entity.fchFinal|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Fchcre</th>
+            <td>{{ entity.fchCre|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Fchmodif</th>
+            <td>{{ entity.fchModif|date('Y-m-d H:i:s') }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('permiso') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('permiso_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('permiso_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

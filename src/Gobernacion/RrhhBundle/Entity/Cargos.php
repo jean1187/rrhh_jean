@@ -2,13 +2,17 @@
 
 namespace Gobernacion\RrhhBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints as DoctrineAssert;
+
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Gobernacion\RrhhBundle\Entity\Cargos
  *
  * @ORM\Table(name="cargos")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Gobernacion\RrhhBundle\Repository\CargosDependenciaRepository")
  */
 class Cargos
 {
@@ -25,6 +29,7 @@ class Cargos
      * @var string $nombre
      *
      * @ORM\Column(name="nombre", type="string", length=45, nullable=false)
+     * @Assert\NotBlank()
      */
     private $nombre;
 
@@ -32,6 +37,7 @@ class Cargos
      * @var float $sueldo
      *
      * @ORM\Column(name="sueldo", type="float", nullable=false)
+     * @Assert\NotBlank()
      */
     private $sueldo;
 

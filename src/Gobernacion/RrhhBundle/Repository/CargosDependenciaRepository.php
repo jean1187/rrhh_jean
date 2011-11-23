@@ -21,5 +21,17 @@ class CargosDependenciaRepository extends EntityRepository
             ->getQuery();
         return $query->getResult();
     }
+    
+    public function findDepCargos($cargos)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder()
+            ->select('Cd')
+            ->from('GobernacionRrhhBundle:CargosDependencia', 'Cd')
+            ->where('Cd.cargos = :cargos')
+            ->setParameter('cargos',$cargos)
+            ->getQuery();
+        return $query->getResult();
+    }
      
 }//Fin Repository

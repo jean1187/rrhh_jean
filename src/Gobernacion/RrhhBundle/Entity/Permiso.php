@@ -1,6 +1,8 @@
 <?php
 
 namespace Gobernacion\RrhhBundle\Entity;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints as DoctrineAssert;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -25,6 +27,7 @@ class Permiso
      * @var text $motivo
      *
      * @ORM\Column(name="motivo", type="text", nullable=true)
+     * @Assert\NotBlank()
      */
     private $motivo;
 
@@ -85,7 +88,15 @@ class Permiso
      *   @ORM\JoinColumn(name="status_id", referencedColumnName="id")
      * })
      */
-    private $status;
+    
+   private $status;
+   
+   public function __toString()
+	{
+		return $this->getNombre();  
+	}
+    
+   
 
     /**
      * @var Funcionario
@@ -95,8 +106,11 @@ class Permiso
      *   @ORM\JoinColumn(name="funcionario_id", referencedColumnName="id")
      * })
      */
+    
+   
     private $funcionario;
 
+    
 
 
     /**
@@ -298,6 +312,8 @@ class Permiso
     {
         $this->funcionario = $funcionario;
     }
+    
+    
 
     /**
      * Get funcionario

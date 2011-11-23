@@ -4,47 +4,47 @@ namespace Gobernacion\RrhhBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use Gobernacion\RrhhBundle\Entity\Titulos;
-use Gobernacion\RrhhBundle\Form\TitulosType;
+use Gobernacion\RrhhBundle\Entity\Permiso;
+use Gobernacion\RrhhBundle\Form\PermisoType;
 
 /**
- * Titulos controller.
+ * Permiso controller.
  *
  */
-class TitulosController extends Controller
+class PermisoController extends Controller
 {
     /**
-     * Lists all Titulos entities.
+     * Lists all Permiso entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entities = $em->getRepository('GobernacionRrhhBundle:Titulos')->findAll();
+        $entities = $em->getRepository('GobernacionRrhhBundle:Permiso')->findAll();
 
-        return $this->render('GobernacionRrhhBundle:Titulos:index.html.twig', array(
+        return $this->render('GobernacionRrhhBundle:Permiso:index.html.twig', array(
             'entities' => $entities
         ));
     }
 
     /**
-     * Finds and displays a Titulos entity.
+     * Finds and displays a Permiso entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entity = $em->getRepository('GobernacionRrhhBundle:Titulos')->find($id);
+        $entity = $em->getRepository('GobernacionRrhhBundle:Permiso')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Titulos entity.');
+            throw $this->createNotFoundException('Unable to find Permiso entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('GobernacionRrhhBundle:Titulos:show.html.twig', array(
+        return $this->render('GobernacionRrhhBundle:Permiso:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
 
@@ -52,29 +52,29 @@ class TitulosController extends Controller
     }
 
     /**
-     * Displays a form to create a new Titulos entity.
+     * Displays a form to create a new Permiso entity.
      *
      */
     public function newAction()
     {
-        $entity = new Titulos();
-        $form   = $this->createForm(new TitulosType(), $entity);
+        $entity = new Permiso();
+        $form   = $this->createForm(new PermisoType(), $entity);
 
-        return $this->render('GobernacionRrhhBundle:Titulos:new.html.twig', array(
+        return $this->render('GobernacionRrhhBundle:Permiso:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView()
         ));
     }
 
     /**
-     * Creates a new Titulos entity.
+     * Creates a new Permiso entity.
      *
      */
     public function createAction()
     {
-        $entity  = new Titulos();
+        $entity  = new Permiso();
         $request = $this->getRequest();
-        $form    = $this->createForm(new TitulosType(), $entity);
+        $form    = $this->createForm(new PermisoType(), $entity);
         $form->bindRequest($request);
 
         if ($form->isValid()) {
@@ -82,34 +82,34 @@ class TitulosController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('titulos_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('permiso_show', array('id' => $entity->getId())));
             
         }
 
-        return $this->render('GobernacionRrhhBundle:Titulos:new.html.twig', array(
+        return $this->render('GobernacionRrhhBundle:Permiso:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView()
         ));
     }
 
     /**
-     * Displays a form to edit an existing Titulos entity.
+     * Displays a form to edit an existing Permiso entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entity = $em->getRepository('GobernacionRrhhBundle:Titulos')->find($id);
+        $entity = $em->getRepository('GobernacionRrhhBundle:Permiso')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Titulos entity.');
+            throw $this->createNotFoundException('Unable to find Permiso entity.');
         }
 
-        $editForm = $this->createForm(new TitulosType(), $entity);
+        $editForm = $this->createForm(new PermisoType(), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('GobernacionRrhhBundle:Titulos:edit.html.twig', array(
+        return $this->render('GobernacionRrhhBundle:Permiso:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -117,20 +117,20 @@ class TitulosController extends Controller
     }
 
     /**
-     * Edits an existing Titulos entity.
+     * Edits an existing Permiso entity.
      *
      */
     public function updateAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entity = $em->getRepository('GobernacionRrhhBundle:Titulos')->find($id);
+        $entity = $em->getRepository('GobernacionRrhhBundle:Permiso')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Titulos entity.');
+            throw $this->createNotFoundException('Unable to find Permiso entity.');
         }
 
-        $editForm   = $this->createForm(new TitulosType(), $entity);
+        $editForm   = $this->createForm(new PermisoType(), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
         $request = $this->getRequest();
@@ -141,10 +141,10 @@ class TitulosController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('titulos_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('permiso_edit', array('id' => $id)));
         }
 
-        return $this->render('GobernacionRrhhBundle:Titulos:edit.html.twig', array(
+        return $this->render('GobernacionRrhhBundle:Permiso:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -152,7 +152,7 @@ class TitulosController extends Controller
     }
 
     /**
-     * Deletes a Titulos entity.
+     * Deletes a Permiso entity.
      *
      */
     public function deleteAction($id)
@@ -164,17 +164,17 @@ class TitulosController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getEntityManager();
-            $entity = $em->getRepository('GobernacionRrhhBundle:Titulos')->find($id);
+            $entity = $em->getRepository('GobernacionRrhhBundle:Permiso')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Titulos entity.');
+                throw $this->createNotFoundException('Unable to find Permiso entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('titulos'));
+        return $this->redirect($this->generateUrl('permiso'));
     }
 
     private function createDeleteForm($id)

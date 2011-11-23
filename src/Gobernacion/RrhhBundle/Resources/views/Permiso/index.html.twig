@@ -1,8 +1,8 @@
-{# src src/Gobernacion/RrhhBundle/Resource/views/Direccion/index.html.twig #}
+{# src src/Gobernacion/RrhhBundle/Resource/views/Permiso/index.html.twig #}
 
 {% extends 'ConfigurationGralBundle::layout.html.twig' %} 
 
-{% block title %}Permisos{% endblock %}
+{% block title %}Listado de Permisos{% endblock %}
 
 {% block body %}
 <div class="cuerpo grid_16 " >
@@ -52,6 +52,53 @@
                 </tr>
     </tfoot> 
 </table>      
-<!--<div id="new_form" style="display:none" href="{#{path("dir_create")}#}" ></div> --> 
+<div id="new_form" style="display:none" href="{{path("permiso_create")}}" ></div>
 </div>
 {% endblock body%}
+
+{% block javascripts %}
+{{ parent() }}
+        <script type="text/javascript">
+            $(document).ready(function() {
+                         $( ".add_button" ).button({text: true});
+                         op=1;
+                         
+                        $('#new_form').load($('#button_new').attr("href")).dialog({
+					autoOpen: false,
+					width: 980,
+					buttons: {
+						"Cancelar": function() { 
+							$(this).dialog("close"); 
+						} ,                                            
+						"Guardar": function() 
+                                                { 
+                                                        alert("guardar")
+						}
+					}
+				});
+
+                         $(".add_button").live("click",(function (event) 
+                            { 
+                                $('#new_form').dialog('open');
+                            
+                                  op=1;
+                                 event.preventDefault(); //para prevenir el comportamiento normal de un href
+                            })        
+                        );//fin .add_button
+
+                         $(".edit_button").live("click",(function (event)
+                         {
+                             alert("edit")
+                             event.preventDefault(); //para prevenir el comportamiento normal de un href
+                        }));//fin .edit_button      
+                        
+                         $(".del_button").live("click",(function (event) 
+                            { 
+                                alert("del")
+                                 event.preventDefault(); //para prevenir el comportamiento normal de un href
+                            })        
+                        );     //fin .del_button                                                    
+            });//fin ready
+            
+        </script>
+{% endblock javascripts%}  

@@ -9,7 +9,6 @@ GobernacionRrhhBundle_dep:
 GobernacionRrhhBundle_dir:
     resource: "@GobernacionRrhhBundle/Resources/config/routing/direccion.yml"
     prefix:   /dir
-<<<<<<< HEAD
 
 GobernacionRrhhBundle_cargos:
     resource: "@GobernacionRrhhBundle/Resources/config/routing/cargos.yml"
@@ -18,7 +17,7 @@ GobernacionRrhhBundle_cargos:
 GobernacionRrhhBundle_permiso:
     resource: "@GobernacionRrhhBundle/Resources/config/routing/permiso.yml"
     prefix:   /permiso
-=======
+
     
 GobernacionRrhhBundle_funcionario:
     resource: "@GobernacionRrhhBundle/Resources/config/routing/funcionario.yml"
@@ -27,4 +26,4 @@ GobernacionRrhhBundle_funcionario:
 GobernacionRrhhBundle_persona:
     resource: "@GobernacionRrhhBundle/Resources/config/routing/persona.yml"
     prefix:   /persona
->>>>>>> jean
+

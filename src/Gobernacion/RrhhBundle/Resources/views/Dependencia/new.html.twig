@@ -9,9 +9,8 @@
 
     <div class="grid_16 " >
         {{ parent() }}
-       
-
-            <form action="{{ path('dep_create') }}" method="post" {{ form_enctype(form) }}>
+      
+           <form action="{{ path('dep_create') }}" method="post" {{ form_enctype(form) }}>
                 {{ form_widget(form) }}
                     
                 {% if not app.request.isXmlHttpRequest %}

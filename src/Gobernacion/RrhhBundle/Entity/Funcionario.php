@@ -307,7 +307,7 @@ class Funcionario
     {
         $this->tipoFuncionario = $tipoFuncionario;
     }
-
+    
     /**
      * Get tipoFuncionario
      *

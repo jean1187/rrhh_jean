@@ -407,6 +407,62 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            if (0 === strpos($pathinfo, '/rrhh/persona')) {
+                // persona
+                if (rtrim($pathinfo, '/') === '/rrhh/persona') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'persona');
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\PersonaController::indexAction',  '_route' => 'persona',);
+                }
+
+                // persona_show
+                if (preg_match('#^/rrhh/persona/(?P<id>[^/]+?)/show$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\PersonaController::showAction',)), array('_route' => 'persona_show'));
+                }
+
+                // persona_new
+                if ($pathinfo === '/rrhh/persona/new') {
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\PersonaController::newAction',  '_route' => 'persona_new',);
+                }
+
+                // persona_create
+                if ($pathinfo === '/rrhh/persona/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_persona_create;
+                    }
+                    return array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\PersonaController::createAction',  '_route' => 'persona_create',);
+                }
+                not_persona_create:
+
+                // persona_edit
+                if (preg_match('#^/rrhh/persona/(?P<id>[^/]+?)/edit$#x', $pathinfo, $matches)) {
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\PersonaController::editAction',)), array('_route' => 'persona_edit'));
+                }
+
+                // persona_update
+                if (preg_match('#^/rrhh/persona/(?P<id>[^/]+?)/update$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_persona_update;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\PersonaController::updateAction',)), array('_route' => 'persona_update'));
+                }
+                not_persona_update:
+
+                // persona_delete
+                if (preg_match('#^/rrhh/persona/(?P<id>[^/]+?)/delete$#x', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_persona_delete;
+                    }
+                    return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\PersonaController::deleteAction',)), array('_route' => 'persona_delete'));
+                }
+                not_persona_delete:
+
+            }
+
         }
 
         // _homepage

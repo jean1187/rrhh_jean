@@ -13,3 +13,7 @@ GobernacionRrhhBundle_dir:
 GobernacionRrhhBundle_funcionario:
     resource: "@GobernacionRrhhBundle/Resources/config/routing/funcionario.yml"
     prefix:   /funcionario
+    
+GobernacionRrhhBundle_persona:
+    resource: "@GobernacionRrhhBundle/Resources/config/routing/persona.yml"
+    prefix:   /persona

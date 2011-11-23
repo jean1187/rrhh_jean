@@ -50,16 +50,64 @@
                 </tr>
             {% endfor %}
             </tbody>
+        
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <a id="button_new" href="{{path("funcionario_new")}}" ><button class="add_button" >Nueva Funcionario</button></a>
+                    </td>    
+                </tr>
+            </tfoot> 
+            
         </table>
-
-        <ul>
-            <li>
-                <a href="{{ path('funcionario_new') }}">
-                    Create a new entry
-                </a>
-            </li>
-        </ul>
 </div>
 
-<div id="new_form" style="display:none" href="{{path("dep_create")}}" ></div>    
+<div id="new_form" style="display:none" href="{{path("funcionario_create")}}" ></div>    
 {% endblock body%}
+
+{% block javascripts %}
+{{ parent() }}
+        <script type="text/javascript">
+            $(document).ready(function() {
+                         $( ".add_button" ).button({text: true});
+                         op=1;
+                         
+                        $('#new_form').load($('#button_new').attr("href")).dialog({
+					autoOpen: false,
+					width: 980,
+					buttons: {
+						"Cancelar": function() { 
+							$(this).dialog("close"); 
+						} ,                                            
+						"Guardar": function() 
+                                                { 
+                                                        alert("guardar")
+						}
+					}
+				});
+
+                         $(".add_button").live("click",(function (event) 
+                            { 
+                                $('#new_form').dialog('open');
+                            
+                                  op=1;
+                                 event.preventDefault(); //para prevenir el comportamiento normal de un href
+                            })        
+                        );//fin .add_button
+
+                         $(".edit_button").live("click",(function (event)
+                         {
+                             alert("edit")
+                             event.preventDefault(); //para prevenir el comportamiento normal de un href
+                        }));//fin .edit_button      
+                        
+                         $(".del_button").live("click",(function (event) 
+                            { 
+                                alert("del")
+                                 event.preventDefault(); //para prevenir el comportamiento normal de un href
+                            })        
+                        );     //fin .del_button                                                    
+            });//fin ready
+            
+        </script>
+{% endblock javascripts%}      

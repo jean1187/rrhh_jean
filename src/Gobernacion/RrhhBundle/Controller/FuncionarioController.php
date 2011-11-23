@@ -7,6 +7,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Gobernacion\RrhhBundle\Entity\Funcionario;
 use Gobernacion\RrhhBundle\Form\FuncionarioType;
 
+use Gobernacion\RrhhBundle\Entity\Persona;
+use Gobernacion\RrhhBundle\Form\PersonaType;
+
 /**
  * Funcionario controller.
  *
@@ -59,10 +62,12 @@ class FuncionarioController extends Controller
     {
         $entity = new Funcionario();
         $form   = $this->createForm(new FuncionarioType(), $entity);
+        $persona   = $this->createForm(new PersonaType(), $persona=new Persona());
 
         return $this->render('GobernacionRrhhBundle:Funcionario:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView()
+            'form'   => $form->createView(),
+            'form_persona'=>$persona->createView()
         ));
     }
 

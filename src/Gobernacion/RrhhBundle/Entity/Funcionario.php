@@ -59,7 +59,7 @@ class Funcionario
     /**
      * @var Persona
      *
-     * @ORM\ManyToOne(targetEntity="Persona")
+     * @ORM\OneToOne(targetEntity="Persona", inversedBy="funcionario")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="persona_id", referencedColumnName="id")
      * })

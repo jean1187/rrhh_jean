@@ -1,0 +1,65 @@
+<h1>Persona</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Cedula</th>
+            <td>{{ entity.cedula }}</td>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <td>{{ entity.nombre }}</td>
+        </tr>
+        <tr>
+            <th>Apellido</th>
+            <td>{{ entity.apellido }}</td>
+        </tr>
+        <tr>
+            <th>Sexo</th>
+            <td>{{ entity.sexo }}</td>
+        </tr>
+        <tr>
+            <th>Tlfcelular</th>
+            <td>{{ entity.tlfCelular }}</td>
+        </tr>
+        <tr>
+            <th>Tlfhabitacion</th>
+            <td>{{ entity.tlfHabitacion }}</td>
+        </tr>
+        <tr>
+            <th>Direccion</th>
+            <td>{{ entity.direccion }}</td>
+        </tr>
+        <tr>
+            <th>Fchcre</th>
+            <td>{{ entity.fchCre|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Fchmodif</th>
+            <td>{{ entity.fchModif|date('Y-m-d H:i:s') }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('persona') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('persona_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('persona_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

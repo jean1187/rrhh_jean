@@ -28,6 +28,10 @@ class EstadoCivil
      */
     private $nombre;
 
+    public function getEdoCivilPersonas()
+    {
+        return $this->getNombre();
+    }
 
 
     /**

@@ -1,0 +1,53 @@
+<h1>Persona list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Cedula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Sexo</th>
+            <th>Tlfcelular</th>
+            <th>Tlfhabitacion</th>
+            <th>Direccion</th>
+            <th>Fchcre</th>
+            <th>Fchmodif</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('persona_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.cedula }}</td>
+            <td>{{ entity.nombre }}</td>
+            <td>{{ entity.apellido }}</td>
+            <td>{{ entity.sexo }}</td>
+            <td>{{ entity.tlfCelular }}</td>
+            <td>{{ entity.tlfHabitacion }}</td>
+            <td>{{ entity.direccion }}</td>
+            <td>{{ entity.fchCre|date('Y-m-d H:i:s') }}</td>
+            <td>{{ entity.fchModif|date('Y-m-d H:i:s') }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('persona_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('persona_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('persona_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>

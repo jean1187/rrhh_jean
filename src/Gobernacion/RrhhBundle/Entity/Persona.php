@@ -103,7 +103,45 @@ class Persona
      * })
      */
     private $status;
+    /**
+     * @var funcionario
+     *
+     * @ORM\OneToOne(targetEntity="Funcionario", mappedBy="persona" )
+     * 
+     */    
+    private $funcionario;
+  
 
+    /**
+     * @var beneficiario
+     *
+     * @ORM\OneToOne(targetEntity="Beneficiario", mappedBy="persona" )
+     * 
+     */    
+    private $beneficiario;    
+
+    
+    
+    
+    public function getFuncionario()
+    {
+        return $this->funcionario;
+    }    
+    
+    
+    public function getFindPersonasNotUncionarios()
+    {
+        return $this->getNombre()." ".$this->getApellido();
+    }
+    /**
+     * Get Select Personas
+     *
+     * @return string
+     */    
+    public function getSelectPersonas()
+    {
+        return $this->getNombre()." ".$this->getApellido();
+    }
 
 
     /**

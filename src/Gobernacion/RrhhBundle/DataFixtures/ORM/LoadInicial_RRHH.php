@@ -255,7 +255,7 @@ class LoadInicial_RRHH extends AbstractFixture implements OrderedFixtureInterfac
 		  $manager->persist($FuncCDep);
 		}//fin $i<=20
 
-		if($i>20)
+		if($i>20 && $i<41)
 		{
 		  $benef=new Beneficiario();
 		  $benef->setPersona($persona_obj);

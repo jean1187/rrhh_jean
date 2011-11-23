@@ -73,6 +73,13 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'funcionario_edit' => true,
        'funcionario_update' => true,
        'funcionario_delete' => true,
+       'persona' => true,
+       'persona_show' => true,
+       'persona_new' => true,
+       'persona_create' => true,
+       'persona_edit' => true,
+       'persona_update' => true,
+       'persona_delete' => true,
        '_homepage' => true,
        'config_menu' => true,
        'config_menu_show' => true,
@@ -421,6 +428,41 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getfuncionario_deleteRouteInfo()
     {
         return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\FuncionarioController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/funcionario',  ),));
+    }
+
+    private function getpersonaRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\PersonaController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/persona/',  ),));
+    }
+
+    private function getpersona_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\PersonaController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/persona',  ),));
+    }
+
+    private function getpersona_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\PersonaController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/persona/new',  ),));
+    }
+
+    private function getpersona_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\PersonaController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/rrhh/persona/create',  ),));
+    }
+
+    private function getpersona_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\PersonaController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/persona',  ),));
+    }
+
+    private function getpersona_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\PersonaController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/persona',  ),));
+    }
+
+    private function getpersona_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Gobernacion\\RrhhBundle\\Controller\\PersonaController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/rrhh/persona',  ),));
     }
 
     private function get_homepageRouteInfo()

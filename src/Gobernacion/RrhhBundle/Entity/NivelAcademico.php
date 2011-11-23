@@ -28,7 +28,10 @@ class NivelAcademico
      */
     private $nombre;
 
-
+    public function getSelectNivelAcademico()
+    {
+        return $this->getNombre();
+    }
 
     /**
      * Get id

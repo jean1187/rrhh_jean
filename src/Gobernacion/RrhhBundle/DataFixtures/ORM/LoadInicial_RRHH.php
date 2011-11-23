@@ -207,7 +207,8 @@ class LoadInicial_RRHH extends AbstractFixture implements OrderedFixtureInterfac
         {
 
             $persona_obj = new Persona();
-          
+            $persona_obj->setCedula(18543906+$i);
+            $persona_obj->setSexo(rand(0,1)?'M':"F");
             $persona_obj->setNombre($datos_personales['nombres'][rand(0, count($datos_personales['nombres'])-1)]);
             $persona_obj->setApellido(
                 $datos_personales['apellidos'][rand(0, count($datos_personales['apellidos'])-1)].
@@ -254,7 +255,7 @@ class LoadInicial_RRHH extends AbstractFixture implements OrderedFixtureInterfac
 		  $manager->persist($FuncCDep);
 		}//fin $i<=20
 
-		if($i>20)
+		if($i>20 && $i<41)
 		{
 		  $benef=new Beneficiario();
 		  $benef->setPersona($persona_obj);

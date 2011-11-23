@@ -24,7 +24,7 @@ class Beneficiario
     /**
      * @var Persona
      *
-     * @ORM\ManyToOne(targetEntity="Persona")
+     * @ORM\OneToOne(targetEntity="Persona", inversedBy="beneficiario")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="persona_id", referencedColumnName="id")
      * })

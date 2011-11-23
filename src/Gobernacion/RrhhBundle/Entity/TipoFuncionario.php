@@ -29,7 +29,10 @@ class TipoFuncionario
     private $nombre;
 
 
-
+    public function getSelectTipoFun()
+    {
+        return $this->getNombre();
+    }
     /**
      * Get id
      *

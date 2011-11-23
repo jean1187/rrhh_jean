@@ -38,7 +38,10 @@ class Status
      */
     private $catStatus;
 
-
+    public function getStatusSelect()
+    {
+        return $this->getNombre();
+    }
 
     /**
      * Get id

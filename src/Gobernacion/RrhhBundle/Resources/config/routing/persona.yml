@@ -1,0 +1,30 @@
+persona:
+    pattern:  /
+    defaults: { _controller: "GobernacionRrhhBundle:Persona:index" }
+
+persona_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GobernacionRrhhBundle:Persona:show" }
+
+persona_new:
+    pattern:  /new
+    defaults: { _controller: "GobernacionRrhhBundle:Persona:new" }
+
+persona_create:
+    pattern:  /create
+    defaults: { _controller: "GobernacionRrhhBundle:Persona:create" }
+    requirements: { _method: post }
+
+persona_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GobernacionRrhhBundle:Persona:edit" }
+
+persona_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GobernacionRrhhBundle:Persona:update" }
+    requirements: { _method: post }
+
+persona_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GobernacionRrhhBundle:Persona:delete" }
+    requirements: { _method: post }

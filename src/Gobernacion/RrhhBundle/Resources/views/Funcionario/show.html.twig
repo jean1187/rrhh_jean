@@ -1,0 +1,49 @@
+<h1>Funcionario</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Fchingreso</th>
+            <td>{{ entity.fchIngreso|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Direccione</th>
+            <td>{{ entity.direccionE }}</td>
+        </tr>
+        <tr>
+            <th>Contactoe</th>
+            <td>{{ entity.contactoE }}</td>
+        </tr>
+        <tr>
+            <th>Vivienda</th>
+            <td>{{ entity.vivienda }}</td>
+        </tr>
+        <tr>
+            <th>Vehiculo</th>
+            <td>{{ entity.vehiculo }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('funcionario') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('funcionario_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('funcionario_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

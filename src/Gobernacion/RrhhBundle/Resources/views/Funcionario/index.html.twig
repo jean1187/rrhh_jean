@@ -1,0 +1,113 @@
+{# src src/Gobernacion/RrhhBundle/Resource/views/Funcionario/index.html.twig #}
+
+{% extends 'ConfigurationGralBundle::layout.html.twig' %} 
+
+{% block title %}Listado de Funcionarios{% endblock %}
+
+{% block body %}
+<div class="cuerpo grid_16 " >
+    {{ parent() }}
+
+        <table class="records_list">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Cedula</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Genero</th>
+                    <th>Ingreso</th>
+                    {#<th>Direccione</th>
+                    <th>Contactoe</th>#}
+                    <th>Vivienda</th>
+                    <th>Vehiculo</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('funcionario_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.persona.cedula}}</td>
+                    <td>{{ entity.persona.nombre}}</td>
+                    <td>{{ entity.persona.apellido}}</td>
+                    <td>{{ entity.persona.sexo}}</td>
+                    <td>{{ entity.fchIngreso|date('Y-m-d') }}</td>
+                    {#<td>{{ entity.direccionE | truncate(20, true) | default('--') }}</td>
+                    <td> {{ entity.contactoE | truncate(20, true) | default('--') }}  </td>#} 
+                    <td>{{  entity.vivienda  ? 'si' : 'no' }}</td>
+                    <td>{{   entity.vehiculo   ? 'si' : 'no' }} </td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('funcionario_show', { 'id': entity.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('funcionario_edit', { 'id': entity.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <a id="button_new" href="{{path("funcionario_new")}}" ><button class="add_button" >Nueva Funcionario</button></a>
+                    </td>    
+                </tr>
+            </tfoot> 
+            
+        </table>
+</div>
+
+<div id="new_form" style="display:none" href="{{path("funcionario_create")}}" ></div>    
+{% endblock body%}
+
+{% block javascripts %}
+{{ parent() }}
+        <script type="text/javascript">
+            $(document).ready(function() {
+                         $( ".add_button" ).button({text: true});
+                         op=1;
+                         
+                        $('#new_form').load($('#button_new').attr("href")).dialog({
+					autoOpen: false,
+					width: 980,
+					buttons: {
+						"Cancelar": function() { 
+							$(this).dialog("close"); 
+						} ,                                            
+						"Guardar": function() 
+                                                { 
+                                                        alert("guardar")
+						}
+					}
+				});
+
+                         $(".add_button").live("click",(function (event) 
+                            { 
+                                $('#new_form').dialog('open');
+                            
+                                  op=1;
+                                 event.preventDefault(); //para prevenir el comportamiento normal de un href
+                            })        
+                        );//fin .add_button
+
+                         $(".edit_button").live("click",(function (event)
+                         {
+                             alert("edit")
+                             event.preventDefault(); //para prevenir el comportamiento normal de un href
+                        }));//fin .edit_button      
+                        
+                         $(".del_button").live("click",(function (event) 
+                            { 
+                                alert("del")
+                                 event.preventDefault(); //para prevenir el comportamiento normal de un href
+                            })        
+                        );     //fin .del_button                                                    
+            });//fin ready
+            
+        </script>
+{% endblock javascripts%}      

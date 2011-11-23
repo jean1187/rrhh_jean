@@ -1,0 +1,38 @@
+{# src src/Gobernacion/RrhhBundle/Resource/views/Direccion/new.html.twig #}
+{% extends app.request.isXmlHttpRequest  ? 'ConfigurationGralBundle::layout_ajax.html.twig' :'ConfigurationGralBundle::layout.html.twig' %}
+
+{% block title %}Creación de Direccion{% endblock %}
+
+{% block pageid 'new' %}
+
+{% block body %}
+
+        <h1>Funcionario creation</h1>
+
+        <form action="{{ path('funcionario_create') }}" method="post" {{ form_enctype(form) }}>
+            {% include 'GobernacionRrhhBundle:Funcionario:formFuncionario.html.twig' %}
+                {{ form_widget(form) }}
+            
+                {# Cuarta columna #}
+
+                {% if not app.request.isXmlHttpRequest %}
+		<div class="grid_2 prefix_7" >
+		    <p>
+			<input type="submit" value="Guardar" />
+		    </p>
+		</div>
+                <div class="clear"></div>
+                <div class="grid_2 prefix_7" >
+                    <p>
+                        {% set Uri =  url('dir') %}
+                        {{- block('funcionario') -}}                        
+		    </p>
+		</div>                    
+                {% endif %}
+
+		{{ form_errors(form._token) }}
+		{{ form_widget(form._token) }}
+        </form>
+      
+    </div>
+{% endblock body%}

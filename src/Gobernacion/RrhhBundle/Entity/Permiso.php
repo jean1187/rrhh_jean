@@ -91,13 +91,7 @@ class Permiso
     
    private $status;
    
-   public function __toString()
-	{
-		return $this->getNombre();  
-	}
-    
    
-
     /**
      * @var Funcionario
      *
@@ -106,8 +100,6 @@ class Permiso
      *   @ORM\JoinColumn(name="funcionario_id", referencedColumnName="id")
      * })
      */
-    
-   
     private $funcionario;
 
     
@@ -314,7 +306,6 @@ class Permiso
     }
     
     
-
     /**
      * Get funcionario
      *

@@ -10,6 +10,7 @@
         {{ parent() }}
 
     <form action="{{ path('permiso_create') }}" method="post" {{ form_enctype(form) }}>
+        {% include 'GobernacionRrhhBundle:Permiso:formPermiso.html.twig' %}
         {{ form_widget(form) }}
 
         {% if not app.request.isXmlHttpRequest %}

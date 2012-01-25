@@ -106,7 +106,10 @@ class Funcionario
      */
     private $tipoFuncionario;
 
-
+     public function getFuncionarios()
+    {
+        return $this->getPersona()->getNombre()." ".$this->getPersona()->getApellido();
+    }
 
     /**
      * Get id

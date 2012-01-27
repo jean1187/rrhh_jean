@@ -186,6 +186,22 @@ class TitulosController extends Controller
         $request = $this->getRequest();
         $em = $this->getDoctrine()->getEntityManager();
         
+        if ($this->getRequest()->getMethod() == 'POST' && $this->getRequest()->isXmlHttpRequest()) 
+                 {  
+                    $TitulosPersona=$em->getRepository('GobernacionRrhhBundle:TitulosPersona')->findTitulosPersona($id);
+                    $msg="";
+                    $num=count($TitulosPersona);
+                        if($num )
+                                $msg.=" El Titulo no puede ser eliminado, por que tiene ".$num." Personas ";                    
+                        else
+                            { 
+                                $entity = $em->getRepository('GobernacionRrhhBundle:Titulos')->find($id);
+                                $em->remove($entity);
+                                $em->flush();
+                            }
+                    return new \Symfony\Component\HttpFoundation\Response($msg);
+                 } 
+                 
         $form->bindRequest($request);
 
         if ($form->isValid()) {

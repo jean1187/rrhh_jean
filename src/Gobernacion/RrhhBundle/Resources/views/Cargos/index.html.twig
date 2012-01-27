@@ -73,7 +73,7 @@
                                                                   {
                                                                       var fila='<tr>    <td><a href="'+data.obj.id+'/show">'+data.obj.id+'</a></td>\
                                                                                         <td class="text">'+data.obj.nombre+'</td>\
-                                                                                         <td class="text">'+data.obj.sueldo+'</td>\
+                                                                                        <td class="text">'+data.obj.sueldo+'</td>\
                                                                                         <td>\
                                                                                             <span  class="ui-widget-header ui-corner-all toolbar">\
                                                                                                 <a class="edit_button" href="'+data.obj.id+'/edit">Editar</a>\
@@ -89,6 +89,7 @@
                                                                     {
                                                                          edit.children(".nombre").text(data.obj.nombre);
                                                                          edit.children(".sueldo").text(data.obj.sueldo);
+                                                                         
                                                                     }
                                                                          
                                                                      $('#new_form').dialog("close"); 

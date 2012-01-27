@@ -83,7 +83,9 @@ class DireccionController extends Controller
                 }
 
             $form->bindRequest($request);
+            
               if ($form->isValid()) {
+                $em = $this->getDoctrine()->getEntityManager();  
                 $em->persist($entity);
                 $em->flush();
 

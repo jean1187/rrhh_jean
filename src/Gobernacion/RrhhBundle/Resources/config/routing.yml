@@ -26,4 +26,8 @@ GobernacionRrhhBundle_funcionario:
 GobernacionRrhhBundle_persona:
     resource: "@GobernacionRrhhBundle/Resources/config/routing/persona.yml"
     prefix:   /persona
+    
+GobernacionRrhhBundle_titulos:
+    resource: "@GobernacionRrhhBundle/Resources/config/routing/titulos.yml"
+    prefix:   /titulos    
 

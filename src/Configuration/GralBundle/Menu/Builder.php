@@ -30,6 +30,9 @@ class Builder  extends Controller
           $mantenimiento->addChild('Dirección', array('route' => 'dir'));
 	  $mantenimiento->addChild('Dependencia', array('route' => 'dep'));
 	  $mantenimiento->addChild('Cargos', array('route' => 'cargos'));
+          $mantenimiento->addChild('Titulos', array('route' => 'titulos'));
+          $mantenimiento->addChild('Permiso', array('route' => 'permiso'));
+          $mantenimiento->addChild('Funcionario', array('route' => 'funcionario'));
          
           
         $menu->addChild('Salir', array('route' => 'fos_user_security_logout'));

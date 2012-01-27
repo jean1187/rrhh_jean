@@ -81,8 +81,9 @@
                                                                        $("#tableDireccion tbody").append(fila);
                                                                        $.botones();$( ".add_button" ).button({text: true});
                                                                    }
-                                                                   else
+                                                                   else{
                                                                          edit.text(data.obj.nombre);
+                                                                       }
                                                                          
                                                                      $('#new_form').dialog("close"); 
                                                            }
@@ -98,14 +99,14 @@
                              return false;
                         });//fin .add_button
 
-                         $(".edit_button").live("click",function(){
+                        $(".edit_button").live("click",function(){
                              op=2;
                              edit=$(this).parents('tr').children(".text");
                              url_update=$(this).attr("href").replace("edit","update");
                              $.get($(this).attr("href"),function(data) {
                                     $('#new_form').dialog('open');
                                     $('#new_form #gobernacion_rrhhbundle_direcciontype_nombre').val(data);
-                                 });
+                             });
                              return false;
                         });//fin .edit_button      
                         

@@ -1,0 +1,1 @@
+1 -- pendiente --> deleteAction($id); titulos

@@ -7,28 +7,26 @@
 
 {% block body %}
 
-    <div class="grid_16 " >
+<div class="grid_16 " >
         {{ parent() }}
-       
-
-<form action="{{ path('cargos_create') }}" method="post" {{ form_enctype(form) }}>
+        <form action="{{ path('cargos_create') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
         {% if not app.request.isXmlHttpRequest %}
-		<div class="grid_2 prefix_7" >
-		    <p>
-			<input type="submit" value="Guardar" />
-		    </p>
-		</div>
+                <div class="grid_2 prefix_7" >
+                    <p>
+                        <input type="submit" value="Guardar" />
+                    </p>
+                </div>
                 <div class="clear"></div>
                 <div class="grid_2 prefix_7" >
                     <p>
                         {% set Uri =  url('cargos') %}
                         {{- block('listado') -}}                        
-		    </p>
-		</div>                    
+                        </p>
+                    </div>                    
                 {% endif %}
-    
-</form>
-     
-     </div>
+
+                </form>
+
+            </div>
 {% endblock body%}  

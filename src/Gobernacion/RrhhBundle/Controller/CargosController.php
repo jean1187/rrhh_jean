@@ -185,7 +185,7 @@ class CargosController extends Controller
      * Deletes a Cargos entity.
      *
      */
-    public function deleteAction($id)
+        public function deleteAction($id)
     {
         $form = $this->createDeleteForm($id);
         $request = $this->getRequest();

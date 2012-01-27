@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Gobernacion\RrhhBundle\Entity\Titulos;
 use Gobernacion\RrhhBundle\Form\TitulosType;
+use Configuration\GralBundle\Resources\util\Util;
 
 /**
  * Titulos controller.
@@ -75,6 +76,16 @@ class TitulosController extends Controller
         $entity  = new Titulos();
         $request = $this->getRequest();
         $form    = $this->createForm(new TitulosType(), $entity);
+        $em = $this->getDoctrine()->getEntityManager();
+        
+        if ($request->getMethod() == 'POST' && $request->isXmlHttpRequest()) 
+                 {  
+                    $inyeccioDependencias=array("validator"=>$this->get('validator'),"translator"=>$this->get('translator'),"session"=>$this->get('session'));
+                    return Util::ValidarAjax($entity, $request->get("gobernacion_rrhhbundle_titulostype"),$inyeccioDependencias,$em);
+              
+                }
+
+        
         $form->bindRequest($request);
 
         if ($form->isValid()) {
@@ -90,7 +101,7 @@ class TitulosController extends Controller
             'entity' => $entity,
             'form'   => $form->createView()
         ));
-    }
+    }//fin createAcction
 
     /**
      * Displays a form to edit an existing Titulos entity.
@@ -101,6 +112,18 @@ class TitulosController extends Controller
         $em = $this->getDoctrine()->getEntityManager();
 
         $entity = $em->getRepository('GobernacionRrhhBundle:Titulos')->find($id);
+        
+        if ($this->getRequest()->isXmlHttpRequest()) 
+                 { 
+                   $response = new \Symfony\Component\HttpFoundation\Response(json_encode(array('code' =>1,"selectores"=>
+                                                                                                        array(
+                                                                                                              "#gobernacion_rrhhbundle_titulostype_nombre"=>$entity->getNombre()
+                                                                                                            )
+                                                                                            ))
+                                                                                      );
+                        $response->headers->set('Content-Type', 'application/json');
+                        return $response; 
+                 } 
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Titulos entity.');
@@ -115,16 +138,18 @@ class TitulosController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
-
-    /**
-     * Edits an existing Titulos entity.
-     *
-     */
+   
     public function updateAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
 
         $entity = $em->getRepository('GobernacionRrhhBundle:Titulos')->find($id);
+        
+        if ($this->getRequest()->getMethod() == 'POST' && $this->getRequest()->isXmlHttpRequest()) 
+                 {  
+                    $inyeccionTitulos=array("validator"=>$this->get('validator'),"translator"=>$this->get('translator'),"session"=>$this->get('session'));
+                    return Util::ValidarAjax($entity, $this->getRequest()->get("gobernacion_rrhhbundle_titulostype"),$inyeccionTitulos,$em);
+                 }
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Titulos entity.');
@@ -159,7 +184,8 @@ class TitulosController extends Controller
     {
         $form = $this->createDeleteForm($id);
         $request = $this->getRequest();
-
+        $em = $this->getDoctrine()->getEntityManager();
+        
         $form->bindRequest($request);
 
         if ($form->isValid()) {

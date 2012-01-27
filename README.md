@@ -62,7 +62,9 @@ Como ya las entidades estan creadas
 
 2. php app/console doctrine:schema:create
 
-3. php app/console doctrine:fixtures:load
+3. php app/console doctrine:schema:update --force
+
+4. php app/console doctrine:fixtures:load
     
     `Solamente tengo algunas tablas precargadas` Si quieres modificar puedes ver el archivo
 

@@ -17,17 +17,4 @@ class Grupo extends BaseGrupo
      */
      protected $id;
 
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-    public function __toString() {
-             return $this->getName();
-    }        
 }

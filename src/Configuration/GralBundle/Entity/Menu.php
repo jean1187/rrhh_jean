@@ -8,12 +8,10 @@ use Doctrine\ORM\Mapping as ORM;
  * Configuration\GralBundle\Entity\Menu
  *
  * @ORM\Table(name="menu")
- * @ORM\Entity(repositoryClass="Configuration\GralBundle\Entity\MenuRepository")
+ * @ORM\Entity
  */
 class Menu
 {
- 
-
     /**
      * @var integer $id
      *
@@ -33,68 +31,37 @@ class Menu
     /**
      * @var string $uri
      *
-     * @ORM\Column(name="uri", type="string", length=200, nullable=true)
+     * @ORM\Column(name="uri", type="string", length=200)
      */
     private $uri;
 
     /**
-     * @var text $roles
+     * @var integer $parent
      *
-     * @ORM\Column(name="roles", type="text", nullable=true)
+     * @ORM\Column(name="parent", type="integer",nullable=true)
      */
-    
-    private $roles;
 
-    /**
-     * @var Menu
-     *
-     * @ORM\OneToOne(targetEntity="Menu")
-     * @ORM\JoinColumn(name="parent", referencedColumnName="id")
-     */
     private $parent;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Configuration\GralBundle\Entity\Grupo")
-     * @ORM\JoinTable(name="menu_group",
-     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
-     * )
-     */
-    protected $groups;
-    
-    /**
-     * Get getSelectParent
+     * @var text $roles
      *
-     * @return String
+     * @ORM\Column(name="roles", type="text",nullable=true)
      */
-    public function __toString() {
-             return $this->getNombre(). " id = ".$this->getId() ;
-    }    
+    private $roles;
 
     /**
-     * Get getselect_rutas
+     * Get nombres de los demas items del menu
      *
-     * @return String
+     * @return integer 
      */
-    public function getSelectRutas()
-    {
+    public function getSelectParent(){
         return $this->getNombre();
-    }        
-    
-
-    /**
-     * Get getSelectParent
-     *
-     * @return String
-     */
-    public function getSelectParent()
-    {
-        return $this->getNombre();
-    }    
+    }
 
     /**
      * Get id
-     *shipping_id
+     *
      * @return integer 
      */
     public function getId()
@@ -107,12 +74,12 @@ class Menu
      *
      * @param string $nombre
      */
-    public function setNombre($nombre)
+    public function setNombre( $nombre)
     {
         $this->nombre = $nombre;
     }
 
-    /**shipping_id
+    /**
      * Get nombre
      *
      * @return string 
@@ -143,6 +110,26 @@ class Menu
     }
 
     /**
+     * Set parent
+     *
+     * @param integer $parent
+     */
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+    }
+
+    /**
+     * Get parent
+     *
+     * @return integer 
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
      * Set roles
      *
      * @param text $roles
@@ -160,60 +147,5 @@ class Menu
     public function getRoles()
     {
         return $this->roles;
-    }
-    
-    /**
-     * Set parent
-     *
-     * @param Configuration\GralBundle\Entity\Menu $parent
-     */
-    public function setParent( $parent)
-    {
-        $this->parent = $parent;
-    }
-
-    /**
-     * Get parent
-     *
-     * @return Configuration\GralBundle\Entity\Menu 
-     */
-    public function getParent()
-    {
-        return $this->parent;
-    }
-    
-     /**
-     * Get parent
-     *
-     * @return String
-     */
-    public function getParentS()
-    {
-        return $this->getNombre();
-    }
-    
-    public function __construct()
-    {
-        $this->groups = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
-    /**
-     * Add groups
-     *
-     * @param Configuration\GralBundle\Entity\Grupo $groups
-     */
-    public function addGroups(\Configuration\GralBundle\Entity\Grupo $groups)
-    {
-        $this->groups[] = $groups;
-    }
-
-    /**
-     * Get groups
-     *
-     * @return Doctrine\Common\Collections\Collection 
-     */
-    public function getGroups()
-    {
-        return $this->groups;
     }
 }

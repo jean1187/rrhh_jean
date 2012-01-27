@@ -6,7 +6,7 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Configuration\GralBundle\Resources\util\Util;
 
 use Configuration\GralBundle\Entity\Grupo;
-
+use Configuration\GralBundle\Entity\Usuario;
 
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -37,7 +37,7 @@ class LoadInicial extends AbstractFixture implements OrderedFixtureInterface,Con
         for($i=1;$i<=3;$i++)
         {
              
-           /* $user = new Usuario();
+             /*$user = new Usuario();
             $user->setEmail('john@example.com');
             $user->setUsername('admin'.$i);
             $encoder = $this->container->get('security.encoder_factory')->getEncoder($user);

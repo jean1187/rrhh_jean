@@ -373,4 +373,34 @@ class Persona
     {
         return $this->status;
     }
+
+    /**
+     * Set funcionario
+     *
+     * @param Gobernacion\RrhhBundle\Entity\Funcionario $funcionario
+     */
+    public function setFuncionario(\Gobernacion\RrhhBundle\Entity\Funcionario $funcionario)
+    {
+        $this->funcionario = $funcionario;
+    }
+
+    /**
+     * Set beneficiario
+     *
+     * @param Gobernacion\RrhhBundle\Entity\Beneficiario $beneficiario
+     */
+    public function setBeneficiario(\Gobernacion\RrhhBundle\Entity\Beneficiario $beneficiario)
+    {
+        $this->beneficiario = $beneficiario;
+    }
+
+    /**
+     * Get beneficiario
+     *
+     * @return Gobernacion\RrhhBundle\Entity\Beneficiario 
+     */
+    public function getBeneficiario()
+    {
+        return $this->beneficiario;
+    }
 }

@@ -15,10 +15,10 @@ class Builder  extends Controller
         $em = $this->getDoctrine()->getEntityManager();
         $securityContext = $this->container->get('security.context');
         $user = $securityContext->getToken()->getUser();
-        $menu_orm = $em->getRepository('ConfigurationGralBundle:Menu');
+        /*$menu_orm = $em->getRepository('ConfigurationGralBundle:Menu');
             foreach ( $menu_orm->findAllNoHijos() as $valor) 
                  $this->Recursividad_Hijos_Padres($menu,$valor,$menu_orm,$user);
-           
+          */ 
       //  if ( $this->get('security.context')->isGranted("SUPER_ADMIN")) {           
                 $menu->addChild('Configuration', array('attributes'=>array('class' => 'parent')));
                 $menu['Configuration']->addChild('Menu', array('route' => 'config_menu'));

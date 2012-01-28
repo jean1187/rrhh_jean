@@ -29,7 +29,7 @@ class Usuario extends UsuarioBase
      *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
      * )
      */
-    protected $groups;
+    protected $groups;    
 
 
     public function __construct()
@@ -38,6 +38,5 @@ class Usuario extends UsuarioBase
         // tu propia lógica
     }
  
-
 
 }

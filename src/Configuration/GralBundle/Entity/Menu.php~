@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Configuration\GralBundle\Entity\Menu
  *
  * @ORM\Table(name="menu")
- * @ORM\(repositoryClass="Configuration\GralBundle\Entity\MenuRepository")
+ * @ORM\Entity(repositoryClass="Configuration\GralBundle\Entity\MenuRepository")
  */
 class Menu
 {

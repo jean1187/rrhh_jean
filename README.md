@@ -142,6 +142,6 @@ El proyecto esta siendo desarrollado por:
 ```
 
   * Jean Mendoza (@rivasjeancarlos)
-  * Keyla Saragozza (@katla20)
+  * Keyla Zaragozza (@katla20)
 
 ```

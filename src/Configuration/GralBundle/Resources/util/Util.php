@@ -197,12 +197,14 @@ class Util
      * @return string Slug calculado para la cadena original
      */    
     
-    static public function ValidarAjax($ObjEntidad,$ArrayPost,$inyeccioDependencias,$em,$entidades=NULL)
+    static public function ValidarAjax($ObjEntidad,$ArrayPost,$inyeccioDependencias,$em,$entidades=NULL,$retorno=false,$campos_Excluidos=array())
                 {
+
                    $campos=array();
                         foreach ($ArrayPost as $key=>$value)
-                             {   //echo $key;
-                            
+                             {   
+                               if(in_array($key,$campos_Excluidos))
+                                   continue;
                                $campos[$key]=$ArrayPost[$key];
    
                                if(count($entidades)!=0  && array_key_exists($key, $entidades)) 
@@ -212,7 +214,7 @@ class Util
                                 }//fin if
                                 
                                 else if(strcmp($key,"_token"))
-                                       $ObjEntidad->{'set'.ucfirst($key)}( $ArrayPost[$key]);                                    
+                                       $ObjEntidad->{'set'.ucfirst($key)}( $ArrayPost[$key]);
                              }//fin for
                          $msg = array();
                          $errores = $inyeccioDependencias["validator"]->validate($ObjEntidad);
@@ -231,6 +233,9 @@ class Util
                              $em->flush();
                              $campos["id"]=$ObjEntidad->getId();
                             }
+                            
+                               if($retorno)
+                                   return array('code' => $code,"obj"=>$campos, 'msg' => $msg,"locale" => $inyeccioDependencias["session"]->getLocale());
                         $response = new \Symfony\Component\HttpFoundation\Response(json_encode(array('code' => $code,"obj"=>$campos, 'msg' => $msg,"locale" => $inyeccioDependencias["session"]->getLocale())));
                         $response->headers->set('Content-Type', 'application/json');
                         return $response;

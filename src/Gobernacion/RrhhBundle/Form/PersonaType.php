@@ -20,8 +20,8 @@ class PersonaType extends AbstractType
             ->add('tlfCelular',null,array("label"=>"Tlf. Celular"))
             ->add('tlfHabitacion',null,array("label"=>"Tlf. Habitacion"))
             ->add('direccion')
-            ->add('fchCre')
-            ->add('fchModif')
+            /*->add('fchCre')
+            ->add('fchModif')*/
             ->add('nivelAcademico',null,array('property'=>"select_nivel_academico"))
             ->add('status','entity', array(
                                 'property'=>"status_select",

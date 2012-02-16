@@ -4,6 +4,7 @@ namespace Gobernacion\RrhhBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Gobernacion\RrhhBundle\Entity\Persona
  *
@@ -24,7 +25,9 @@ class Persona
     /**
      * @var string $cedula
      *
-     * @ORM\Column(name="cedula", type="string", length=10, nullable=true)
+     * @ORM\Column(name="cedula", type="integer", length=10, nullable=true)
+     * @Assert\NotBlank()
+     * @Assert\Type(type="integer", message="The value {{ value }} is not a valid {{ type }}.")
      */
     private $cedula;
 
@@ -32,6 +35,7 @@ class Persona
      * @var string $nombre
      *
      * @ORM\Column(name="nombre", type="string", length=45, nullable=true)
+     * @Assert\NotBlank()
      */
     private $nombre;
 
@@ -39,6 +43,7 @@ class Persona
      * @var string $apellido
      *
      * @ORM\Column(name="apellido", type="string", length=45, nullable=true)
+     * @Assert\NotBlank()
      */
     private $apellido;
 
@@ -46,6 +51,7 @@ class Persona
      * @var string $sexo
      *
      * @ORM\Column(name="sexo", type="string", length=1, nullable=true)
+     * @Assert\NotBlank()
      */
     private $sexo;
 
@@ -53,6 +59,7 @@ class Persona
      * @var string $tlfCelular
      *
      * @ORM\Column(name="tlf_celular", type="string", length=11, nullable=true)
+     * @Assert\NotBlank()
      */
     private $tlfCelular;
 
@@ -67,6 +74,7 @@ class Persona
      * @var text $direccion
      *
      * @ORM\Column(name="direccion", type="text", nullable=true)
+     * @Assert\NotBlank()
      */
     private $direccion;
 
@@ -74,6 +82,7 @@ class Persona
      * @var datetime $fchCre
      *
      * @ORM\Column(name="fch_cre", type="datetime", nullable=false)
+     * @Assert\DateTime()
      */
     private $fchCre;
 
@@ -81,6 +90,7 @@ class Persona
      * @var datetime $fchModif
      *
      * @ORM\Column(name="fch_modif", type="datetime", nullable=false)
+     * @Assert\DateTime()
      */
     private $fchModif;
 
@@ -91,6 +101,7 @@ class Persona
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="nivel_academico_id", referencedColumnName="id")
      * })
+     * @Assert\NotBlank()
      */
     private $nivelAcademico;
 
@@ -101,13 +112,13 @@ class Persona
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="status_id", referencedColumnName="id")
      * })
+     * @Assert\NotBlank()
      */
     private $status;
     /**
      * @var funcionario
      *
      * @ORM\OneToOne(targetEntity="Funcionario", mappedBy="persona" )
-     * 
      */    
     private $funcionario;
   

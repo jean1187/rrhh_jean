@@ -11,7 +11,7 @@
 
         <form action="{{ path('funcionario_create') }}" method="post" {{ form_enctype(form) }}>
             {% include 'GobernacionRrhhBundle:Funcionario:formFuncionario.html.twig' %}
-                {{ form_widget(form) }}
+             
             
                 {# Cuarta columna #}
 
@@ -31,6 +31,7 @@
                 {% endif %}
 
 		{{ form_errors(form._token) }}
+                {{ form_errors(form_persona._token) }}
 		{{ form_widget(form._token) }}
         </form>
       

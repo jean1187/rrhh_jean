@@ -1,27 +1,59 @@
 {% import "ConfigurationGralBundle::macros_form.html.twig" as forms %}
                 {# Primera columna #}
                     <div class="grid_4 omega" >
-                        {{ forms.input(form_persona.cedula, { 'attr': {'placeholder': '  Escriba su cedula '} })  }}
+                        {{ forms.input(form_persona.cedula, { 'attr': {'placeholder': '  Escriba su cedula ','class':"reset"} })  }}
                     </div>
                     <div class="grid_5" >
-                        {{ forms.input(form_persona.nombre, { 'attr': {'placeholder': '  Escriba su nombre '} }) }}
+                        {{ forms.input(form_persona.nombre, { 'attr': {'placeholder': '  Escriba su nombre ','class':"reset"} }) }}
                     </div>
+
                     <div class="grid_6 omega" >
-                        {{ forms.input(form_persona.apellido, { 'attr': {'placeholder': '  Escriba su apellido '} }) }}
+                        {{ forms.input(form_persona.apellido, { 'attr': {'placeholder': '  Escriba su apellido ','class':"reset"} }) }}
                     </div>
 		<div class="clear"></div>
                 {# Segunda columna #}
                     <div class="grid_4 omega" >
-                        {{ forms.input(form_persona.sexo)  }}
+                        {{ forms.input(form_persona.nivelAcademico, { 'attr': {'class':"reset"} }) }}
                     </div>
                     <div class="grid_5" >
-                        {{ forms.input(form_persona.tlfCelular, { 'attr': {'placeholder': '  Escriba su telefono Cel'} }) }}
-                    </div>
-                    <div class="grid_6 omega" >
-                        {{ forms.input(form_persona.tlfHabitacion, { 'attr': {'placeholder': '  Escriba su telefono Hab '} }) }}
+                        {{ forms.input(form_persona.status, { 'attr': {'class':"reset"} }) }}
                     </div>
 		<div class="clear"></div>
+                {# Segunda columna #}
+                    <div class="grid_4 omega" >
+                        {{ forms.input(form_persona.sexo, { 'attr': {'class':"reset"} }) }}
+                    </div>
+                    <div class="grid_5" >
+                        {{ forms.input(form_persona.tlfCelular, { 'attr': {'placeholder': '  Escriba su telefono Cel','class':"reset"} }) }}
+                    </div>
 
+                    <div class="grid_6 omega" >
+                        {{ forms.input(form_persona.tlfHabitacion, { 'attr': {'placeholder': '  Escriba su telefono Hab ','class':"reset"} }) }}
+                    </div>
+		<div class="clear"></div>
+                {# Tercera columna #}
+                     <div class="grid_5 omega" >
+                        {{ forms.input(form_persona.direccion,{ 'attr': {'placeholder': 'Escriba su Direccion','cols':"25",'class':"reset"} }) }}
+                    </div>
+                    <div class="grid_5" >
+                        {{ forms.input(form.direccionE, { 'attr': {'placeholder': 'Escriba su Direccion de Emergencia ','cols':"25",'class':"reset"} }) }}
+                    </div>
 
+                    <div class="grid_5 omega" >
+                        {{ forms.input(form.contactoE,  { 'attr': {'placeholder': 'Escriba su contacto de Emergencia ','cols':"30",'class':"reset"} }) }}
+                    </div>
+                <div class="clear"></div>
+                {# Cuarta columna #}
+                     <div class="grid_5 omega" >
+                        {{ forms.input(form.estadoCivil) }}
+                        {{ forms.input(form.fchIngreso,  { 'attr': {'placeholder': '2011/01/23','cols':"30",'class':"reset"} }) }}
+                    </div>
+                    <div class="grid_5" >
+                        {{ forms.input(form.vivienda) }}{{ forms.input(form.vehiculo)}}
+                    </div>
 
-
+                    <div class="grid_5 omega" >
+                        {{ forms.input(form.lateralidad, { 'attr': {'class':"reset"} }) }}
+                         {{ forms.input(form.tipoFuncionario, { 'attr': {'class':"reset"} }) }}
+                    </div>
+                <div class="clear"></div>

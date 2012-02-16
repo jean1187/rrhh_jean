@@ -15,7 +15,10 @@
 {% endblock %}
 {% block header%}
     <div id="header" class="grid_16 " >
-       <center> <h1> ========= Aqui va un banner HEADER ===============</h1> </center>
+        {% image 'tope_dts.png' %}
+            <img src="{{ asset_url }}">
+        {% endimage %}
+
     </div>
     <div class="clear"></div>
     {% block menu%}

@@ -3,7 +3,7 @@
 namespace Gobernacion\RrhhBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Gobernacion\RrhhBundle\Entity\Funcionario
  *
@@ -25,6 +25,9 @@ class Funcionario
      * @var date $fchIngreso
      *
      * @ORM\Column(name="fch_ingreso", type="date", nullable=false)
+     * 
+     * @Assert\NotBlank()
+     * @Assert\Date()
      */
     private $fchIngreso;
 
@@ -47,14 +50,14 @@ class Funcionario
      *
      * @ORM\Column(name="vivienda", type="boolean", nullable=true)
      */
-    private $vivienda;
+    private $vivienda=false;
 
     /**
      * @var boolean $vehiculo
      *
      * @ORM\Column(name="vehiculo", type="boolean", nullable=true)
      */
-    private $vehiculo;
+    private $vehiculo=false;
 
     /**
      * @var Persona
@@ -106,10 +109,7 @@ class Funcionario
      */
     private $tipoFuncionario;
 
-     public function getFuncionarios()
-    {
-        return $this->getPersona()->getNombre()." ".$this->getPersona()->getApellido();
-    }
+
 
     /**
      * Get id
@@ -310,7 +310,7 @@ class Funcionario
     {
         $this->tipoFuncionario = $tipoFuncionario;
     }
-    
+
     /**
      * Get tipoFuncionario
      *

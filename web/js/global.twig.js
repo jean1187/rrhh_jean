@@ -37,3 +37,41 @@ $(document).ready(function() {
             });
         return data.code;
     };
+
+    //inicio mesages_validation Multiples
+    jQuery.mesages_validation_multiples = function(data) {
+       $.each(data,function(key,val){
+           $variable=0;
+           $.each(val.msg,function(key,val){
+                $.achtung({message: 'Campo \"'+key+"\" : "+val, timeout:5});
+                $variable++;
+            });
+       });//fin cada registro de validacion
+       if($variable==0)
+          $.achtung({message: 'El dato fue guardado', timeout:5});
+      return $variable;
+    };
+    
+    
+jQuery.fn.resetear = function(){
+        this.each( function(){
+            switch(this.tagName)
+             {
+                    case 'INPUT':
+                        switch(this.type)
+                            {
+                                case 'text':
+                                    this.value="";
+                                break;
+                            }
+                    break;
+                    case 'TEXTAREA':
+                        this.value="";
+                    break;
+                    case 'SELECT':
+                        this.options[0].selected=true;
+                    break;
+             }
+        });
+}
+

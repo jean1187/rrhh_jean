@@ -81,9 +81,18 @@
 						} ,                                            
 						"Guardar": function() 
                                                 { 
-                                                        alert("guardar")
+                                                        $.post((op==1)?$('#new_form').attr("href"):url_update,$("form").serializeArray() ,function(data) {
+                                                          $var=$.mesages_validation_multiples(data);
+                                                          console.log(data)
+                                                          if(!$var)
+                                                              {
+                                                                $('#new_form').dialog("close");
+                                                                $(".reset").resetear();
+                                                              }
+                                                        });//fin post
 						}
-					}
+					},
+                                        position:["center",40]
 				});
 
                          $(".add_button").live("click",(function (event) 
